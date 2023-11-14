@@ -6,6 +6,20 @@
 }
 
 .add-event-container {
-  width: 400px;
+  width: 500px;
   padding: 30px 20px;
+}
+
+.underlined span:last-child {
+  flex: 1;
+  border-bottom: 1px solid #BAB7B7;
+  line-height: 36px;
+}
+
+.btn-gray {
+  background-color: rgb(229 231 235);
+}
+
+.btn-gray:hover {
+  background-color: rgb(209 213 219);
 }

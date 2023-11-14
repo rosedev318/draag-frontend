@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { Button, IconButton, Box, Drawer } from '@mui/material';
+import { Button, IconButton, Box, Drawer, TextField, FormControlLabel } from '@mui/material';
 import './AddEventDrawer.css';
-import { AddCircleOutlineOutlined } from '@mui/icons-material';
+import { AddCircleOutlineOutlined, CalendarMonth } from '@mui/icons-material';
+import Radio from '@mui/material/Radio';
+import RadioGroup from '@mui/material/RadioGroup';
+import DatePicker from '../DatePicker/DatePicker';
 
 const AddEventDrawer = (props) => {
 //   const { timezone, handleChange } = props;
@@ -34,10 +37,30 @@ const AddEventDrawer = (props) => {
             <AddCircleOutlineOutlined sx={{ color: '#0B66E4' }} />
           </IconButton>
         </div>
-        <Box sx={{color: '#BAB7B7', fontSize: '16px', lineHeight: '20px'}}>
-          Input data about your activities, enabling you to track your progress effectively.<br />
+        <Box sx={{color: '#BAB7B7', fontSize: '16px', lineHeight: '20px', marginTop: '16px'}}>
+          Input data about your activities, enabling you to track your progress effectively.
           By doing so, you can gain insights into what is working well for you and what 
           you need to avoid in your journey.
+        </Box>
+        <Box sx={{marginTop: '16px'}}>
+          <RadioGroup
+            defaultValue="female"
+            name="radio-buttons-group"
+          >
+            <FormControlLabel className='ml-0 underlined' value="female" control={<Radio className='px-0 mr-8px' />} label="Fb campain" />
+            <FormControlLabel className='ml-0 underlined' value="male" control={<Radio className='px-0 mr-8px' />} label="Mass message - Putney" />
+            <FormControlLabel className='ml-0 underlined' value="other" control={<Radio className='px-0 mr-8px' />} label="Mario Festival stall day 1" />
+          </RadioGroup>
+        </Box>
+        <TextField
+          className='w-100 mt-16px'
+          multiline
+          rows={3}
+          variant="outlined"
+          placeholder='Notes'
+        />
+        <Box className="mt-16px">
+          <DatePicker label="Add date" />
         </Box>
       </div>
     </Drawer>

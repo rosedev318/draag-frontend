@@ -99,7 +99,7 @@
 .checkbox-button {
     cursor: pointer;
     margin-top: -2px;
-  }
+}
 .checkbox-button__input {
     opacity: 0;
     position: absolute;

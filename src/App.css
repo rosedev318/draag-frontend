@@ -21,10 +21,36 @@
   width: 100%;
 }
 
+.w-100 {
+  width: 100%;
+}
+
 .h-100vh {
   height: 100vh !important;
 }
 
 .pt-36px {
   padding-top: 36px !important;
+}
+
+.ml-0 {
+  margin-left: 0 !important;
+}
+
+.px-0 {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.mr-8px {
+  margin-right: 8px !important;
+}
+
+.mt-16px {
+  margin-top: 16px !important;
+}
+
+:focus {
+  outline: 0 !important;
+  outline-offset: 0 !important;
 }

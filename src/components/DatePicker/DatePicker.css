@@ -1,0 +1,26 @@
+.datepicker-container .MuiPaper-root {
+  background-color: rgb(229 231 235);
+  border-radius: 12px;
+  padding: 16px 4px;
+  width: 328px !important;
+}
+
+.datepicker-container .menu-title {
+  padding-left: 16px;
+  padding-right: 16px;
+  color: rgb(156 163 175);
+}
+
+.datepicker-container .label-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.datepicker-container .label-content .title {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.datepicker-container .label-content .sub-title {
+  font-size: 14px;
+}
