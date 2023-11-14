@@ -94,7 +94,7 @@ const TzSelect = (props) => {
         }
         onItemSelect={handleChange}
         popoverProps={{ matchTargetWidth: true }}
-        placeholder="Custom Placeholder"
+        inputProps={{ placeholder: "Searching..." }}
       >
         <div className="dropdown-container w-full ml-0">
           {timezone?.value.replace('/', ' - ')}

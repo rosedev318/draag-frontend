@@ -28,19 +28,17 @@ import AreaCard from '../components/Analytics/AreaCard';
 import CheckIcon from '@mui/icons-material/Check';
 import DateField from '../components/input/DateField';
 import InsertInvitationIcon from '@mui/icons-material/InsertInvitation';
-import { InputAdornment, Button, Drawer } from '@mui/material';
+import { InputAdornment } from '@mui/material';
+import AddEventDrawer from '../components/Analytics/AddEventDrawer';
 import dayjs from 'dayjs';
 import JobCard from '../components/Analytics/JobCard';
 // import dayjs from 'dayjs';
-
-import { AddCircleOutlineOutlined } from '@mui/icons-material';
 
 const Analytics = () => {
   const initialValues = {
     sdate: '',
     edate: ''
   };
-  const [addingEvent, setAddingEvent] = useState(false);
   
   const [formValues, setFormValues] = useState(initialValues);
   const [monthData, setMonthData] = useState([]);
@@ -228,21 +226,7 @@ const Analytics = () => {
         <div>
           <Card metricsData={metricsData} datamonth={datamonth} />
         </div>
-        <Button
-          variant="text"
-          sx={{ color: '#262525' }}
-          className='add-event-btn mt-2'
-          onClick={() => {setAddingEvent(true)}}
-        >
-          <AddCircleOutlineOutlined sx={{ color: '#0B66E4', marginRight: '6px' }} />Add an event
-        </Button>
-        <Drawer
-          anchor={'right'}
-          open={addingEvent}
-          onClose={() => {setAddingEvent(false)}}
-        >
-          Hello World
-        </Drawer>
+        <AddEventDrawer />
         <div className="mt-3">
           <div className="candidate-total-head">Total candidates</div>
           <div className="pt-3">

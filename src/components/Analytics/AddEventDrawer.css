@@ -1,0 +1,11 @@
+.add-event-btn {
+  font-size: 18px;
+  line-height: 22px;
+  font-weight: 500;
+  text-transform: unset;
+}
+
+.add-event-container {
+  width: 400px;
+  padding: 30px 20px;
+}

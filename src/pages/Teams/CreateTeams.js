@@ -70,18 +70,17 @@ function CreateTeams() {
   return (
     <>
       <div className="main d-flex">
-        <div className="join1 d-flex justify-content-center h-auto">
+        <div className="join1 d-flex justify-content-center h-100vh">
           <div className="text-white join1_txt fs-3 px-5">
             Information here on why you should create your own workspace
           </div>
         </div>
-        <div className="join2 d-flex flex-column align-items-center px-2 text-center">
+        <div className="join2 d-flex flex-column align-items-center px-2 text-center h-100vh">
           <div className="d-flex align-items-center">
             <div className="ct-second-card">
               <p className="workspace-title">Select your timezone</p>
               <TzSelect timezone={selectedTimezone} handleChange={setSelectedTimezone} />
-              {/* <div className="dropdown-container"></div> */}
-              <p className="workspace-title mt-3">Workspace name</p>
+              <p className="workspace-title pt-36px">Workspace name</p>
               <input
                 type="text"
                 className="workspace-field"

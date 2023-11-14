@@ -9,5 +9,22 @@
     color: green !important;
 }
 
+.justify-between {
+  justify-content: space-between;
+}
 
+.items-center {
+  align-items: center;
+}
 
+.w-full {
+  width: 100%;
+}
+
+.h-100vh {
+  height: 100vh !important;
+}
+
+.pt-36px {
+  padding-top: 36px !important;
+}
