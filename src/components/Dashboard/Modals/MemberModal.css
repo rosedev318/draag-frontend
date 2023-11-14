@@ -1,0 +1,24 @@
+.opacity-member{
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 9999999;
+    width: 100%;
+    background-color: #0000006e;
+    height: 100vh;
+}
+
+.main-member{
+    background-color: #f6f6f6;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 9999999;
+    padding-left: 20px;
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 5px;
+    overflow-y: scroll;
+    height: 100vh;
+    /* height: 610px; */
+}

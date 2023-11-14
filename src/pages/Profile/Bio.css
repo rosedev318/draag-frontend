@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+:root {
+    --bg-color: #F9FBFD;
+}
+.back{
+    font-family: 'Arial Unicode MS';
+    color: #A1A1A1;
+    font-size: 18px;
+}
+.sticky-head{
+    position: fixed;
+    width: 90%;
+    z-index: 999;
+    background-color: white;
+}
+.sticky-head-sopen{
+    width: 77%;
+    position: fixed;
+    z-index: 999;
+    background-color: white;
+}
+.back-profile{
+    font-family: 'Arial Unicode MS';
+    color: #060505;
+    font-size: 18px;
+}
+.bottom-menu{
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    background-color: white;
+    padding-bottom: 10px;
+    z-index: 999;
+}
+.save-btn{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #FFFFFF;
+    border: 1px solid #D9D9D9;
+    border-radius: 6px;
+    font-size: 16px;
+    color: #C4C4C4;
+    font-weight: bold;
+    width: 100px;
+    height: 40px;
+}
+.bg-color {
+    background-color: var(--bg-color);
+}
+.bg-color:focus{
+    background-color: var(--bg-color);
+    box-shadow: none;
+}
+.bg-color1{
+    background-color: #F6F9F9;
+}
+.txt {
+    font-family: 'Arial Unicode MS';
+}
+.text-bold{
+    font-weight: 500;
+}
+.text-bold1{
+    font-family: 'Arial Unicode MS';
+    font-size: 20px;
+    color: #101111;
+    font-weight: 600;
+}
+
+.bio_main {
+    width: 50%;
+    margin-top: 60px !important;
+}
+
+.bio_card1 {
+    padding: 10px 40px 30px 20px;
+}
+.form-text{
+     font-family: 'Arial Unicode MS';
+    font-size: 12px;
+    color: #9E9E9E;
+}
+.desc-title{
+     font-family: 'Arial Unicode MS';
+    font-size: 14px;
+    color: #424242;
+}
+.desc-text{
+    font-size: 17px;
+    color: #424242;
+}
+.link-text{
+    font-family: 'Arial Unicode MS';
+    font-size: 18px;
+    color: #339BF1;
+    font-weight: 600;
+}
+.css-1elwnq4-MuiPaper-root-MuiAccordion-root {
+    background-color: var(--bg-color) !important;
+    box-shadow: none !important;
+}
+
+.hiztcv.Mui-error .MuiOutlinedInput-notchedOutline {
+    border-color: black !important;
+}
+
+
+/* ---------------------------------------------------------------------------------------------------------------------------------------------
+                                        media Quary
+--------------------------------------------------------------------------------------------------- */
+
+@media screen and  (max-width: 480px){
+    .bio_main {
+        width: 90%;
+       
+    }
+    .city{
+        /* margin-top: 15px; */
+    }
+    .sticky-head-sopen{
+        width: 89%;
+    }
+
+}
+/* Styles for screens with a width between 481px and 768px */
+@media screen and (min-width: 481px) and (max-width: 767px) {
+    .bio_main {
+        width: 90%;
+        margin-top: 60px !important;
+    }
+    .sticky-head-sopen{
+        width: 60%;
+    }
+    .sticky-head{
+        /* width: 82%; */
+    }
+}
+
+/* Styles for screens with a width between 769px and 1024px */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .bio_main {
+        width: 80%;
+        margin-top: 40px !important;
+    }
+    .sticky-head-sopen{
+        width: 59%;
+    }
+    .sticky-head{
+        width: 82%;
+    }
+
+}
+
+/* Styles for screens with a width between 1025px and 1440px */
+@media screen and (min-width: 1024px) and (max-width: 1440px) {
+    .bio_main {
+        width: 60%;
+        margin-top: 40px !important;
+    }
+    .sticky-head-sopen{
+        width: 77%;
+    }
+    .sticky-head{
+        width: 90%;
+    }
+   
+   
+}
+
+/* Styles for screens with a width of 1441px or higher */
+@media screen and (min-width: 1441px) {
+    .bio_main {
+        width: 60%;
+        margin-top: 40px !important;
+    }
+}

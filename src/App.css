@@ -1,0 +1,13 @@
+@import "./colors/colors.css";
+
+
+.error-message span {
+    color: red !important;
+}
+
+.error-message span.green {
+    color: green !important;
+}
+
+
+

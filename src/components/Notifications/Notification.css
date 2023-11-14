@@ -1,0 +1,151 @@
+.main-notification{
+    width: 650px;
+    height: 600px;
+    overflow-y: scroll;
+    /* padding-bottom: 10px; */
+}
+.notification-head{
+    padding: 10px 25px 10px 30px;
+}
+.notification-main{
+    height: 630px;
+}
+.main-title-n{
+    color: #172A4C;
+    font-size: 17px;
+    font-weight: 700;
+    height: 17px;
+    width: 86px;
+}
+.option-text{
+    color: #008BFF;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.hr-notification{
+    border-right: 1px solid #CBC8C8;
+    height: 19px;
+}
+
+.notification-list{
+    width: auto;
+    height: auto;
+    padding: 20px 10px 10px 20px;
+    margin-bottom: 3px;
+}
+
+.seen-notification{
+    background-color: white;
+}
+
+.unseen-notification{
+    background-color: #ECF8FE;
+}
+
+.notification-content{
+    position: relative;
+    padding: 5px 5px 5px 8px;
+}
+
+
+.notification-text{
+    font-size: 14px;
+    font-weight: 600;
+    line-break: auto;
+    /* text-align: justify; */
+    width: 430px;
+    color: #2E3A59;
+}
+.highlight-notification{
+    color: #008BFF;
+}
+
+.time-label{
+    color: gray;
+    font-size: 14px;
+    padding: 10px 0px;
+}
+
+.seen-message{
+    color: #000;
+}
+
+.sent-message{
+    color: #5E5E5E;
+}
+
+.notification-time{
+    font-size: 13px;
+    color: #A9A9A9;
+    font-weight: 500;
+}
+
+.icon-content{
+    position: absolute;
+    right: -10;
+}
+
+.notification-bottom{
+    color: #008BFF;
+    font-size: 17px;
+    position: absolute;
+    bottom: 15px;
+    right: 33%;
+    cursor: pointer;
+}
+
+
+.css-levciy-MuiTablePagination-displayedRows{
+    padding-top: 15px;
+}
+
+.notification-option > .css-3bmhjh-MuiPaper-root-MuiPopover-paper {
+    box-shadow: 0px 2px 4px 0px rgba(169, 169, 169, 0.5) !important;
+    height: 40px;
+    width: 149px;
+    display: flex;
+    text-align: start;
+    justify-content: start;
+    padding: 6px 0 0px 15px;
+    color: #424040;
+    font-size: 10px;
+    margin-left: -107px;
+    margin-top: 20px;
+}
+
+.notification-option > .css-1k6vkjs-MuiTypography-root{
+    color: #424040 !important;
+    font-size: 10px !important;
+}
+
+/* .delete-option{
+    position: absolute;
+} */
+
+.notification-main > .css-3bmhjh-MuiPaper-root-MuiPopover-paper{
+    overflow: hidden;
+}
+
+@media screen and  (max-width: 320px){
+    .main-notification{
+        width: 400px;
+        height: 500px;
+        overflow-y: scroll;
+    }
+    .notification-text{
+        width: 200px;
+    }
+}
+
+@media screen and  (max-width: 480px){
+    .main-notification{
+        width: 400px;
+        height: 500px;
+        overflow-y: scroll;
+    }
+    .notification-text{
+        width: 200px;
+    }
+}

@@ -1,0 +1,211 @@
+.title-progress{
+    color: #15BA77;
+    font-weight: 600;
+}
+
+.calender-progress-success{
+    background-color: #15BA77;
+}
+
+.calender-progress-pending{
+    background-color: #ffe10e;
+}
+
+.highlight-text{
+    color: #00abff !important;
+}
+
+.left-arrow-btn{
+    position: absolute;
+    top: 40%;    
+    bottom: 70%;    
+    left: -20;
+}
+
+.right-arrow-btn{
+    position: absolute;
+    top: 40%;    
+    bottom: 70%;  
+    right: 20;
+}
+
+ .btn-calender{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    border-radius: 2rem;
+    border-width: 0.18rem;
+    border: 1px solid #61a5ff;
+    width: 30px;
+    height: 30px;
+}
+
+.btn-calender:disabled{
+    border: 1px solid gray;
+}
+
+.btn-calender svg{
+    position: relative;
+    top: calc(50% - 12px);
+    stroke-width: 0.10rem;
+    stroke: #61a5ff;
+}
+
+
+.mainsch-card{
+    min-width: 250px !important;
+    box-shadow: 0.0145rem 0.029rem 0.174rem rgba(27, 40, 50, 0.01698),
+    0.0335rem 0.067rem 0.402rem rgba(27, 40, 50, 0.024), 0.0625rem 0.125rem 0.75rem rgba(27, 40, 50, 0.03),
+    0.1125rem 0.225rem 1.35rem rgba(27, 40, 50, 0.036), 0.2085rem 0.417rem 2.502rem rgba(27, 40, 50, 0.04302),
+    0.5rem 1rem 6rem rgba(27, 40, 50, 0.06), 0 0 0 0.0625rem rgba(27, 40, 50, 0.015);
+    border-radius: 0.25rem;
+}
+
+.card-header{
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+    text-align: center;
+    border-bottom: 1px solid #edf0f3;
+}
+.scheduled-day{
+    font-size: 20px !important;
+    font-weight: normal !important;
+}
+.scheduled-day-active{
+    font-weight: 600 !important;
+    font-size: 20px !important;
+}
+.event-date-day{
+    font-weight: 700;
+    font-size: 30px;
+}
+
+.schedule-card-body{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.note-list{
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    height: 20rem;
+    overflow-y: scroll;
+    margin-bottom: 1rem;
+    align-items: center;
+    padding-left: 0;
+    margin-left: 0;
+}
+
+.note-item{
+    list-style: none;    
+}
+
+.note-content{
+    font-size: small;
+}
+
+.note-content-container{
+    display: grid;
+    grid-template-columns: 1fr 8fr 1fr;
+    align-items: center;
+}
+
+.card-check input:checked{
+    background-color: #2dd47b;
+    border-color: #2dd47b;
+    box-shadow: none;
+    outline: none;
+}
+
+.card-check input:not(:checked){
+    box-shadow: none;
+    outline: none;
+}
+
+.addnote-btn{
+    background-color: transparent;
+    color: #61a5ff;
+    border: 1px solid #61a5ff;
+    height: 40px;
+}
+
+.addnote-btn:hover{
+    background-color: transparent;
+    color: #08769b;
+    border: 1px solid #08769b;
+    transition: 0.2s ease-in-out;
+}
+
+.main-footer-card{
+    margin-top: 2rem;
+    border-top: 1px solid #edf0f3;
+}
+
+.event-list-container{
+    height: 9rem;
+    overflow-y: scroll;
+}
+
+.event-list-container p{
+    color: #73828c;
+    text-align: center;
+    padding-top: 20px;
+    font-size: 13px;
+}
+
+.event-container{
+    display: grid;
+    grid-template-columns: 9fr 1fr;
+}
+
+.passed{
+    opacity: 0.5 !important;
+}
+
+.event-container .inline-avtar{
+    margin-bottom: 8px;
+}
+
+.event-title,
+.event-time{
+    font-size: small;
+    font-weight: 700;
+}
+
+.input-container-notes{
+    display: grid;
+    grid-template-columns: 4fr 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+}
+
+.note-input{
+    padding-left: 10px;
+    width: 100%;
+    height: 35px;
+    font-size: 14px;
+    border-radius: 2px;
+    border: 1px solid gray;
+}
+
+.note-input:focus{
+    outline: none;
+    box-shadow: 0 0 0 3px #1095c120;
+    border: 1px solid #61a5ff;
+}
+
+.delete-note{
+    height: 15px;
+    width: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    outline: none;
+    /* box-shadow: 0.5px 0.5px #000; */
+}

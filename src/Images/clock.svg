@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="30px" height="30px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>basic / clock</title>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="24" height="24"></rect>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="basic-/-clock">
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <g id="basic-/-clock-(Background/Mask)"></g>
+            <path d="M2,12 C2,17.5139999 6.48600006,22 12,22 C17.5139999,22 22,17.5139999 22,12 C22,6.48600006 17.5139999,2 12,2 C6.48600006,2 2,6.48600006 2,12 Z M4,12 C4,7.58900023 7.58900023,4 12,4 C16.4109993,4 20,7.58900023 20,12 C20,16.4109993 16.4109993,20 12,20 C7.58900023,20 4,16.4109993 4,12 Z M11,7 L11,13 L17,13 L17,11 L13,11 L13,7 L11,7 Z" fill="#B1B2B5" mask="url(#mask-2)"></path>
+        </g>
+    </g>
+</svg>

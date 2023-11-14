@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>basic / done</title>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="24" height="24"></rect>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="basic-/-done">
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <g id="basic-/-done-(Background/Mask)"></g>
+            <path d="M10.9394002,16.2426462 L9.52518702,17.6568594 L4.57543945,12.7071118 L5.98965299,11.2928982 L10.9394002,16.2426462 Z M18.0104647,6.34313965 L19.4246778,7.75735354 L10.9394002,16.2426462 L9.5251832,14.8284206 L18.0104647,6.34313965 Z" fill="#2E3A59" mask="url(#mask-2)"></path>
+        </g>
+    </g>
+</svg>

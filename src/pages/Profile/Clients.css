@@ -1,0 +1,162 @@
+.client-head{
+    color: #262424;
+    font-size: 23px;
+}
+/* .css-1my7huh-MuiTableCell-root{
+    padding: 0 !important;
+} */
+
+.position-card-sec{
+    width: auto;
+    background-color: #FFFFFF;
+    border: 1px solid #DDDDDD;
+    border-radius: 12px;
+    font-size: 12px;
+    color: #788590;
+    padding: 2px;
+    
+}
+
+.btngroup {
+    font-size: 0;
+    line-height: 1;
+    white-space: nowrap;
+    display: inline; 
+  }
+
+  .btngroup--btn{
+    font-size: 1rem;
+    letter-spacing: .1em;
+    text-decoration: none;
+    text-transform: uppercase;
+    background: transparent;
+    border: 2px solid #7f8c8d;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    display: inline-block;
+    outline: 0; 
+    border-end-end-radius: 20px;
+    border-start-end-radius: 20px;
+    
+  }
+  .btngroup--btn2{
+    font-size: 1rem;
+    letter-spacing: .1em;
+    text-decoration: none;
+    text-transform: uppercase;
+    background: transparent;
+    border: none;
+    background-color: plum;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    /* border: 2px solid #7f8c8d; */
+    display: inline-block;
+    outline: 0; 
+    
+  }
+  .btngroup--btn3{
+    font-size: 1rem;
+    letter-spacing: .1em;
+    text-decoration: none;
+    text-transform: uppercase;
+    background: transparent;
+    border: 2px solid #7f8c8d;
+    
+    display: inline-block;
+    outline: 0; 
+    
+  }
+  .btngroup--btn4{
+    font-size: 1rem;
+    letter-spacing: .1em;
+    text-decoration: none;
+    text-transform: uppercase;
+    background: transparent;
+    border: 2px solid #7f8c8d;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    display: inline-block;
+    outline: 0; 
+    
+  }
+
+  .actbtn{
+    height: 20px !important;
+    width: 40px !important;
+    border-radius: 10px !important;
+    font-size: 10px !important;
+  }
+
+  .select-dropdown-pagination select{
+    background-color: transparent;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    /* padding: 0px 25px 0 0; */
+    background-repeat: no-repeat;
+    padding: 10px 36px !important;
+    background-size: 20px;
+    background-image: url("../../Images/chevron_down.svg");
+    background-position: calc(100% - 3px) center;
+    box-sizing: content-box;
+    
+    border: 2px solid grey;
+    outline: none;
+    border-radius: 4px;
+    margin-right: 20px;
+  }
+
+  .page-select{
+    
+    background-repeat: no-repeat;
+    border: 2px solid grey;
+    outline: none;
+    border-radius: 4px;
+    padding: 10px 25px;
+    margin-right: 20px;
+  }
+
+  .select-dropdown-status select{
+    background-color: transparent;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    padding: 0px 25px 0 0;
+    border: none;
+    outline: none;
+    background-repeat: no-repeat;
+    background-size: 20px;
+    background-image: url("../../Images/chevron_down.svg");
+    background-position: calc(100% - 3px) center;
+    box-sizing: content-box;
+    color: #595B62;
+    font-size: 13px;
+}
+
+.actbtn-active{
+  background-color: #2150A0;
+  color: #FFFFFF;
+  width: 46px;
+  font-size: 11px;
+  padding-top: 3px;
+  border-bottom-left-radius: 7px;
+  border-top-left-radius: 7px;
+}
+.deactbtn{
+  background-color: #4187FF;
+  color: #FFFFFF;
+  width: 46px;
+  font-size: 11px;
+  padding-top: 3px;
+}
+.actbtn-active2{
+  background-color: #AE75FF;
+  color: #FFFFFF;
+  width: 46px;
+  font-size: 11px;
+  padding-top: 3px;
+  border-bottom-right-radius: 7px;
+  border-top-right-radius: 7px;
+}
+
+

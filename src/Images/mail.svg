@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>basic / mail</title>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="24" height="24"></rect>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="basic-/-mail">
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <g id="basic-/-mail-(Background/Mask)"></g>
+            <path d="M2,6 C2,4.89543056 2.89543056,4 4,4 L20,4 C21.1045704,4 22,4.89543056 22,6 L22,18 C22,19.1045694 21.1045704,20 20,20 L4,20 C2.89543104,20 2,19.1045694 2,18 L2,6 C2,5.26362038 2,5.26362038 2,6 Z M20,7.86850476 L20,18 L4,18 L4,7.86850739 L12,13.2018394 L20,7.86850476 L20,7.86850476 Z M19.1972046,6 L4.80279016,6 L12,10.7981381 L19.1972046,6 L19.1972046,6 Z" fill="#C0CBD2" mask="url(#mask-2)"></path>
+        </g>
+    </g>
+</svg>

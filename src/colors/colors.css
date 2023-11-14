@@ -1,0 +1,85 @@
+html[data-theme="light"]{
+    --header-color: #F6F6F6; 
+    --header-text: black; 
+    --main-body: #FFFFFF;
+    --nav-user: #595B62;
+    --input-border: gray;
+    --input-focus: #0072E5;
+    --input-shrink: rgba(0, 0, 0, 0.6);
+    --input-color: #000000;
+
+
+    /* integration page  */
+    --inte-title: #101111;
+    --inte-subtitle: #7D7F84;
+    --title-head: #5D5D5D;
+    --title-sub: #7D7F84;
+    --modal-new: RGBA(255, 255, 255, 0.92);
+    --modal-content: #FFFFFF;
+    --modal-title: #101111;
+    --check-text: #80858A;
+    --number-avtar-background: #FFFFFF; 
+    --number-avtar: lightgray; 
+    --empty-avtar-background: #bdbdbd; 
+    --empty-avtar: #FFFFFF; 
+
+    /* Join Team  */
+    --join-text: #0A0A0A;
+    --back-text-link: black;
+    --join-card: #FFFFFF;
+    --join-card-text: #000000;
+    --card-body-check: #EDF5FF;
+    --card-body-border: #E3E7E8;
+    --card-border-check: #191717;
+    --card-text-check: #224aa7;
+    --team-title: #111010;
+
+    /* dashboard  */
+    --list-title: #202020;
+    --job-card-main: white;
+
+}   
+
+html[data-theme="dark"]{
+    --header-color: #141414;
+    --header-text: white; 
+    --main-body: #000000;
+    --nav-user: #B1B1B1;
+    --input-border: gray;
+    --input-focus: gray;
+    --input-shrink: white;
+    --input-color: white;
+
+
+    
+    
+    /* integration page  */
+    --inte-title: #F6F6F6;
+    --inte-subtitle: white;
+    --title-head: white;
+    --title-sub: white;
+    --modal-new: black;
+    --modal-content: #292828;
+    --modal-title: white;
+    --check-text: white;
+    --number-avtar-background: #000000; 
+    --number-avtar: #FFFFFF; 
+    --empty-avtar-background: #4D4D4D; 
+    --empty-avtar: #000000; 
+
+    /* Join Team  */
+    --join-text: white;
+    --back-text-link: white;
+    --join-card: #1e1e1e;
+    --join-card-text: white;
+    --card-body-check: #28282B;
+    --card-body-border: gray;
+    --card-border-check: #E3E7E8;
+    --card-text-check: white;
+    --team-title: white;
+
+     /* dashboard  */
+     --list-title: #FFFFFF;
+     --job-card-main: 000000;
+}
+

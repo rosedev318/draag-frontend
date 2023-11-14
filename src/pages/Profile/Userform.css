@@ -1,0 +1,259 @@
+.userform {
+    width: 70%;
+    margin-top: 50px !important;
+}
+
+.userform .form-control.is-invalid:focus,
+.userform .form-select.is-invalid:focus {
+    box-shadow: none;
+}
+
+.userform .form-control:focus,
+.userform .form-select:focus {
+    box-shadow: none;
+}
+
+
+.userform .select-text{
+    color: #424242;
+}
+.css-1wc848c-MuiFormHelperText-root{
+    margin-left: 0;
+}
+
+.form-text {
+    font-size: 13px;
+}
+.upload-head-text{
+    color: #424242;
+    font-size: 13px;
+}
+
+.upload-head-sub{
+    color: #424242;
+    font-size: 14px;
+}
+
+.drop-icon {
+    width: 30px;                
+    height: 30px;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #0d6efd;
+}
+
+.image-drop {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.drop1 {
+    width: 50%;
+    height: 200px;
+    border: 8px dashed #51A9F2 !important;
+    border-width: 2px !important;
+    border-radius: 5px;
+}
+
+.drop2 {
+    width: 40%;
+    height: 200px;
+    margin-left: 50px
+}
+
+.drop2 img {
+    height: 200px;
+    width: 100%;
+    object-fit: contain;
+}
+
+.bg-color{
+    background-color: #F9FBFD;
+    border: none;
+}
+
+.addrow-text{
+    font-size: 18px;
+    color: #339BF1;
+    font-weight: 500;
+}
+.saveform-btn{
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #15C269;
+    color: #FFFFFF;
+    padding: 6px 15px 6px 6px;
+    border-radius: 6px;
+    border: none;
+    font-weight: bold;
+}
+.disabled-btn{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #FFFFFF;
+    border: 1px solid #D9D9D9;
+    border-radius: 6px;
+    font-size: 16px;
+    color: #191919;
+    font-weight: bold;
+    width: 125px;
+    height: 40px;
+}
+.container {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.userform-check .container input
+ {
+    position: absolute !important;
+    opacity: 0 !important;
+    cursor: pointer !important;
+    height: 0 !important;
+    width: 0 !important;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+    position: absolute;
+    top: 5;
+    left: 0;
+    height: 15px;
+    width: 15px;
+    border-radius: 2px;
+    border: 2px solid gray;
+    }
+
+/* On mouse-over, add a grey background color */
+.container:hover input~.checkmark {
+}
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked~.checkmark{
+    border:2px solid #1B72E7;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+.container input:checked~.checkmark:after{
+    display: block;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after ,
+.work-check .checkmark:after {
+    left: 4px;
+    top: px;
+    width: 4px;
+    height: 10px;
+    border: 2px solid #1B72E7;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+/* -------------------------------------------------------------------------------------------------------------------------------------------
+                                                                media quary
+----------------------------------------------------------------------------------------------------------------------------------------------*/
+
+@media screen and (min-width: 1441px) {
+    .userform {
+        width: 60%;
+        margin-top: 100px !important;
+    }
+
+}
+
+
+
+@media screen and (min-width: 1024px) and (max-width: 1440px) {
+    .userform {
+        width: 60%;
+        margin-top: 100px !important;
+    }
+}
+
+
+@media screen and (min-width: 769px) and (max-width: 1023px) {
+    .userform {
+        width: 80%;
+        margin-top: 100px !important;
+    }
+
+}
+
+
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    .userform {
+        width: 90%;
+        margin-top: 100px !important;
+    }
+    .image-drop {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .drop1 {
+        width: 100%;
+        height: 200px;
+    }
+    
+    .drop2 {
+        width: 100%;
+        height: 200px;
+        margin-left: 0px;
+        display: flex;
+        justify-content: center;
+        margin: 10px;
+    }
+
+}
+
+
+
+@media screen and (max-width: 480px) {
+    .userform {
+        width: 90%;
+        padding-top: 70px !important;
+    }
+    .image-drop {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .drop1 {
+        width: 100%;
+        height: 200px;
+    }
+    
+    .drop2 {
+        width: 100%;
+        height: 200px;
+        margin-left: 0px !important;
+        display: flex;
+        justify-content: center;
+        margin: 10px;
+        /* display: none; */
+    }
+}

@@ -1,0 +1,176 @@
+.team1 {
+    width: 30%;
+    height: 100vh;
+    overflow-y: hidden;
+    background-color: #112A3F;
+}
+
+.team2 {
+    width: 70%;
+    overflow-y: scroll;
+    height: 100vh;
+    background-color: var(--main-body);
+}
+
+.team1_txt {
+    margin-top: 250px;
+}
+
+.team_main {
+    display: flex;
+}
+
+.second-card {
+    margin-top: 80px;
+}
+
+.searchbar {
+    width: 60%;
+}
+
+.search-team {
+    font-family: 'Arial Unicode MS';
+    font-size: 22px;
+    color: #0D0C0C;
+    text-align: left;
+}
+.input-con{
+    position: relative;
+}
+.input-con .searchi{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 15;
+    font-size: 20px;
+    color: lightgray;
+}
+.input-search {
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+    border: 2px solid lightgray;
+}
+
+.input-search:focus {
+    outline: none;
+}
+
+.list-text {
+    font-family: 'Arial Unicode MS';
+    font-size: 14px;
+    color: #0D0C0C;
+    font-weight: 500;
+    margin-bottom: 0px;
+}
+
+.team-list {
+    width: 49%;
+}
+
+.card_txt {
+    margin-left: 20px;
+}
+
+.card-body {
+    padding: 10;
+}
+
+.req-btn {
+    background-color: #2AB271;
+    color: #fff;
+    border: none;
+    margin-top: 60px;
+    border-radius: 6px;
+    box-shadow: 0px 3px 3px 0px RGBA(0, 0, 0, 0.1);
+    height: 40px;
+}
+
+.back-btn {
+    background-color: #fff;
+    color: black;
+    border: none;
+    margin-top: 10px;
+    border-radius: 10px;
+}
+
+.team_cards {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+
+
+
+
+/* media quary */
+
+
+@media screen and (max-width: 480px) {
+
+    .team_main {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .team1 {
+        width: 100%;
+        height: 100px;
+    }
+
+    .team2 {
+        width: 100%;
+    }
+
+    .team1_txt {
+        margin-top: 0px;
+        height: 100px;
+        display: flex;
+        align-items: center;
+    }
+
+    .team-list {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .team_cards {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-top: 0;
+    }
+    .searchbar {
+        width: 80%;
+    }
+    .second-card{
+        margin-top: 30px;
+    }
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px)
+{
+    .card_txt{
+        margin-left: 7px;
+    }
+    .team_cards {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-top: 0;
+    }
+    .team-list {
+        width: 100%;
+        margin-top: 10px;
+    }
+    .second-card{
+        margin-top: 30px;
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px){
+    .searchbar{
+        width: 80%;
+    }
+}

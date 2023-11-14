@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>basic / Flag_fill</title>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="24" height="24"></rect>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="basic-/-Flag_fill">
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <g id="basic-/-Flag_fill-(Background/Mask)"></g>
+            <path d="M13.6599998,4.30000001 C13.5699998,3.84 13.1600003,3.5 12.6800003,3.5 L5.5,3.5 C4.94999999,3.5 4.5,3.94999999 4.5,4.5 L4.5,19.5 C4.5,20.05 4.94999999,20.5 5.5,20.5 C6.05000001,20.5 6.5,20.05 6.5,19.5 L6.5,13.5 L12.0999999,13.5 L12.3400002,14.6999998 C12.4300002,15.1699998 12.8399997,15.5 13.3199997,15.5 L18.5,15.5 C19.05,15.5 19.5,15.05 19.5,14.5 L19.5,6.5 C19.5,5.94999999 19.05,5.5 18.5,5.5 L13.8999996,5.5 L13.6599998,4.30000001 Z" fill="#AFAFAF" fill-rule="nonzero" mask="url(#mask-2)"></path>
+        </g>
+    </g>
+</svg>

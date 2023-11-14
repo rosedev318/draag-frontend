@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>basic / location</title>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="24" height="24"></rect>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="basic-/-location">
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <g id="basic-/-location-(Background/Mask)"></g>
+            <path d="M12,3 C8.13000011,3 5,6.13000011 5,10 C5,13.5 7.33333333,17.1666667 12,21 C16.6666667,17.1666667 19,13.5 19,10 C19,6.13000011 15.8699999,3 12,3 C9.42000008,3 9.42000008,3 12,3 Z M12,13 C13.6568546,13 15,11.6568546 15,10 C15,8.34314585 13.6568546,7 12,7 C10.3431458,7 9,8.34314585 9,10 C9,11.6568546 10.3431458,13 12,13 C13.1045698,13 13.1045698,13 12,13 Z" fill="#C0CBD2" mask="url(#mask-2)"></path>
+        </g>
+    </g>
+</svg>

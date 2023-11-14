@@ -1,0 +1,82 @@
+.bp5-popover-arrow {
+  display: none;
+}
+
+.bp5-popover-transition-container {
+  margin-top: -10px;
+}
+
+.bp5-select-popover .bp5-menu {
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+}
+
+.bp5-icon-search {
+  display: none !important;
+}
+
+.bp5-input-group {
+  padding: 6px 10px;
+}
+
+.bp5-input-group input {
+  height: 40px;
+  border-radius: 5px;
+  border: 2px solid #006aff;
+  padding-left: 10px !important;
+}
+
+.bp5-menu-item.bp5-active {
+  background-color: #006aff !important;
+  color: white !important;
+}
+
+.bp5-input-group .bp5-input-action {
+  display: none !important;
+}
+
+.bp5-menu-header {
+  border-top: 0 !important;
+}
+
+.bp5-menu li {
+  font-size: 17px !important;
+}
+.bp5-menu li a {
+  padding-top: 13px !important;
+  padding-bottom: 13px !important;
+}
+
+.bp5-heading {
+  font-size: 16px !important;
+  text-transform: uppercase;
+}
+
+.down-icon {
+  position: absolute;
+  right: 8px;
+  top: 16px;
+}
+
+.w-70 {
+  width: 70% !important;
+}
+
+.w-full {
+  width: 100% !important;
+}
+
+.dropdown-container {
+  position: relative;
+  font-size: 20px;
+  color: #006aff;
+  background-color: #edf5ff;
+  text-align: center;
+  line-height: 54px;
+  height: 60px;
+  width: 70%;
+  border: 3px solid #006aff;
+  border-radius: 8px;
+  padding: 0;
+  cursor: pointer;
+}

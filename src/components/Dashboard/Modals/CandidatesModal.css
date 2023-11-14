@@ -1,0 +1,47 @@
+.candidate-job-modal{
+    background-color: #FFFFFF;
+    width: 442px;
+    height: max-content;
+    border-radius: 5px;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);
+    position: relative;
+    z-index: 1;
+}
+
+.assign-btn{
+    border: 1px solid #AFB1B3;
+    border-radius: 6px;
+    width: 60px;
+    height: 22px;
+    color: #AFB1B3;
+    font-size: 13px;
+    background-color: #FFFFFF;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.remove-btn{
+    border: 1px solid #AFB1B3;
+    border-radius: 6px;
+    width: 72px;
+    height: 22px;
+    color: #AFB1B3;
+    background-color: #FFFFFF;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.sent-btn{
+    border: 1px solid #2F69F2;
+    border-radius: 6px;
+    width: 58px;
+    height: 22px;
+    color: #2F69F2;
+    font-size: 12px;
+    background-color: #FFFFFF;
+    font-weight: bold;
+}
+
+.candidate-job-modal ::-webkit-scrollbar{
+    display: none;
+}

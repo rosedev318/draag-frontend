@@ -1,0 +1,1065 @@
+@media only screen and (min-width: 1441px) {
+   .main-signup {
+      display: flex;
+      justify-content: end;
+   }
+   .signupcard {
+      width: 50%;
+   }
+   .termstext {
+      text-align: left;
+      font-family: 'Arial Unicode MS';
+      font-weight: 400;
+      color: #888686;
+      font-size: 15px;
+   }
+   .termstext-two {
+      text-align: left;
+      font-family: 'Arial Unicode MS';
+      font-weight: 400;
+      color: #888686;
+      font-size: 15px;
+   }
+   .signup {
+      display: flex;
+   }
+   .s1 {
+      width: 390px;
+      margin: auto;
+   }
+   .s2 {
+      width: 390px;
+      margin: auto;
+   }
+   .dont-account{
+      padding-top: 10px;
+   }
+   .profile-card{
+      width: 30%;
+   }
+   .detail-card{
+      width: 70%;
+      margin-left: 10px;
+
+   }
+   .MainBox{
+      overflow-x: hidden;
+   }
+   .job-card{
+      width: 100%;
+   }
+   .status-card{
+      width: 100%;
+   }
+   .contact-icons {
+      padding: 10px;
+      position: absolute;
+   }
+   .contact-text {
+      position: relative;
+      margin-left: 60px;
+   }
+   .skill-light {
+      margin-right: 2px;
+   }
+   .skill-blue {
+      margin-right: 2px;
+   }
+   .cook-skill {
+      margin-top: 7px;
+   }
+   .bts{
+      display: flex;
+      justify-content: center;
+   }
+
+}
+
+/*=============================================================================================================================
+ 									max-width: 1024px to 1440 
+ ==============================================================================================================================*/
+@media screen and (min-width:1024px) and (max-width: 1440px) {
+   .firstname-err {
+      display: none;
+   }
+
+   .main-signup {
+      display: flex;
+      justify-content: end;
+   }
+   .signupcard {
+      width: 50%;
+   }
+
+   .termstext {
+      width: 390px;
+      text-align: left;
+      font-family: 'Arial Unicode MS';
+      font-weight: 400;
+      color: #888686;
+      font-size: 15px;
+   }
+
+   .signup {
+      display: flex;
+   }
+
+   .s1 {
+      width: 390px;
+      margin: auto;
+   }
+   .s2{
+      width: 390px;
+      margin: auto;
+   }
+
+   .termstext-two {
+      width: 390px;
+   }
+   .MainBox{
+      overflow-x: hidden;
+   }
+   .profile-card{
+      /* width: 40%; */
+   }
+   .detail-card{
+      width: 100%;
+      margin-left: 10px;
+
+   }
+   .job-card{
+      width: 100%;
+   }
+   .status-card{
+      width: 100%;
+   }
+   .contact-icons{
+      padding: 10px;
+      position: absolute;
+   }
+   .contact-text{
+      position: relative;
+      margin-left: 60px;
+   }
+   .skill-light{
+      margin-right: 2px;
+   }
+   .skill-blue{
+      margin-right: 2px;
+   }
+   .cook-skill{
+      margin-top: 7px;
+   }   
+   .bts{
+      justify-content: center;
+   }
+   .advance-btn{
+      width: 100px;
+   }
+   .rating-btn{
+      width: 100px;
+   }
+   /* .thumb-icon{
+      padding: 6px;
+   } */
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1023px) {
+   .main-signup {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+   }
+
+   .signup {
+      display: flex;
+   }
+
+   .signupcard {
+      width: 100%;
+   }
+
+   .termstext {
+      width: 390px;
+      text-align: left;
+      font-family: 'Arial Unicode MS';
+      font-weight: 400;
+      color: #888686;
+      font-size: 15px;
+   }
+
+   .termstext-two {
+      width: 390px;
+   }
+
+   .s1 {
+      width: 390px;
+      margin: auto;
+   }
+   .s2{
+      width: 390px;
+      margin: auto;
+   }
+   .MainBox{
+      overflow-x: hidden;
+   }
+   .main-card{
+      flex-direction: column;
+   }
+
+   .profile-card {
+      width: 100%;
+   }
+
+   .job-card {
+      width: 100%;
+   }
+
+   .status-card {
+      width: 100%;
+   }
+
+   .detail-card {
+      width: 100%;
+      margin-top: 10px;
+      margin-left: 10px;
+   }
+   .footer{
+      position: absolute;
+      bottom: 0;
+      /* margin-top: 50px; */
+   }
+   .bts{
+      display: flex;
+      justify-content: center;
+   }
+}
+
+
+   /* tablet screen */
+
+
+   @media screen and (min-width: 441px) and (max-width: 768px){
+      .main-signup {
+         display: flex;
+         justify-content: center;
+         align-items: center;
+      }
+   
+      .signup {
+         display: flex;
+      }
+   
+      .signupcard {
+         width: 100%;
+      }
+   
+      .termstext {
+         width: 390px;
+         text-align: left;
+         font-family: 'Arial Unicode MS';
+         font-weight: 400;
+         color: #888686;
+         font-size: 15px;
+      }
+   
+      .termstext-two {
+         width: 390px;
+      }
+   
+      .s1 {
+         width: 390px;
+         margin: auto;
+      }
+      .s2{
+         width: 390px;
+         margin: auto;
+      }
+      .MainBox{
+         overflow-x: hidden;
+      }
+      .main-card{
+         flex-direction: column;
+      }
+   
+      .profile-card {
+         width: 100%;
+      }
+   
+      .job-card {
+         width: 100%;
+      }
+   
+      .status-card {
+         width: 100%;
+      }
+   
+      .detail-card {
+         width: 100%;
+         margin-top: 10px;
+      }
+      .footer{
+         position: absolute;
+         bottom: 0;
+         /* margin-top: 50px; */
+      }
+      .bts{
+         display: flex;
+         justify-content: center;
+      }
+
+      /* Signup confirm Page  */
+      .signup-success-card{
+         padding-top: 50px
+      }
+}
+
+
+/*=============================================================================================================================
+                                   Max-Width: 575px   Start
+==============================================================================================================================*/
+@media only screen and (max-width: 575px) {
+   .MainBox {
+      overflow-x: hidden;
+   }
+
+   .main-card {
+      padding-left: 0 !important;
+      flex-direction: column;
+   }
+   /* .profile-card{
+      width: 305px;
+      margin-left: -10px;
+   } */
+   .css-19kzrtu{
+      padding-left: 5px !important;
+   }
+
+   .job-card {
+      width: 280px;
+   }
+
+   .status-card {
+      width: 280px;
+   }
+
+   .contact-icons {
+      position: absolute;
+   }
+
+   .contact-text {
+      position: relative;
+      margin-left: 60px;
+   }
+
+   .cook-skill {
+      margin-top: 7px;
+   }
+   /* .detail-card{
+      width: 305px;
+      margin-left: -10px;
+      margin-top: 10px;
+   } */
+   .logincard{
+      height: 500px;
+   }
+
+   .or-2 {
+      margin-top: 0px;
+   }
+
+   .or {
+      margin: 0 50px;
+   }
+
+   .or-2 {
+      margin: 0 50px;
+   }
+
+   /* Sign Up page */
+
+   .termstext>.input[type="checkbox"] {
+      border: 5px solid #2E3A59 !important;
+   }
+
+   .main-signup {
+      justify-content: center;
+   }
+
+   .forgetpass-card .backlogin-text {
+      margin: 0 30% 0 30%;
+   }
+
+   /* Password Send  */
+   .success-check {
+      margin-top: 10px;
+      /* margin-left: 10px; */
+      color: #2AB916;
+   }
+
+   .success-check svg {
+      font-size: 140px !important;
+   }
+
+   .success-text {
+      padding-top: 0px;
+      padding-bottom: 5px;
+   }
+
+   .passwordsend-card .backlogin-text {
+      margin: 0 30% 0 38%;
+   }
+
+   /* LOgin With Email  */
+   .continue-google {
+      font-size: 17px;
+      white-space: nowrap;
+      padding-left: 10px !important;
+   }
+
+  
+
+}
+
+/*=============================================================================================================================
+                                   Max-Width: 575px   End
+==============================================================================================================================*/
+
+/*=============================================================================================================================
+                                   Max-Width: 428px   Start
+==============================================================================================================================*/
+@media only screen and (max-width: 440px){
+   .css-zxdg2z{
+      padding: 20px !important   ;
+   }
+   .logincard{
+      width: 400px;
+   }
+   .s1 {
+      width: 100%;
+      margin: auto;
+   }
+   .s2 {
+      width: 100%;
+      margin: auto;
+      padding: 20px 60px 20px 60px;
+
+   }
+   .forgetpass-card {
+      width: 400px;
+   }
+
+   .input-container .input-field-forget-pass {
+      width: 340px;
+   }
+
+   .bts{
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+   }
+   .reset-passwordbtn {
+      width: 340px;
+   }
+
+   /* SignUp Page  */
+   .signupcard {
+      width: 100%;
+      border: 1px solid #CFCFCF;
+      border-radius: 2px;
+      /* width: 550px; */
+      text-align: center;
+      background-color: #FFFFFF;
+
+   }
+
+   .main-signup {
+      display: flex;
+      justify-content: center;
+   }
+
+   .signup {
+      flex-direction: column;
+   }
+
+   .input-field- {
+      width: 340px;
+      margin-left: 6px;
+   }
+
+   .input-field-surname {
+      width: 340px;
+      margin-top: 10px;
+      margin-left: -1px;
+   }
+
+   .input-field-email {
+      width: 340px;
+   }
+
+   .input-field-cpassword {
+      width: 340px;
+   }
+
+   .sign-email-err {
+      padding-left: 35px;
+   }
+   .accountbtn {
+      width: 250px;
+   }
+   .p80{
+      padding-top: 30px;
+   }
+   .p60{
+      padding-top: 100px;
+  }
+
+   /* Login Page  */
+   .usererror-login {
+      padding-left: 30px;
+   }
+
+   .emailbtn {
+      width: 340px;
+   }
+
+   /* Login With Email  */
+   .input-container .input-field {
+      width: 340px;
+   }
+
+   
+
+   .g-text {
+      padding-left: 20px;
+   }
+
+   .g-button {
+      width: 250px;
+   }
+
+   .login-btn {
+      width: 250px;
+   }
+
+   .input-container .login-key {
+      left: 305;
+      rotate: calc(-47deg);
+      font-size: 12px;
+      position: absolute;
+      top: 20;
+   }
+
+   .input-container .login-arrow {
+      left: 314;
+      font-size: 12px;
+      position: absolute !;
+      top: 20;
+   }
+
+   .signup-footer {
+      width: 100%;
+      bottom: 0;
+      text-align: center;
+      position: relative;
+   }
+
+}
+
+/*=============================================================================================================================
+                                   Max-Width: 425px   Start
+==============================================================================================================================*/
+@media only screen and (max-width: 440px) {
+
+   /*=============================== Login Page ===========================================================*/
+   .logincard {
+      width: 350px;
+   }
+
+   .input-container .input-field {
+      width: 250px;
+   }
+
+   .input-container input {
+      width: 250px;
+   }
+
+   .usererror-login {
+      padding-left: 80px;
+   }
+
+   .emailbtn {
+      width: 250px;
+   }
+
+   .g-button {
+      width: 250px;
+   }
+
+   .g-text {
+      padding-left: 20px;
+   }
+
+   /* .footer{
+      margin-top: 300px;
+      position: absolute;
+      bottom: 0;
+   } */
+
+   /*=============================== Sign up Page ===========================================================*/
+   .signupcard {
+      width: 350px;
+   }
+
+   .signup {
+      flex-direction: column;
+   }
+
+   .input-field-fname {
+      width: 250px;
+      /* margin-left: 5px; */
+      margin-left: -5px;
+   }
+
+   .input-field-surname {
+      width: 250px;
+      margin-top: 10px;
+      margin-left: -5px;
+   }
+
+   .input-field-email {
+      width: 250px;
+      margin-left: -5px;
+   }
+
+   .password-err {
+      position: relative;
+      margin-left: -30px;
+   }
+
+   .input-field-cpassword {
+      width: 250px;
+      margin-top: 10px;
+      margin-left: -5px;
+   }
+
+   .sign-email-err {
+      padding-left: 50px;
+      margin-right: 50;
+   }
+
+   .error-message {
+      text-align: left;
+      padding-left: 50px;
+   }
+
+   .err-msg {
+      margin-left: -29px;
+   }
+
+   .accountbtn {
+      width: 250px;
+   }
+
+   .termstext {
+      font-size: 15px;
+   }
+
+   .err-msg-fname {
+      padding-left: 47px;
+   }
+
+   .err-msg-surname {
+      padding-left: 47px;
+   }
+
+   .firstname-err {
+      display: block;
+      margin-left: -100px;
+   }
+
+   .email-err {
+      margin-left: 60px;
+   }
+
+   .error-large {
+      display: none;
+   }
+
+   .pass-err {
+      padding-left: 60px;
+   }
+
+   /*=============================== Forget Password Page ===========================================================*/
+   .forgetpass-card {
+      width: 350px
+   }
+
+   .reset-passwordbtn {
+      width: 250px;
+   }
+
+   
+
+   /*=============================== Password Send Page ===========================================================*/
+   .passwordsend-card {
+      width: 350px;
+   }
+
+   .success-check {
+      font-size: 140px !important;
+      text-align: center;
+   }
+
+   .success-text {
+      padding-left: 10px;
+      padding-right: 1px;
+      font-size: 20px;
+   }
+
+   .backlogin-text {
+      margin: 0 30% 0 35%;
+   }
+
+}
+
+/*=============================================================================================================================
+                                   Max-Width: 425px   End
+==============================================================================================================================*/
+
+@media only screen and (max-width: 440px) {
+   .forgetpass-card {
+      width: 400px;
+   }
+
+   .input-container .input-field-forget-pass {
+      width: 310px;
+   }
+
+   .reset-passwordbtn {
+      width: 310px;
+   }
+
+ 
+
+   .signup-footer {
+      width: 100%;
+      bottom: 0;
+      text-align: center;
+      margin-top: 20px;
+      /* position: unset; */
+   }
+
+}
+
+/*=============================================================================================================================
+                                   Max-Width: 414px   Start
+==============================================================================================================================*/
+
+@media only screen and (max-width: 440px) {
+   .forgetpass-card {
+      width: 400px;
+   }
+
+   .input-container .input-field-forget-pass {
+      width: 310px;
+   }
+
+   .reset-passwordbtn {
+      width: 310px;
+   }
+
+   /* Signup page  */
+   /* .err-msg-surname{
+      margin-top: 45px;
+   } */
+   /* Login With Email  */
+   .input-container .input-field {
+      width: 300px;
+   }
+
+   .g-text {
+      padding-left: 20px;
+   }
+
+   .g-button {
+      width: 250px;
+   }
+
+   .input-container .login-key {
+      left: 260;
+      rotate: calc(-47deg);
+      font-size: 12px;
+      position: absolute;
+      top: 20;
+   }
+
+   .input-container .login-arrow {
+      left: 270;
+      font-size: 12px;
+      position: absolute !;
+      top: 20;
+   }
+
+   /* Forget Password  */
+   .forgetpass {
+      padding-left: 50px !important;
+   }
+
+   .footer {
+      width: 100%;
+      /* bottom: 0; */
+      text-align: center;
+      /* margin-top: 20px; */
+      margin-bottom: 0px;
+      /* position: unset; */
+   }
+
+   .page-container {
+      position: relative;
+      min-height: 100vh;
+   }
+
+   .footer-success {
+      bottom: 0;
+      position: absolute;
+   }
+}
+
+
+
+/*=============================================================================================================================
+                                   Max-Width: 440px   Start
+==============================================================================================================================*/
+@media only screen and (max-width: 440px) {
+
+   
+   .signup-footer {
+      width: 100%;
+      bottom: 0;
+      text-align: center;
+      margin-top: 20px;
+      /* position: unset; */
+   }
+
+   /* Login Page  */
+   .usererror-login {
+      padding-left: -100px !important;
+   }
+
+   /* Sign Up Page */
+   .sign-email-err {
+      padding-left: 47px;
+   }
+
+   /* .err-msg-surname{
+      margin-top: 45px;
+   } */
+   .signup-footer {
+      bottom: 0;
+      position: relative;
+   }
+
+   /* Signup Confirm  */
+   .footer-success {
+      bottom: 0;
+      position: absolute;
+   }
+   .signup-success-card{
+      padding-top: 50px
+   }
+
+   /* ForgetPassword  */
+   .forgetpass-card {
+      width: 350px;
+   }
+
+   .forget-footer {
+      bottom: 0;
+      position: absolute;
+      margin-top: 200px;
+   }
+   .email-err {
+      margin-left: -51px;
+   }
+
+   .usererror-login {
+      padding-left: 82px;
+   }
+}
+
+/*=============================================================================================================================
+                                   Max-Width: 320px   Start
+==============================================================================================================================*/
+@media only screen and (max-width: 320px) {
+   .MainBox{
+      overflow-x: hidden;
+   }
+   .main-card{
+      flex-direction: column;
+   }
+   .backtext{
+      margin-left: 25px;
+      padding-top: 66px !important;
+   }
+   .profile-card{
+      width: 90vw;
+      margin: auto;
+      margin-bottom: 10px;
+
+   }
+   .detail-card{
+      width: 90vw;
+      margin: auto;
+   }
+   .css-zxdg2z {
+      padding: 0px !important;
+   }
+   .job-card{
+      width: 100%;
+   }
+   .status-card{
+      width: 100%;
+   }
+   .rating-btn{
+      width: 80px;
+   }
+   .advance-btn{
+      width: auto;
+   }
+   .bts{
+      padding: 20px;
+   }
+   .job-card{
+      height: 100px;
+   }
+   .job-title{
+      line-height: 20px;
+      margin-bottom: 7px;
+   }
+   .job-decs{
+      line-height: 10px;
+   }
+   .logincard {
+      width: 300px;
+   }
+
+   .forgetpass-card {
+      width: 300px;
+   }
+
+   .input-container .input-field-forget-pass {
+      width: 250px;
+   }
+
+   .reset-passwordbtn {
+      width: 250px;
+   }
+
+   .p80 {
+      padding-top: 20px;
+   }
+   .p60{
+      padding-top: 50px;
+  }
+
+   /* Login Page */
+   .usererror-login {
+      padding-left: 58px;
+   }
+
+   /* Login With Email  */
+   .input-container .input-field {
+      width: 250px;
+   }
+
+   .g-text {
+      padding-left: 20px;
+   }
+
+   .g-button {
+      width: 250px;
+   }
+
+   .signup-footer {
+      width: 100%;
+      bottom: 0;
+      text-align: center;
+      /* position: unset; */
+   }
+
+   .input-container .login-key {
+      left: 220;
+      rotate: calc(-47deg);
+      font-size: 12px;
+      position: absolute;
+      top: 20;
+   }
+
+   .input-container .login-arrow {
+      left: 230;
+      font-size: 12px;
+      position: absolute !;
+      top: 20;
+   }
+
+   /* Sign up Page  */
+   .sign-email-err {
+      padding-left: 35px;
+      padding-top: 0;
+      margin-top: -1px;
+   }
+   .err-msg-fname{
+      padding-left: 35px;
+      
+   }
+   .err-msg-surname{
+      padding-left: 35px;
+      
+   }
+}
+
+/*=============================================================================================================================
+                                   Max-Width: 320px   End
+==============================================================================================================================*/
+
+/*=============================================================================================================================
+                                   Max-Width: Mobile screen
+==============================================================================================================================*/
+@media screen and (min-width: 321px) and (max-width: 480px){
+   .MainBox{
+      overflow-x: hidden;
+   }
+   .main-card{
+      flex-direction: column;
+   }
+   .profile-card{
+      width: 90vw;
+      margin: auto;
+      margin-bottom: 10px;
+   }
+   .detail-card{
+      width: 90vw;
+      margin: auto;
+   }
+
+   .job-card{
+      width: 100%;
+   }
+   .status-card{
+      width: 100%;
+   }
+  
+ }
+
+
+      /* media screen 320 */
+
+ @media screen and (max-width: 320px){
+ 
+
+   
+ }
+ 
+ 

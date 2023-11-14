@@ -1,0 +1,120 @@
+.main-attach-modal{
+    width: 277px;
+    background-color: #FFFFFF;
+    padding: 5px;
+    border-radius: 5px;
+    height: 620px;
+    padding-bottom: 0px;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.attach-main{
+    padding: 5px 10px 0px 10px;
+}
+
+.attach-main input[type="file"] {
+    display: none;
+}
+
+.custom-file-upload{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background-color: #E4E6E9;
+    padding: 6px 12px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.text-input-attach{
+    font-size: 14px;
+}
+
+.attach-input{
+    border: 2px solid lightgray;
+    border-radius: 3px;
+    height: 40px;
+    width: 100%;
+    outline: none;
+    padding-left: 5px;
+}
+
+.attach-input:focus{
+    border: 2px solid #0072E5;
+}
+
+.attach-input::placeholder{
+    font-size: 14px;
+}
+
+.attach-main{
+    /* height: 500px; */
+    /* max-height: max-content; */
+    box-shadow: #fff, 0px 8px 12px #091e4226, 0px 0px 1px #091e424f;
+    /* overflow-y: scroll; */
+}
+
+.cancelattach-btn{
+    border: none;
+    background-color: white;
+    width: 70px;
+    height: 40px;   
+
+}
+
+.insertbtn-attach{
+    background-color: #0b66e4;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 3px;
+    width: 70px;
+    height: 40px;
+}
+
+/* .attach-main::-webkit-scrollbar {
+    width: 10px;
+    background-color: #F5F5F5;
+  }
+  
+
+.attach-main::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3) !important;
+	border-radius: 10px !important;
+	background-color: black !important;
+    height: 50px;
+}
+
+.attach-main ::-webkit-scrollbar-thumb
+{
+	border-radius: 10px !important;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3) !important;
+	background-color: black !important;
+} */
+
+@media screen and (max-width: 480px) {
+    .attach-main{
+        height: 350px;
+    }
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    .attach-main{
+        height: 400px;
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .attach-main{
+        height: 400px;
+    }
+}
+
+
+@media screen and (min-width: 1025px) and (max-width: 1440px) {
+    
+}   

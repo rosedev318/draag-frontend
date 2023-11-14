@@ -1,0 +1,296 @@
+.main-integration{
+    background-color: var(--main-body);
+}
+
+.title-main{
+    width: 70%;
+    margin: 0 80px 0 80px;
+}
+.inte-main{
+    width: 80%;
+    margin: 0 90px 0 80px;
+}
+.inte-title{
+    color: var(--inte-title);
+    font-size: 23px;
+    font-weight: 600;
+}
+.inte-subtitle{
+    color: var(--inte-subtitle);
+    font-size: 15px;
+    margin-top: -13px;
+}
+.title-head{
+    font-size: 14.5px;
+    color: var(--title-head);
+    font-weight: bold;
+}
+.title-sub{
+    color: var(--title-sub);
+    font-size: 14.5px;
+}
+.inte-icons{
+    border-radius: 50%;
+    padding: 11px;
+    opacity: 100%;
+}
+.connected-btn{
+    background-color: #2AB271;
+    color: #FFFFFF;
+    font-size: 16px;
+    border-radius: 6px;
+    width: 144px;
+    height: 40px;
+    border: none;
+}
+.learn-more-text{
+    font-size: 14px;
+    color: var(--title-head);
+}
+.connect-btn{
+    background-color: #FFFFFF;
+    border-radius: 6px;
+    color: #000000;
+    font-size: 16px;
+    border: none;
+    width: 99px;
+    height: 40px;
+    box-shadow: 0px 3px 3px 0px RGBA(0, 0, 0, 0.1);
+    opacity: 100%;
+}
+.small-img{
+    background-color: #F2F2F2;
+    width: 55.9px;
+    height: 54.13px;
+    position: relative;
+    border-radius: 8px;
+    box-shadow: 0px 3px 3px 0px RGBA(0, 0, 0, 0.1);
+}
+.img-link{
+    position: absolute;
+    top: 10;
+    left: 10;
+}
+.modal-title{
+    color:  var(--modal-title);
+    font-size: 18px;
+    font-weight: 600;
+}
+ .modal-input-label{
+    font-size: 12px !important;
+    margin-bottom: 3px !important;
+}
+.dragg-check-head{
+    color: var(--modal-title);
+    font-size: 14px;
+    font-weight: 600;
+    text-shadow: none;
+    padding-top: 20px;
+}
+.check-text{
+    color: var(--check-text);
+    font-size: 12px;
+    padding-left: 12px;
+    /* padding-bottom: 10px; */
+}
+.policy-text{
+    color: var(--check-text);
+    font-size: 12px;
+}
+.policy-small{
+    color: #258FF8;
+    font-size: 12px;
+}
+.modal-check {
+    position: relative;
+  }
+  
+  .modal-check label {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+    height: 20px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 20px;
+  }
+  
+  .modal-check label:after {
+    border: 2px solid #fff;
+    border-top: none;
+    border-right: none;
+    content: "";
+    height: 6px;
+    left: 3px;
+    opacity: 0;
+    position: absolute;
+    top: 5px;
+    transform: rotate(-45deg);
+    width: 12px;
+  }
+  
+  .modal-check input[type="checkbox"] {
+    visibility: hidden;
+  }
+  
+  .modal-check input[type="checkbox"]:checked + label {
+    background-color: #2AB271;
+    border-color: #2AB271;
+    height: 20px;
+    width: 20px;
+  }
+  
+  .modal-check input[type="checkbox"]:checked + label:after {
+    opacity: 1;
+  }
+.work-btn{
+    width: 133px;
+    height: 40px;
+    box-shadow: 0px 3px 3px 0px RGBA(0, 0, 0, 0.1);
+    border-radius: 6px;
+    color: #80858A;
+    font-size: 12px;
+    border: none;
+    background-color: #FFFFFF;
+    opacity: 100%;
+}
+.cancel-btn{
+    width: 71px;
+    height: 40px;
+    box-shadow: 0px 3px 3px 0px RGBA(0, 0, 0, 0.1);
+    border-radius: 6px;
+    color: #80858A;
+    font-size: 12px;
+    border: none;
+    background-color: #FFFFFF;
+    opacity: 100%;
+}
+.modal-connected-btn{
+    width: 70%;
+    height: 41px;
+    border-radius: 6px;
+    background-color: #2AB271;
+    box-shadow: 0px 0px 3px 0px RGBA(0, 0, 0, 0.1);
+    border: none;
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: 600;
+}
+.model-main{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 598px;
+    z-index: 9999;
+}
+.modal-new{
+    display: flex;    
+    justify-content: center;
+    align-items: center;
+    height: 598px;
+    /* background-color: var(--modal-new); */
+    background-repeat: no-repeat;
+    /* width: 100%; */
+    /* opacity: 99%; */
+}
+.modal-content-new{
+    width: 422px;
+    margin-top: 40px;
+    background-color: var(--modal-content);
+    border-radius: 6px;
+    box-shadow: 2px 7px 17px 0px rgba(0, 0, 0, 0.2);
+}
+.model-main ::placeholder{
+    font-size: 12px;
+}
+
+.color-row{
+   
+    
+}
+
+.MuiOutlinedInput-root {
+    color: var(--input-color) !important;
+  }
+
+.MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline {
+    border-color: var(--input-border) !important;
+    color: var(--input-color) !important;
+}
+  .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+    border-color: var(--input-focus) !important;
+    color: var(--input-color)  !important;
+  }
+
+  .MuiInputLabel-shrink{
+    color: var(--input-shrink) !important;
+  }
+
+.buttons-bottom{
+    padding: 0px 10px 20px 10px;
+}
+
+
+/* ---------------------------------------------------------------------------------------------------------------------------------------------
+                                        media Quary
+--------------------------------------------------------------------------------------------------- */
+
+@media screen and  (max-width: 480px){
+   .inte-main{
+        flex-direction: column;
+        align-items: start !important;
+   }
+   .inte-two{
+    padding-top: 10px;
+   }
+   .modal-content-new{
+    width: 350px;
+  }
+   .title-main{
+    width: 70%;
+    margin: 0 60px 0 60px;
+}
+.inte-main{
+    width: 80%;
+    margin: 0 60px 0 60px;
+}
+   
+
+}
+/* Styles for screens with a width between 481px and 768px */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+   .inte-main{
+        flex-direction: column;
+        align-items: start !important;
+   }
+   .inte-two{
+    padding-top: 10px;
+   }
+   .modal-content-new{
+    width: 400px;
+  }
+   
+}
+
+/* Styles for screens with a width between 769px and 1024px */
+@media screen and (min-width: 769px) and (max-width: 1023px) {
+    .modal-content-new{
+        /* width: 30%; */
+      }
+ 
+}
+
+/* Styles for screens with a width between 1025px and 1440px */
+@media screen and (min-width: 1024px) and (max-width: 1440px) {
+    .modal-content-new{
+        /* width: 30%; */
+      }
+   
+}
+
+/* Styles for screens with a width of 1441px or higher */
+@media screen and (min-width: 1441px) {
+   
+}

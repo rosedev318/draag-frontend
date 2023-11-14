@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>basic / mail_open</title>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="24" height="24"></rect>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="basic-/-mail_open">
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <g id="basic-/-mail_open-(Background/Mask)"></g>
+            <path d="M2,9.13236666 C2,8.42984104 2.36859769,7.77882767 2.97100848,7.41738129 L10.9710083,2.61738124 C11.604373,2.23736235 12.395627,2.23736212 13.0289917,2.61738101 L21.0289917,7.41738081 C21.6314011,7.77882719 22,8.42984104 22,9.13236666 L22,19.9999866 C22,21.104557 21.1045704,21.9999866 20,21.9999866 L4,21.9999866 C2.89543104,21.9999866 2,21.1045551 2,19.9999866 L2,9.13236666 C2,8.66401625 2,8.66401625 2,9.13236666 Z M20,9.86850452 L20,19.9999866 L4,19.9999866 L4,9.86850739 L12,15.2018394 L20,9.86850452 L20,9.86850452 Z M18.6835022,8.34246826 L12,4.33236694 L5.31649494,8.34246969 L12,12.7981377 L18.6835022,8.34246826 L18.6835022,8.34246826 Z" fill="#2E3A59" mask="url(#mask-2)"></path>
+        </g>
+    </g>
+</svg>

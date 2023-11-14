@@ -1,0 +1,514 @@
+
+:root{
+    --white-color: #FFFFFF;
+    --text-gray-color: #A7A8AB;
+    --check-color: #FD7028;
+    --trial-color: #DCFF96;
+    --hold-color: #CED2D4;
+    --place-color: #008BFF;
+    --replace-color: #0c0c0c;
+    --refund-color: #FF5D5D;
+    --blue-color: #008BFF;
+    --interview-color: #6CF1EC;
+    --available-color: #05D18C
+}
+
+.topcard{
+    background-color: var(--blue-color);
+    border-radius: 6px;
+    height: 185px;
+    width: 100%;
+}
+.topcard-small{
+    height: 50px;
+    background-color: var(--blue-color);
+}
+
+
+/* dnd  */
+.main-column{
+    background-color: var(--header-color);
+}
+
+
+
+.single-data{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.state-text{
+    font-size: 14px;
+    color: var(--white-color);
+}
+
+.candidate-state{
+    font-size: 34px;
+    padding-bottom: 0;
+    margin-bottom: 0;
+    color: RGBA(255, 255, 255, 0.8);
+}
+
+.candidate-state-num{
+    font-size: 40px;
+    line-height: 0;
+    padding-bottom: 0;
+    margin-bottom: 0;
+
+    color: RGB(255, 255, 255);
+}
+
+.candi-state-sub{
+    font-size: 16px;
+    color: RGBA(255, 255, 255, 0.6);
+}
+
+.state-rating{
+    font-size: 18px;
+    color: RGB(255, 255, 255);
+}
+
+.pers{
+    font-size: 14px;
+    color: RGB(255, 255, 255);
+}
+
+.list-title{
+    padding: 8px 0px 8px 8px;
+    color: var(--list-title);
+    font-size: 16px;
+    width: max-content;
+}
+.dot-icon{
+    color: var(--list-title);
+}
+.user-name{
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.living-text{
+    font-size: 12px;
+    color: var(--text-gray-color);
+    font-weight: 600;
+}
+.green-label{
+    background-color: var(--available-color);
+    color: var(--white-color);
+    font-size: 10px;
+    padding: 2px 5px 2px 9px;
+    border-bottom-left-radius: 50px;
+}
+.hold-label{
+    background-color: var(--hold-color);
+    color: #000;
+    font-size: 10px;
+    padding: 2px 5px 2px 9px;    
+    border-bottom-left-radius: 50px;
+}
+.trial-label{
+    background-color: var(--trial-color);
+    color: #000;
+    font-size: 10px;
+    padding: 2px 5px 2px 9px;
+    border-bottom-left-radius: 50px;
+}
+.place-label{
+    background-color: var(--place-color);
+    color: var(--white-color);
+    font-size: 10px;
+    padding: 2px 5px 2px 9px;
+    border-bottom-left-radius: 50px;
+}
+.replace-label{
+    background-color: var(--replace-color);
+    color: var(--white-color);
+    font-size: 10px;
+    padding: 2px 5px 2px 9px;
+    border-bottom-left-radius: 50px;
+}
+.interview-label{
+    background-color: var(--interview-color);
+    color: white;
+    font-size: 10px;
+    padding: 2px 5px 2px 9px;
+    border-bottom-left-radius: 50px;
+}
+.progressColor-interview{
+    background-color: var(--interview-color);
+}
+.progress-bar-green{
+    background-color: var(--available-color);
+}
+.check-label{
+    background-color: var(--check-color);
+    color: var(--white-color);
+    font-size: 10px;
+    padding: 2px 5px 2px 9px;
+    border-bottom-left-radius: 50px;
+}
+.refund-label{
+    background-color: var(--refund-color);
+    color: var(--white-color);
+    font-size: 10px;
+    padding: 2px 5px 2px 9px;
+    border-bottom-left-radius: 50px;
+}
+.empty-label{
+    margin-top: 20px !important;
+}
+.card-star{
+    font-size: 12px;
+    color: #ffcd43;
+}
+.card-time{
+    color: var(--text-gray-color);
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.card-color{
+    color: var(--text-gray-color);
+}
+
+.addlist-title{
+    background-color: #F6F6F6;
+    height: max-content;
+    padding: 10px;
+    width: 250px;
+    cursor: pointer;
+}
+
+.check-progress{
+    background-color: var(--check-color);
+}
+
+.trial-progress{
+    background-color: var(--trial-color);
+}
+.placed-progress{
+    background-color: var(--place-color);
+}
+
+/* Right Sidebar  */
+.main-sidebar{
+    background-color: var(--white-color);
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+    width: 330px;
+    position: fixed;
+    top: 120;
+    right: 0;
+    z-index: 30;
+    height: 100vh;
+    overflow-y: scroll;
+}
+
+.border-box {
+    display: flex;
+    flex-direction: column;
+}
+
+.box {
+    padding: 0px 20px;
+    width: 200px;
+    text-align: start;
+}
+
+  .border-left {
+    border-left: 4px solid var(--hold-color);
+  }
+  .bg-buttons{
+    height: 40px;
+    padding: 5px 10px;
+    border: 1px solid lightgray;
+    border-radius: 7px;
+    text-align: center;
+  }
+  .member-text{
+    font-size: 12px;
+    color: gray;
+    font-weight: 500;
+  }
+
+.member-name{
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.calender-icon-highlight svg path{
+    fill: #434141;
+}
+
+.calender-icon svg path{
+    fill: #B9B9B9;
+}
+
+.bottom-button{
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    font-size: 25px;
+    border: none;
+    outline: none;
+    background-color: rgb(28, 37, 54);
+    color:  var(--white-color);;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50%;
+}
+
+.plus-assign{
+    background-color:  var(--white-color);;
+    color: lightgray;
+    border: 1px solid lightgray;
+    font-size: 15px;
+}
+
+.fade-out{
+    color: #000;
+    /* opacity: 32% !important; */
+}
+
+.job-card-main{
+    background-color: var(--job-card-main);
+}
+.css-1jl820a-MuiAvatar-root{
+    background-color: var(--empty-avtar-background) !important;
+    color: var(--empty-avtar) !important;
+}
+
+.job-card-main:hover{
+    transition: all 0.2s ease-out !important;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
+    z-index: 10 !important;
+}
+
+.main-filterSidebar{
+    background-color: var(--white-color);
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+    width: 350px;
+    position: fixed;
+    top: 120;
+    right: 0;
+    z-index: 30;
+    height: 80vh !important;
+    overflow-y: scroll !important;
+    margin-bottom: 10px;
+}
+
+
+.filter-text{
+    font-size: 13px;
+    color: #201E1E;
+    font-weight: 500;
+    letter-spacing: 0.03;
+}
+.filter-title-text{
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.03;
+}
+.label-card{
+    border-radius: 2px;
+    padding: 5px;
+    width: 266px;
+}
+
+.checkbox-dropdown {
+    width: 250px;
+    border: none;
+    padding: 5px 10px;
+    position: relative;
+    margin: 0 auto;
+    user-select: none;
+    border-radius: 2px;
+    background-color: #EBEBEB;
+}
+
+
+
+/* Display CSS arrow to the right of the dropdown text */
+.checkbox-dropdown:after {
+    content:'';
+    height: 0;
+    position: absolute;
+    width: 0;
+    border: 6px solid transparent;
+    border-top-color: #000;
+    top: 50%;
+    right: 10px;
+    margin-top: -3px;
+}
+
+/* Reverse the CSS arrow when the dropdown is active */
+.checkbox-dropdown.is-active:after {
+    border-bottom-color: #000;
+    border-top-color: #fff;
+    margin-top: -9px;
+}
+
+.checkbox-dropdown-list {
+    z-index: 1;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 100%; /* align the dropdown right below the dropdown text */
+    border: inherit;
+    border-top: none;
+    left: -1px; /* align the dropdown to the left */
+    right: -1px; /* align the dropdown to the right */
+    opacity: 0; /* hide the dropdown */
+   
+    transition: opacity 0.4s ease-in-out;
+    background-color:  var(--white-color);;
+    height: 100px;
+    overflow: scroll;
+    overflow-x: hidden;
+    pointer-events: none; /* avoid mouse click events inside the dropdown */
+}
+.is-active{
+    width: 250px;
+    border: none;
+    padding: 5px 10px;
+    position: relative;
+    margin: 0 auto;
+    user-select: none;
+    background-color: #EBEBEB;
+    
+}
+.is-active .checkbox-dropdown-list {
+    opacity: 1; /* display the dropdown */
+    pointer-events: auto; /* make sure that the user still can select checkboxes */
+    border: 1px solid #EBEBEB;
+}
+
+.checkbox-dropdown-list li label {
+    display: block;
+    /* border-bottom: 1px solid silver; */
+    /* padding: 10px; */
+    transition: all 0.2s ease-out;
+}
+
+.card-checkbox input:checked{
+    background-color: #2dd47b;
+    border-color: #2dd47b;
+    box-shadow: none;
+    outline: none;
+}
+
+.card-checkbox input{
+    margin: 5px;
+}
+
+.select-card-number{
+    border-radius: 50%;
+    font-size: 14px;
+    align-items: center;
+}
+
+.card-checkbox input:not(:checked){
+    box-shadow: none;
+    outline: none;
+}
+
+.action-drop .dropdown-toggle::after{
+    display: contents !important;
+}
+
+.action-drop .dropdown-menu{
+    transform: translate(-154px, 26px) !important;
+}
+
+
+.main-users{
+    padding: 15px 0 15px 20px;
+}
+
+.scroll-modal ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+    
+.trial-ring{
+    border: 3px solid #BDE078;
+    border-radius: 50%;
+    padding: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.check-ring{
+    border: 3px solid var(--check-color);
+    border-radius: 50%;
+    padding: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.place-ring{
+    border: 3px solid var(--place-color);
+    border-radius: 50%;
+    padding: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.css-2s90m6-MuiAvatar-root{
+    z-index: 0 !important;
+}
+
+@media screen and (max-width: 480px) {
+    .topcard{
+        height: max-content;
+    }
+    .main-filterSidebar{
+        height: 450px;
+    }
+}
+
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    .topcard{
+        height: max-content;
+    }
+    .main-stats{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .topcard{
+        height: max-content;
+    }
+    .main-stats{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .main-filterSidebar{
+        height: 80vh !important;
+    }
+    
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1440px) {
+    .main-filterSidebar{
+        height: 81vh !important;
+    }
+}   
+
+@media screen and (min-width: 1441px) {
+    .main-filterSidebar{
+        height: 90vh !important;
+    }
+}

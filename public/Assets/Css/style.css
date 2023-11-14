@@ -1,0 +1,1418 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap'); */
+
+/* @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap'); */
+
+/* @font-face {
+    font-family: 'Arial Unicode MS';
+    src: url('./ArialUnicodeMSFont.ttf');
+  }
+
+ body{
+    font-family: "Arial Unicode MS" !important;
+ } */
+
+ body{
+    background-color: var(--main-body);
+ }
+
+ :root{
+    --available-color: #05D18C;
+    --check-color: #FD7028;
+    --trial-color: #DCFF96;
+    --hold-color: #CED2D4;
+    --place-color: #008BFF;
+    --replace-color: #0c0c0c;
+    --refund-color: #FF5D5D;
+    --blue-color: #008BFF;
+    --interview-color: #6CF1EC;
+ }
+
+ .css-10hburv-MuiTypography-root{
+    font-family: 'Arial Unicode MS';
+    font-size: 14px;
+}
+
+
+.number-avtar{
+    background-color: var(--number-avtar-background);
+    color: var(--number-avtar);
+    border: 1px solid var(--number-avtar)
+}
+
+.css-1jl820a-MuiAvatar-root{
+    background-color: var(--empty-avtar-background) !important;
+    color: var(--empty-avtar) !important;
+}
+
+.cursor-pointer{
+    cursor: pointer;
+}
+.fade-out{
+    opacity: 32% !important;
+}
+
+/* mui input error  */
+.css-k4qjio-MuiFormHelperText-root{
+    margin-left: 0;
+    margin-right: 0;
+}
+
+/* mui select error  */
+.css-1d1r5q-MuiFormHelperText-root{
+    color: #d32f2f !important;
+}
+/* .css-1pz1xd0-MuiPaper-root-MuiAppBar-root{
+    right: 11px !important;
+} */
+
+/* mui date picker  */
+/* .css-19qh8xo-MuiInputBase-input-MuiOutlinedInput-input{
+    color: #E7E7E7 !important;
+} */
+ .css-hfutr2-MuiSvgIcon-root-MuiSelect-icon   {
+    fill: #E7E7E7 !important;
+  }
+.MuiInputLabel-root {
+    color: #E7E7E7 !important;
+  } 
+  .MuiInputLabel-shrink{
+    color: rgba(0, 0, 0, 0.6) !important;
+  }
+
+  .css-19qh8xo-MuiInputBase-input-MuiOutlinedInput-input.Mui-disabled {
+    -webkit-text-fill-color: #E7E7E7 !important;
+  }
+ 
+   .css-8je8zh-MuiTouchRipple-root{
+    display: none !important;
+  }
+
+  /* candidate table border bottom  */
+  .border-remove{
+    border-bottom: none !important;
+  }
+
+.css-1qz00cp-MuiTableCell-root{
+     font-family: 'Arial Unicode MS';
+ }
+
+.css-5skmll-MuiDrawer-docked .MuiDrawer-paper {
+    box-sizing: border-box;
+    width: 270px !important;
+}
+
+:root {
+    --loginbtn-color: #2AB271;
+}
+
+
+
+/*=========================================== Login Page Start ============================================= */
+.logincard {
+    border: 1px solid #CFCFCF;
+    border-radius: 2px;
+    width: 577px;
+    height: 610px;
+    text-align: center;
+    opacity: 100%;
+    margin-bottom: 39px;  
+    background-color: #FFFFFF;
+}
+
+.logincard>h3 {
+    font-size: 31px;
+    color: #090A0B;
+    font-weight: 700;
+    font-family: 'Arial Unicode MS';
+}
+
+.input-group-text {
+    background-color: #fff;
+}
+
+.input-container {
+    position: relative;
+    /* display: inline-block; */
+
+}
+
+.input-container input {
+    width: 390px;
+    /* adjust the padding to make room for the left icon */
+    /* padding-right: 30px; */
+    /* adjust the padding to make room for the right icon */
+}
+
+
+.input-container.focused .key {
+    opacity: 1;
+}
+
+.input-container .key{
+    right: 20px;
+    rotate: calc(85deg);
+    font-size: 15px;
+    position: absolute;
+    top: 23;
+    /* adjust the right position to align the icon */
+}
+.input-container .arrow-down{
+    right: 10px;
+    font-size: 15px;
+    position: absolute;
+    top: 23;
+}
+.input-container .danger-icon{
+    right: 20px;
+    padding-top: 20px;
+    color: #FD483A;
+}
+.input-container .succ-icon{
+    right: 20px;
+    padding-top: 20px;
+    color: #32B455;
+}
+/* .input-container .fa-angle-down{
+    right: 14px;
+    font-size: 12px;
+} */
+
+.input-field {
+    /* border: 2px solid #191717; */
+    /* background-color: white; */
+    border-radius: 8px;
+    /* padding-left: 15; */
+    /* width: 390px; */
+    /* height: 48px; */
+    outline: none;
+}
+
+
+.input-container>input[type=text]:focus {
+    outline: none;
+}
+
+input::placeholder {    
+    color: lightgrey;
+    font-size: 17px;
+    font-weight: 400;
+    font-family: 'Arial Unicode MS' !important;
+}
+
+.emailbtn {
+    background-color: var(--loginbtn-color);
+    width: 390px;
+    border-radius: 23px;
+    border: none;
+    color: #FFFFFF;
+    height: 40px;
+    /* font-family: 'Arial Unicode MS'; */
+    font-weight: 300 !important;
+    font-size: 18px;
+}
+
+.googlebtn {
+    background-color: #4285f4;
+    width: 350px;
+    border-radius: 20px;
+    border: none;
+    color: #fff;
+    height: 40px;
+    font-weight: 600;
+}
+
+.separator {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.or{
+    padding-top: 10px;
+    margin-left: 80px;
+    margin-right: 80px;
+}
+.or-2{
+    margin-top: 80px;
+    margin-left: 90px;
+    margin-right: 90px;
+}
+
+.separator::before,
+.separator::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid lightgray;
+}
+
+.separator:not(:empty)::before {
+    margin-right: .25em;
+}
+
+.separator:not(:empty)::after {
+    margin-left: .25em;
+}
+
+.signupbtn {
+    background-color: white;
+    color: #118A00;
+    width: 249px;
+    border: 2px solid #118A00;
+    border-radius: 22px;
+    height: 46px;
+    font-family: 'Arial Unicode MS';
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.g_body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nsm7Bb-HzV7m-LgbsSe .nsm7Bb-HzV7m-LgbsSe-BPrWId{
+    text-overflow: initial !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+}
+
+.g-button {
+    border: 1px solid rgb(66, 133, 244);
+    background: rgb(66, 133, 244);
+    display: flex;
+    width: 390px;
+    border-radius: 22px;
+    border: none;
+    color: #fff;
+    height: 42px;
+    padding-top: 8px;
+}
+
+.g-logo {
+    width: 40px;
+    height: 40px;
+    background: #fff;
+    border-radius: 50%;
+    margin-top: -7px;
+    margin-bottom: 1px;
+    margin-left: -5px;
+}
+
+.g-text {
+    font-size: 16px;
+    padding-left: 75px;
+    color: #FFFFFF;
+    text-align: center;
+    font-family: 'Arial Unicode MS';
+    font-weight: 300;
+    font-size: 18px;
+}
+.err-msg{
+    font-family: 'Arial Unicode MS';
+    font-weight: 400;
+    color: #FD483A;
+    font-size: 15px;
+    text-align: left;
+}
+.errors-div{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 0;
+}
+.err-msg-fname{
+    font-family: 'Arial Unicode MS';
+    font-weight: 400;
+    color: #FD483A;
+    font-size: 15px;
+}
+.err-msg-surname{
+    font-family: 'Arial Unicode MS';
+    font-weight: 400;
+    color: #FD483A;
+    font-size: 15px;
+    text-align: left;
+    padding-left: 19px;
+    /* position: absolute; */
+    /* margin-top: 46px; */
+}
+.usererror-login{
+    font-family: 'Arial Unicode MS';
+    font-weight: 400;
+    color: #FD483A;
+    font-size: 15px;
+    position: absolute;
+    text-align: left;
+    padding-left: 92px;
+    /* padding: 0 0 0 112px !important; */
+}
+.emailerr-login{
+    margin-left: -240px;
+    font-family: 'Arial Unicode MS';
+    font-weight: 400;
+    color: #FD483A;
+    font-size: 15px;
+    position: absolute;
+    text-align: left;
+    padding-left: 92px;
+}
+.stre-pass-succ{
+    color: #32B455;
+    font-family: 'Arial Unicode MS';
+    font-weight: 100;
+    /* text-align: end;      */
+    font-size: 15px;
+    /* padding-right: 73px; */
+}
+.stre-pass-dang{
+    color: #FD483A;
+    /* text-align: end; */
+    font-family: 'Arial Unicode MS';
+    font-weight: 100;
+    font-size: 15px;
+    /* padding-right: 73px; */
+}
+.error-border {
+    border: 2px solid red !important;
+  }
+  .pass-err{
+    padding-left: 78px;
+  }
+  .danger-icon-cpass{
+    padding-top: 10px;
+  }
+  .icon-cpass{
+    padding-top: 28px !important;
+  }
+
+  .dont-account{
+    font-family: 'Arial Unicode MS';
+    font-size: 17px;
+    color: #828282;
+    font-weight: 400;
+  }
+/*=========================================== Signup Success Page Start ============================================= */
+.signup-success-card{
+    padding-top: 150px;
+    text-align: center;
+
+}
+.envelop-img{
+    height: 159px;
+    width: 162px;
+}
+.signup-success-text{
+    font-family: 'Arial Unicode MS';
+    font-weight: 400;
+    font-size: 24px;
+    color: #0F0E0E;
+    padding-top: 45px;
+}
+.select-dropdown select {
+    color: #555;
+    font-size: 14px;
+    padding: 10px;
+    border: none;
+  }
+  
+  
+  .select-dropdown select option {
+    background-color: #fff;
+    color: #555;
+    font-size: 14px;
+    border: none;
+  }
+  
+  .select-dropdown select:focus {
+    outline: none;
+  }
+/*=========================================== Home Page Start ============================================= */
+.selectcard{
+    background-color: #FFFFFF;
+    border-radius: 4px;
+    width: 220px;
+    margin-top: 30px;
+    margin-bottom: 40px;
+    height: 45px;
+    box-shadow: 0 2px 4px #D5D8E6;
+}
+.selectlabel{
+    font-family: 'Arial Unicode MS' !important;
+    font-size: 14px;
+    font-weight: 400;
+    padding-left: 8px;
+    color: #595B62 !important;
+    opacity: 80%;
+}
+.selectaccount{
+    width: 73px;
+    height: 19px;
+    border: none !important;
+}
+
+
+.selectcard select{
+    background-color: none;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    padding: 0 20px 0 0;
+    border: none;
+    outline: none;
+    background-repeat: no-repeat;
+    background-size: 20px;
+    background-position: calc(100% - 0px) center;
+    box-sizing: content-box;
+    color: #595B62;
+    font-size: 14px;
+    width: 100px;
+}
+
+
+
+.btn:focus{
+    box-shadow: none;
+}
+.head-select{
+    font-family: 'Arial Unicode MS';
+    font-size: 14px;
+    color: #595B62;
+}
+/* 
+.select-dropdown,
+.select-dropdown * {
+	margin: 0;
+	position: relative;
+	box-sizing: border-box;
+}
+.select-dropdown {
+	position: relative;
+}
+.select-dropdown select {
+    font-family: 'Arial Unicode MS';
+	font-size: 14px;
+    color: #595B62;
+	border: none;
+	background-color: transparent;
+		-webkit-appearance: none;
+		-moz-appearance: none;
+	appearance: none;
+}
+
+.select-dropdown select:active, .select-dropdown select:focus {
+	outline: none;
+	box-shadow: none;
+}
+*/
+/* .select-dropdown:after {
+	content: "";
+	position: absolute;
+	top: 50%;
+	right: -5px;
+	margin-top: -2px;
+	border-top: 5px solid #aaa;
+	border-right: 5px solid transparent;
+	border-left: 5px solid transparent;
+} */
+.user-country{
+    font-family: 'Arial Unicode MS';
+    font-size: 16px;
+    color: #626264;
+    font-weight: 500;
+}
+/*=========================================== Signup Page Start ============================================= */
+.signupcard{
+    border: 1px solid #CFCFCF;
+    border-radius: 2px;
+    /* width: 550px; */
+    text-align: center;
+    background-color: #FFFFFF;
+}
+.signupcard>h3 {
+    font-size: 31px;
+    color: #090A0B;
+    font-weight: 700;
+    font-family: 'Arial Unicode MS';
+}
+.input-field-fname{
+    /* border: 2px solid #252424; */
+    border-radius: 8px;
+    /* width: 193px;
+    height: 48px; */
+    opacity: 100%;
+    /* margin-right: 10px;
+    padding-left: 10px; */
+    outline: none;
+}
+.input-field-surname{
+    /* border: 2px solid #252424; */
+    border-radius: 8px;
+    /* width: 193px;
+    height: 48px; */
+    opacity: 100%;
+    /* padding-left: 10px; */
+    margin-left: 20px;
+    outline: none;
+}
+.signupcard > input::placeholder{
+    color: #BFBFBF;
+    font-family: 'Arial Unicode MS';
+    font-weight: 400;
+    opacity: 100%;
+}
+.signup > input::placeholder{
+    color: #BFBFBF;
+    font-family: 'Arial Unicode MS';
+    font-weight: 400;
+    opacity: 100%;
+}
+.input-field-email{
+    width: 390px;
+    border-radius: 8px;
+    margin-top: 10px;
+    /* padding-left: 10px; */
+    /* height: 48px; */
+    outline: none;
+}
+.input-field-cpassword{
+    width: 395px;
+    height: 48px;
+    border: 2px solid #0A0B0B;
+    border-radius: 8px;
+    margin-top: 10px;
+    padding-left: 10px;
+    outline: none;
+}
+.password-err{
+    padding-left: 80px;
+    position: absolute;
+    color: #ABABAB;
+}
+.termsinput {
+    margin: 0 12px 0 0;
+    vertical-align: middle;
+    position: relative;
+    top: -1px;
+}
+.termstext input[type="checkbox"] {
+    -webkit-appearance: none;
+    /* remove default appearance */
+    -moz-appearance: none;
+    appearance: none;
+    border: 2px solid #2E3A59;
+    border-radius: 2px;
+    /* change border color */
+    outline: none;
+    /* remove outline */
+    height: 12px;
+    /* set desired height */
+    width: 12px;
+    /* set desired width */
+    position: relative;
+    /* set position */
+    cursor: pointer;
+    /* set cursor */
+  }
+  .termstext input[type="checkbox"]:checked:before {
+    content: "\2713";
+    font-size: 10px;
+    font-weight: bold;
+    color: #2E3A59;
+    position: absolute;
+    top: 45%;
+    left: 52%;
+    transform: translate(-50%, -50%);
+  }
+.termstext-two input[type="checkbox"] {
+    -webkit-appearance: none;
+    /* remove default appearance */
+    -moz-appearance: none;
+    appearance: none;
+    border: 2px solid #2E3A59;
+    border-radius: 2px;
+    /* change border color */
+    outline: none;
+    /* remove outline */
+    height: 12px;
+    /* set desired height */
+    width: 12px;
+    /* set desired width */
+    position: relative;
+    /* set position */
+    cursor: pointer;
+    /* set cursor */
+  }
+  .termstext-two input[type="checkbox"]:checked:before {
+    content: "\2713";
+    font-size: 10px;
+    font-weight: bold;
+    color: #2E3A59;
+    position: absolute;
+    top: 45%;
+    left: 52%;
+    transform: translate(-50%, -50%);
+  }
+
+.termstext{
+    /* margin: 20px; */
+    text-align: left;
+    font-family: 'Arial Unicode MS';
+    font-weight: 400;
+    color: #888686;
+    font-size: 15px;
+}
+
+.termstext-two{
+    /* margin: 20px; */
+    text-align: left;
+    font-family: 'Arial Unicode MS';
+    font-weight: 400;
+    color: #888686;
+    font-size: 15px;
+}
+.termstext-two > label > span{
+    color: #4285F4;
+    font-size: 15px;
+}   
+.accountbtn{
+    background-color: var(--loginbtn-color);
+    width: 390px;
+    height: 46px;
+    border-radius: 23px;
+    border: none;
+    color: #FFFFFF;
+    font-family: 'Arial Unicode MS';
+    font-weight: 300 !important;
+    font-size: 18px;
+}
+.logintext{
+    color: #686868;
+    font-size: 15px;
+    font-family: 'Arial Unicode MS';
+    font-weight: 400;   
+}
+.loginbtn{
+    color: #151515;
+    font-size: 15px;
+    font-weight: 400;
+    cursor: pointer;
+}
+.email-err{
+    margin-left: 82px;
+}
+.sign-email-err{
+    font-family: 'Arial Unicode MS';
+    font-weight: 500;
+    color: #FD483A;
+    font-size: 15px;
+    /* position: absolute; */
+    text-align: left;
+    /* padding-left: 80px; */
+} 
+.error-message{
+    text-align: start;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+}
+
+/*=========================================== Forget Password Page Start ============================================= */
+.forgetpass-card{
+    border: 1px solid #CFCFCF;
+    border-radius: 2px;
+    width: 577px;
+    height: 312px;
+    text-align: center;
+    background-color: #FFFFFF;
+}
+.forgetpass-card > h3{
+    font-size: 31px;
+    color: #090A0B;
+    font-weight: 700;
+    font-family: 'Arial Unicode MS';
+}
+.input-field-forget-pass{
+    width: 577px;
+    height: 48px;
+    padding: 5px;
+    border: 2px solid #2F8AE1;
+    border-radius: 8px;
+    font-family: 'Arial Unicode MS';
+    font-weight: 400;
+    font-size: 18px;
+    color: #1D1B1B;
+}
+.reset-passwordbtn{
+    background-color: var(--loginbtn-color);
+    width: 390px;
+    height: 46px;
+    border-radius: 23px;
+    border: none;
+    font-family: 'Arial Unicode MS';
+    color: #FFFFFF;
+    font-size: 18px;
+    font-weight: 300;
+}
+.usererror-login-email{
+    font-family: 'Arial Unicode MS';
+    font-weight: 400;
+    color: #FD483A;
+    font-size: 15px;
+    /* position: absolute; */
+    text-align: left;
+    /* padding-left: 96px; */
+    padding-left: 1px;
+    padding-top: 0px;
+    margin-top: 0px;
+}
+.forget-footer{
+    bottom: 0;
+}
+/*=========================================== header2 ============================================= */
+.header2{
+    background-color: rgb(241, 241, 241);
+    padding: 0px 10px 0px 10px;
+    /* border-radius: 5px 0px 5px 0px; */
+    /* margin-top: 5px; */
+}
+.css-1aquho2-MuiTabs-indicator{
+    height: 4px !important;
+}
+
+
+/*=========================================== Password Send Start ============================================= */
+.passwordsend-card{
+    width: 577px;
+    border: 1px solid #CFCFCF;
+    border-radius: 2px;
+    height: 550px;
+}
+.success-check{
+    text-align: center;
+    /* margin: 80px; */
+    /* margin-left: 220px; */
+    color: var(--loginbtn-color);
+}
+.success-check svg{
+    font-size: 140px !important;
+}
+.success-text{
+    color: #0F0E0E;
+    font-size: 24px;
+    font-family: 'Arial Unicode MS';
+    text-align: center;
+    font-weight: 400;
+    opacity: 100%;
+    padding-top: 35px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+.backlogin-text{
+    text-align: center;
+    margin: 0 40% 0 40%;
+    color: #686868;
+    font-size: 15px;
+    font-family: "Arial Unicode MS";
+    font-weight: 400;
+}
+.terms-err{
+    font-family: 'Arial Unicode MS';
+    font-weight: 400;
+    color: #FD483A;
+    font-size: 15px;
+}
+/*=========================================== Login With Email Page Start ============================================= */
+.useremail{
+    font-family: 'Arial Unicode MS';
+    font-size: 18px;
+    font-weight: 400;
+    color: #1D1B1B;
+}
+.userpass{
+    border: 2px solid #2F8AE1;
+}
+.forget-text{
+    font-family: 'Arial Unicode MS';
+    font-weight: 400;
+    font-size: 17px;
+    color: #909090;
+}
+.login-btn{
+    background-color: var(--loginbtn-color);
+    width: 390px;
+    height: 40px;
+    border-radius: 23px;
+    border: none;
+    font-family: 'Arial Unicode MS';
+    color: #FFFFFF;
+    font-size: 18px;
+    font-weight: 300;
+    margin-top: 10px;
+}
+
+.disbtn:disabled,
+.disbtn [disabled]{
+    background-color: #76c59f;
+}
+.spinner-border{
+    width: 20px !important;
+    height: 20px !important;
+}
+
+.input-container.focused .login-key {
+    opacity: 1;
+}
+
+.input-container .login-key {
+    left: 355;
+    rotate: calc(-47deg);
+    font-size: 12px;
+    position: absolute;
+    top: 20;
+    font-size: 10px;
+}
+.input-container .login-arrow{
+    left: 365;
+    font-size: 12px;
+    position: absolute !;
+    top: 20;
+    font-size: 10px;
+}
+.p60{
+    padding-top: 40px;
+}
+.p80{
+    padding-top: 70px;
+}
+/*=========================================== Profile Page Start ============================================= */
+.backtext{
+    color: #595B62;
+    font-size: 17px;
+}
+.backtext > span{
+    color: #0A0B0C;
+    font-size: 17px;
+}
+.main-card{
+    display: flex;
+}
+.profile-card{
+    width: 350px;
+    border-radius: 10px;
+    /* margin-right: 20px; */
+}
+.profile-img{
+    object-fit: cover;
+}
+.detail-card{
+    width: 690px;
+    border-radius: 10px;
+}
+.css-19kzrtu{
+    padding: 0 !important;
+    padding-top: 0px;
+
+}
+.pb1{
+    margin-top: 5px;
+    background-color: #FFFFFF;
+    font-family: 'Arial Unicode MS';
+    font-weight: 600;
+    color: #2E2E2E;
+    font-size: 15px;
+    margin-left: 20px;
+}
+.pb2{
+    margin-top: 10px;
+}
+.pb1:focus{
+    background-color: #fff !important;
+    box-shadow: none;
+}
+.pb2:focus{
+    background-color: #fff !important;
+    box-shadow: none;
+}
+.username{
+    font-family: "Arial Unicode MS";
+    font-size: 20px;
+    color: #101111;
+    padding-top: 15px;
+    font-weight: 600;
+}
+.user-nationality{
+    color: #626264;
+    font-size: 16px;
+}
+.user-fav{
+    font-family: "Arial Unicode MS";
+    font-size: 17px;
+    color: #333334;
+    font-weight: 400;
+}   
+.star-group{
+    padding: 10px 0 0 0;
+    gap: 5px;
+}
+.staricons{
+    color: #ffcd43;
+    font-size: 16px !important;
+}
+.divider{
+    color: lightgrey;
+}
+.thumb-icon{
+    border: 1px solid #C0C9DF;
+    border-radius: 50%;
+    padding: 12px;
+    
+}
+.rating-btn{
+    font-family: 'Arial Unicode MS';
+    background-color: #FDD127;
+    border-radius: 21px;
+    width: 116px;
+    height: 42px;
+    color: #191919;
+    font-size: 16px;
+    font-weight: 600;
+}
+.advance-btn{
+    font-family: 'Arial Unicode MS';
+    font-size: 16px;
+    font-weight: 500;
+    background-color: #15BA77;
+    border-radius: 21px;
+    width: 116px;
+    color: #FFFFFF;
+    height: 42px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+.applide-jobs-title{
+    color: #626264;
+    font-size: 12px;
+    font-weight: 400;
+}
+.job-card{
+    background-color: #F6F9F9;
+    width: 325px;
+    border: 1px solid #F2F2F2;
+    border-radius: 7px;
+    height: 70px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 10px;
+    padding: 10px 10px 10px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center
+}
+.job-title{
+    font-family: 'Arial Unicode MS';
+    font-weight: 600;
+    font-size: 16px;
+    color: #181819;
+  
+}
+.user-lang{
+    font-family: 'Arial Unicode MS';
+    font-size: 18px;
+    color: #101111;
+    font-weight: 500;
+}
+.progress{
+    height: 5px !important;
+}
+.status-card{
+    background-color: transparent;
+    width: 325px;
+    height: 90px;
+    border: 2px solid #F2F2F2;
+    border-radius: 8px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 10px;
+    padding: 12px 20px;
+}
+.applied-dot{
+    color: rgb(66, 133, 244);
+    padding-right: 3px;
+}
+.status-icon{
+    font-size: 11px;
+}
+.applied-text{
+    font-family: 'Arial Unicode MS';
+    font-weight: 400;
+    font-size: 14px;
+    color: #404C4E;
+}
+.status-text{
+    font-family: 'Arial Unicode MS';
+    font-weight: 400;
+    font-size: 14px;
+    color: #626264;
+}
+.statusbtn-active{
+    background-color: var(--available-color);
+    width: 60px;
+    border-bottom-left-radius: 12px;
+    border-top-left-radius: 12px;
+    margin-right: 2px;
+    font-weight: 400;
+}
+.statusbtn{
+    background-color: rgb(241, 241, 241);
+    width: 60px;
+    margin-right: 2px;
+    font-weight: 500;
+}
+.statusbtn-last{
+    background-color: rgb(241, 241, 241);
+    width: 60px;
+    border-bottom-right-radius: 12px;
+    border-top-right-radius: 12px;
+    font-weight: 500;
+}
+.statusbtn-active-pl{
+    width: 60px;
+    margin-right: 2px;
+    font-weight: 500;
+    color: white;
+    background-color: var(--place-color);
+}
+.statusbtn-active-rf{
+    width: 60px;
+    margin-right: 2px;
+    font-weight: 500;
+    color: white;
+    background-color: var(--refund-color);
+}
+.statusbtn-active-h{
+    width: 60px;
+    margin-right: 2px;
+    font-weight: 500;
+    color: white;
+    background-color: var(--hold-color);
+}
+.statusbtn-active-tr{
+    width: 60px;
+    margin-right: 2px;
+    font-weight: 500;
+    color: white;
+    background-color: var(--trial-color);
+}
+.statusbtn-active-ch{
+    width: 60px;
+    margin-right: 2px;
+    font-weight: 500;
+    color: white;
+    background-color: var(--check-color);
+}
+.statusbtn-active-sr{
+    width: 60px;
+    margin-right: 2px;
+    font-weight: 500;
+    color: white;
+    background-color: var(--available-color);
+}
+.statusbtn-active-rep{
+    width: 60px;
+    margin-right: 2px;
+    font-weight: 500;
+    color: white;
+    background-color: var(--replace-color);
+}
+.statusbtn-active-bl{
+    width: 60px;
+    margin-right: 2px;
+    font-weight: 500;
+    color: white;
+    background-color: #0A0A0A;
+}
+.statusbtn-active-interview{
+    width: 60px;
+    margin-right: 2px;
+    font-weight: 500;
+    color: white;
+    background-color: var(--interview-color);
+}
+.first-btn-status{
+    width: 60px;
+    border-bottom-left-radius: 12px;
+    border-top-left-radius: 12px;
+    margin-right: 2px;
+    font-weight: 400;
+}
+.last-btn-status{
+    width: 60px;
+    border-bottom-right-radius: 12px;
+    border-top-right-radius: 12px;
+    font-weight: 500;
+}
+.contact-title{
+    font-family: 'Arial Unicode MS';
+    color: #101111;
+    font-size: 19px;
+    font-weight: 600;
+}
+.contact-detail{
+    display: flex;
+}
+.contact-icons{
+    background-color: #EBEFF0;
+    border-radius: 50%;
+    padding: 11px;
+    opacity: 100%;
+}
+.contact-text{
+    margin-left: 20px;
+}
+.email-head{
+    font-weight: 'Arial Unicode MS';
+    font-size: 14px;
+    color: #242626;
+    font-weight: 500;
+}
+.email-text{
+    font-family: 'Arial Unicode MS';
+    font-size: 14px;
+    color: #404C4E;
+}
+.address{
+    font-family: 'Arial Unicode MS';
+    font-size: 14px;
+    color: #404C4E;
+}
+.skills-text{
+    color: #1A1A1B;
+    font-family: 'Arial Unicode MS';
+    font-size: 20px;
+    font-weight: 600;
+}
+.skill-blue{
+    border: 2px solid #358EFF;
+    border-radius: 15px !important;
+    color: #358EFF;
+    font-weight: 500;
+    height: 35px;
+    font-size: 12px;
+    align-items: center;
+    background-color: #FFFFFF;
+    width: max-content;
+}
+.skill-light{
+    border: 1px solid #C0C9DF;
+    border-radius: 15px !important;
+}
+.select-all-btn{
+    background-color: lightgrey;
+    color: black;
+    font-weight: 500;
+}
+.wrapper {
+    max-width: 700px;
+    margin: 50px auto;
+    padding: 20px 0;
+    background-color: #ecfff3;
+    width: 100%;
+    border-radius: 5px;
+    box-shadow: 3px 10px 15px -12px #333333, -3px 0px 15px -12px #333333;
+}
+
+.tab-content {
+    padding: 10px 20px;
+}
+.nav-tabs a {
+    border: 0!important;
+    background-color: transparent !important;
+}
+.nav-tabs li.active {
+    border-bottom: 2px solid #5453d2;
+}
+.nav-tabs li {
+    border-bottom: 2px solid transparent;
+}
+.nav-tabs li a {
+    width: 100%;
+    text-align: center;
+}
+ul.nav.nav-tabs {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    overflow: hidden;
+}
+.nav-tabs li {
+    flex-basis: 90px;
+    min-width: 90px;
+    display: flex;
+    align-items: flex-start;
+    margin: 0!important;
+}
+.tabs-wrapper{
+	position: relative;
+}
+span.left, span.right {
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:#5453D2;
+    border-radius: 50%;
+    left: -50px;
+    top: 8px;
+    cursor: pointer;
+    color: #ffffff;
+}
+span.right{
+ right: -50px;
+ left:unset;
+}
+.css-1aquho2-MuiTabs-indicator{
+    background-color: #15BA77 !important;
+    margin-left: 2px !important;
+}
+.css-1h9z7r5-MuiButtonBase-root-MuiTab-root{
+    font-family: 'Arial Unicode MS';
+    font-size: 14px;
+    color: #595B62;
+    font-weight: 600;
+    text-transform: capitalize !important;
+
+}
+.css-1h9z7r5-MuiButtonBase-root-MuiTab-root.Mui-selected{
+    font-family: 'Arial Unicode MS';
+    font-weight: 600;
+    color: #2B2A2A !important;
+    text-transform: capitalize !important;
+    font-size: 14px !important;
+}
+.css-1kt0o6l{
+    border-bottom: 1px solid #C0C9DF !important;
+}
+.css-19kzrtu{
+    padding-left: 15px;
+    padding-top: 0px !important;
+}
+.personal-detail-title{
+    font-family: 'Arial Unicode MS' !important;
+    font-weight: 600;
+    font-size: 20px;
+    color: #101111;
+}
+.exp-title{
+    font-family: 'Arial Unicode MS';
+    font-weight: 600;
+    font-size: 16px;
+    color: #181819;
+}
+.exp-desc{
+    font-family: 'Arial Unicode MS';
+    font-weight: 500;
+    font-size: 15px;
+    color: #757C7C;
+    padding-bottom: 15px;
+}
+.subdetail{
+    font-weight: 500;
+    color: gray;
+    font-size: 15px;
+}
+.pd{
+    font-weight: 500;
+}
+.bio-text{
+    font-family: 'Arial Unicode MS';
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 21px;
+    color: #424242;
+}
+.rmore{
+    color: #15BA77;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.highlight-icon svg path{
+    fill: #4CCE54;
+}
+
+.default-icon svg path{
+    fill: lightgrey;
+}
+
+
+
+
+/*=========================================== Footer Page Start ============================================= */
+.content-wrap{
+    min-height: calc(100vh - 176px);
+}
+.content-wrap-without-header{
+    min-height: calc(100vh - 120px);
+}
+.content-wrap-without-footer{
+    min-height: calc(100vh - 0px);
+}
+.password-center{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.footer{
+
+
+    position: absolute;
+  /* bottom: 0; */
+  width: 100%;
+  height: 5.5rem;
+
+
+
+
+    /* position: absolute;
+    bottom: 0;
+    width: 100%; */
+    /* height: 2.5rem; */
+    background-color: #112A3F;
+    /* position: absolute; */
+    /* width: 100%; */
+    /* margin-top: 1; */
+    /* bottom: 0px;  */
+    /* bottom: 0; 
+    right: 0; 
+    left: 0;  */
+    /* margin-bottom: 0px; */
+    text-align: center;
+    color: #FFFFFF;
+}
+.company-name{
+    padding-top: 60px;
+}
+
+.updated-footer {
+    background-color: #112a3f;
+    padding: 20px 0;
+}
+
+.updated-footer p {
+    font-size: 14px;
+    margin: 0;
+    line-height: 20px;
+    color: #fff;
+    font-weight: 500;
+    text-align: center;
+}
+

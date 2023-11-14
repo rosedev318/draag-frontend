@@ -1,0 +1,311 @@
+.main{
+    display: flex;
+}
+.join1 {
+    width: 30%;
+    height: 100vh;
+    overflow-y: hidden;
+    background-color:#112A3F;
+}
+
+.join2 {
+    width: 70%;
+    background-color: var(--main-body);
+}
+
+.join1_txt {
+    margin-top: 250px;
+    font-family: 'Arial Unicode MS';
+    
+}
+
+.card-text{
+
+} 
+
+.join_text{
+    color: var(--join-text);
+}
+
+.back-text-link{
+    color: var(--back-text-link);
+}
+
+.back-text-link:hover{
+    color: var(--back-text-link);
+}
+.myteam-title{
+    font-size: 15px;
+    color: var(--team-title);
+}
+
+.join_txt{
+    font-family: 'Arial Unicode MS';
+    font-size:20px !important;
+    color: red;
+}
+.card-text{
+    margin-left: 40px;
+    margin-top: -28px;
+}
+.jt{
+    font-size: 21px;
+    font-family: 'Arial Unicode MS';
+    color: #0A0A0A;
+}
+
+.btn1{
+    width: 102px;
+    height: 40px;
+     font-family: 'Arial Unicode MS';
+    background-color: #2AB271;
+    font-size: 16px;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 6px;
+    opacity: 100%;
+
+}
+
+.css-2s90m6-MuiAvatar-root {
+    z-index: 0 !important;
+    width: 45px !important;
+    height: 45px !important;
+}
+:root {
+    --card-line-height: 1.2em;
+    --card-padding: 1em;
+    --card-radius: 0.5em;
+    --color-green: #2AB916;
+    --color-gray: #e2ebf6;
+    --color-dark-gray: #c4d1e1;
+    --radio-border-width: 2px;
+    --radio-size: 1.5em;
+}
+
+.card {
+    background-color: var(--join-card);
+    border-radius: var(--card-radius);
+    position: relative;
+    color: var(--team-title);
+}
+
+.radio {
+    font-size: inherit;
+    margin: 0;
+    position: absolute;
+    right: calc(var(--card-padding) + var(--radio-border-width));
+    top: calc(var(--card-padding) + var(--radio-border-width));
+}
+
+
+.next_btn{
+    display: flex;
+    justify-content: end;
+}
+
+@supports (-webkit-appearance: none) or (-moz-appearance: none) {
+    .radio {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        background: #fff;
+        border: var(--radio-border-width) solid var(--color-gray);
+        border-radius: 50%;
+        cursor: pointer;
+        height: var(--radio-size);
+        outline: none;
+        transition: background 0.2s ease-out, border-color 0.2s ease-out;
+        width: var(--radio-size);
+    }
+
+    
+
+    .radio::after {
+        border: var(--radio-border-width) solid #fff;
+        border-top: 0;
+        border-left: 0;
+        content: '';
+        display: block;
+        height: 0.75rem;
+        left: 25%;
+        position: absolute;
+        top: 50%;
+        transform: rotate(45deg) translate(-50%, -50%);
+        width: 0.375rem;
+    }
+
+    .radio:checked {
+        background: var(--color-green);
+        border-color: var(--color-green);
+    }
+
+    .radio:checked .card {
+        border: #558309 2px solid;
+    }
+
+    
+    label.card.join2_box1.first_card input[type="radio"]:not(:checked) + .card-body {
+        border: 3px solid var(--card-body-border);
+        border-radius: 8px;
+        color: var(--join-card-text);
+      }
+
+    label.card.join2_box2.second_card input[type="radio"]:not(:checked) + .card-body {
+        border: 3px solid var(--card-body-border);
+        border-radius: 8px;
+        color: var(--join-card-text);
+      }
+      
+    label.card.join2_box1.first_card input[type="radio"]:checked + .card-body {
+        border: 3px solid var(--card-border-check);
+        border-radius: 8px !important;
+        color: var(--card-text-check);
+        font-weight: 600;
+        background-color: var(--card-body-check);
+      }
+
+    label.card.join2_box2.second_card input[type="radio"]:checked + .card-body {
+        border: 3px solid var(--card-border-check);
+        border-radius: 8px !important;
+        color: var(--card-text-check);
+        font-weight: 600;
+        background-color: var(--card-body-check);
+      }
+      
+      
+
+    .card:hover .radio {
+        border-color: var(--color-dark-gray);
+    }
+
+    .card:hover .radio:checked {
+        border: var(--color-green) 2px solid;
+    }
+}
+
+
+
+
+/* ----------------------------------------------------------m-quary---------------------------------------------------------------------------- 
+------------------------------------------------------------------------------------------------------------------------------------------------*/
+@media screen and (max-width: 480px) {
+    .main {
+        display: flex;
+        flex-direction: column;
+    }
+    .join1 {
+        width: 100%;
+        background-color: #112A3F;
+        height: 100px;
+    }
+    .join2 {
+        width: 100%;
+    }
+    .join2_box1{
+        margin-top: 20px;
+        width: 100%;
+        height: 130px;
+    }
+    .join2_box2{
+        margin-top: 20px;
+        width: 100%;
+        height: 130px;
+    }
+    .join_text{
+        margin-top: 20px
+    }
+    .join1_txt{
+        margin-top: 20px
+    }
+    .img_grp{
+        width:45%;
+        height: 50px;
+    }
+    .next_btn{
+
+        display: flex;
+        justify-content: center;
+    }
+    .card-text{
+        margin-left: 10px;
+    }
+}
+
+/* Styles for screens with a width between 481px and 768px */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    .join2_box1 {
+        height: 100px;
+        width: 100%;
+        font-family: 'Arial Unicode MS';
+    }
+    
+    .join2_box2 {
+        width: 100%;
+        height: 100px;
+        font-family: 'Arial Unicode MS';
+    }
+    .join_text{
+        margin-top: 250px;
+    }
+    .card-text{
+        margin-left: 10px;
+    }
+    
+   
+}
+
+/* Styles for screens with a width between 769px and 1024px */
+@media screen and (min-width: 769px) and (max-width: 1023px) {
+    .join2_box1 {
+        height: 100px;
+        width: 100%;
+        font-family: 'Arial Unicode MS';
+    }
+    .join2_box2 {
+        width: 100%;
+        height: 100px;
+        font-family: 'Arial Unicode MS';
+    }
+    .join_text{
+        margin-top: 250px;
+    }
+}
+
+/* Styles for screens with a width between 1025px and 1440px */
+@media screen and (min-width: 1024px) and (max-width: 1440px) {
+    .join2_box1 {
+        height: 100px;
+        width: 100%;
+        font-family: 'Arial Unicode MS';
+    }
+   
+    .join2_box2 {
+        width: 100%;
+        height: 100px;
+        font-family: 'Arial Unicode MS';
+    }
+    .join_text{
+        margin-top: 250px;
+    }
+}
+
+/* Styles for screens with a width of 1441px or higher */
+@media screen and (min-width: 1441px) {
+
+
+    .join2_box1 {
+        height: 100px;
+        width: 100%;
+        font-family: 'Arial Unicode MS';
+    }
+    .join2_box2 {
+        width: 100%;
+        height: 100px;
+        font-family: 'Arial Unicode MS';
+    }
+    .join_text{
+        margin-top: 200px;
+    }
+
+
+}
