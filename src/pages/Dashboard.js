@@ -14,7 +14,7 @@ import {
 } from '../Redux/Actions/CategoryAction';
 import MonthStats from '../components/Dashboard/MonthStats';
 import UnfoldLessIcon from '@mui/icons-material/UnfoldLess';
-import { Box } from '@mui/material';
+import { Box, Skeleton } from '@mui/material';
 import SideBar from '../components/Dashboard/Sidebar/SideBar';
 import Schedule from '../components/Dashboard/Schedule';
 import { useNavigate } from 'react-router-dom';
@@ -62,6 +62,7 @@ const Dashboard = (props) => {
   const monthData = useSelector((state) => state.Category.monthStats);
   const status = useSelector((state) => state.Calender.statusSeen);
   const [placeConfetti, setPlaceConfetti] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   const handleStatsOpen = () => {
     setStatsOpen(!statsOpen);
@@ -110,10 +111,13 @@ const Dashboard = (props) => {
         style={{
           paddingTop: 65,
           height: '100vh',
-          minWidth: '60%'
+          display: 'flex',
+          flexDirection: 'column',
+          overflowY: 'hidden',
+          flexGrow: '1'
           // overflowY: openSidebar && 'hidden'
         }}
-        className="w-100 position-relative"
+        className="position-relative"
       >
         {placeConfetti && (
           <div>
@@ -139,88 +143,110 @@ const Dashboard = (props) => {
         </div>
         <div style={{ padding: '15px 0 10px 50px' }}>
           <div className="d-flex gap-5">
-            <div>
-              <img
-                src={mode === 'light' ? FilterLight : FilterDark}
-                onClick={() => handleFilterSidebar()}
-                className={`cursor-pointer ${
-                  !openFilter && mode === 'light' ? 'fade-out' : ''
-                }`}
-              />
-            </div>
-            <div>
-              <div
-                className={`position-relative ${
-                  openCalender === true
-                    ? 'calender-icon-highlight'
-                    : 'calender-icon'
-                }`}
-              >
-                <svg
-                  onClick={() => handleCalender()}
-                  className="position-relative cursor-pointer"
-                  width="24px"
-                  height="24px"
-                  viewBox="0 0 24 24"
-                  version="1.1"
-                  xmlns="http://www.w3.org/2000/svg"
-                  xmlnsXlink="http://www.w3.org/1999/xlink"
-                >
-                  <title>calendar / calendar_check</title>
-                  <defs>
-                    <rect id="path-1" x="0" y="0" width="24" height="24"></rect>
-                  </defs>
-                  <g
-                    id="Symbols"
-                    stroke="none"
-                    stroke-width="1"
-                    fill="none"
-                    fill-rule="evenodd"
-                  >
-                    <g id="calendar-/-calendar_check">
-                      <mask id="mask-2" fill="white">
-                        <use xlinkHref="#path-1"></use>
-                      </mask>
-                      <g id="calendar-/-calendar_check-(Background/Mask)"></g>
-                      <path
-                        d="M16.7070007,12.7070312 L15.2929993,11.2930298 L11,15.5860291 L8.70699883,13.2930298 L7.29299927,14.7070312 L11,18.414032 L16.7070007,12.7070312 Z M19,4 L17,4 L17,2 L15,2 L15,4 L9,4 L9,2 L7,2 L7,4 L5,4 C3.89699984,4 3,4.89699984 3,6 L3,20 C3,21.1030006 3.89699984,22 5,22 L19,22 C20.1030006,22 21,21.1030006 21,20 L21,6 C21,4.89699984 20.1030006,4 19,4 L19,4 Z M19.0020008,20 L5,20 L5,10 L19,10 L19.0020008,20 L19.0020008,20 Z M19.0002861,8 L19,6 L5,6 L5,8 L19.0002861,8 L19.0002861,8 Z"
-                        fill="#2E3A59"
-                        mask="url(#mask-2)"
-                      ></path>
-                    </g>
-                  </g>
-                </svg>
-                {Object.keys(status)?.length > 0 && !status?.seen && (
-                  <div
-                    className="position-absolute"
-                    style={{ bottom: -3, right: -2 }}
-                  >
-                    <FiberManualRecordIcon
-                      sx={{ height: 13, width: 13, color: '#FF6818' }}
-                    />
-                  </div>
-                )}
+            {loading ? (
+              <Skeleton width={28} height={28} variant="rounded" />
+            ) : (
+              <div>
+                <img
+                  src={mode === 'light' ? FilterLight : FilterDark}
+                  onClick={() => handleFilterSidebar()}
+                  className={`cursor-pointer ${
+                    !openFilter && mode === 'light' ? 'fade-out' : ''
+                  }`}
+                />
               </div>
-              {/* <img
+            )}
+            {loading ? (
+              <Skeleton width={28} height={28} variant="rounded" />
+            ) : (
+              <div>
+                <div
+                  className={`position-relative ${
+                    openCalender === true
+                      ? 'calender-icon-highlight'
+                      : 'calender-icon'
+                  }`}
+                >
+                  <svg
+                    onClick={() => handleCalender()}
+                    className="position-relative cursor-pointer"
+                    width="24px"
+                    height="24px"
+                    viewBox="0 0 24 24"
+                    version="1.1"
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlnsXlink="http://www.w3.org/1999/xlink"
+                  >
+                    <title>calendar / calendar_check</title>
+                    <defs>
+                      <rect
+                        id="path-1"
+                        x="0"
+                        y="0"
+                        width="24"
+                        height="24"
+                      ></rect>
+                    </defs>
+                    <g
+                      id="Symbols"
+                      stroke="none"
+                      stroke-width="1"
+                      fill="none"
+                      fill-rule="evenodd"
+                    >
+                      <g id="calendar-/-calendar_check">
+                        <mask id="mask-2" fill="white">
+                          <use xlinkHref="#path-1"></use>
+                        </mask>
+                        <g id="calendar-/-calendar_check-(Background/Mask)"></g>
+                        <path
+                          d="M16.7070007,12.7070312 L15.2929993,11.2930298 L11,15.5860291 L8.70699883,13.2930298 L7.29299927,14.7070312 L11,18.414032 L16.7070007,12.7070312 Z M19,4 L17,4 L17,2 L15,2 L15,4 L9,4 L9,2 L7,2 L7,4 L5,4 C3.89699984,4 3,4.89699984 3,6 L3,20 C3,21.1030006 3.89699984,22 5,22 L19,22 C20.1030006,22 21,21.1030006 21,20 L21,6 C21,4.89699984 20.1030006,4 19,4 L19,4 Z M19.0020008,20 L5,20 L5,10 L19,10 L19.0020008,20 L19.0020008,20 Z M19.0002861,8 L19,6 L5,6 L5,8 L19.0002861,8 L19.0002861,8 Z"
+                          fill="#2E3A59"
+                          mask="url(#mask-2)"
+                        ></path>
+                      </g>
+                    </g>
+                  </svg>
+                  {Object.keys(status)?.length > 0 && !status?.seen && (
+                    <div
+                      className="position-absolute"
+                      style={{ bottom: -3, right: -2 }}
+                    >
+                      <FiberManualRecordIcon
+                        sx={{ height: 13, width: 13, color: '#FF6818' }}
+                      />
+                    </div>
+                  )}
+                </div>
+                {/* <img
                 src={mode === 'light' ? CalenderLight : CalenderDark}
                 onClick={() => handleCalender()}
                 className="cursor-pointer"
               /> */}
-            </div>
-            <div>
-              <img
-                src={mode === 'light' ? PlusSquareLight : PlusSquareDark}
-                onClick={() => navigate('/jobdetail')}
-                className="cursor-pointer"
-              />
-            </div>
-            <div>
-              <img
-                src={mode === 'light' ? CalendlyLight : CalendlyDark}
-                className="cursor-pointer"
-                onClick={() => setOpenCalendly(true)}
-              />
-            </div>
+              </div>
+            )}
+            {loading ? (
+              <Skeleton width={28} height={28} variant="rounded" />
+            ) : (
+              <div>
+                <img
+                  src={mode === 'light' ? PlusSquareLight : PlusSquareDark}
+                  onClick={() => navigate('/jobdetail')}
+                  className="cursor-pointer"
+                />
+              </div>
+            )}
+            {loading ? (
+              <Skeleton width={28} height={28} variant="rounded" />
+            ) : (
+              <div>
+                <img
+                  src={mode === 'light' ? CalendlyLight : CalendlyDark}
+                  className="cursor-pointer"
+                  onClick={() => setOpenCalendly(true)}
+                />
+              </div>
+            )}
           </div>
           {openCalender && <Schedule />}
         </div>
@@ -230,6 +256,7 @@ const Dashboard = (props) => {
           openFilter={openFilter}
           setOpenFilter={setOpenFilter}
           setPlaceConfetti={setPlaceConfetti}
+          setLoading={setLoading}
         />
         {isVisible == 'true' && (
           <div style={source}>

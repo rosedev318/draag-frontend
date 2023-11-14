@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 import { DragDropContext, DndContext, Droppable } from 'react-beautiful-dnd';
 import initialData, { demo } from './data';
 import Column from './Column';
-import { Box, Button, Popover, Typography } from '@mui/material';
+import { Box, Button, Popover, Skeleton, Typography } from '@mui/material';
 import Input from '../../input/Input';
 import {
   addJobs,
@@ -26,9 +26,7 @@ import { userContext } from '../../../context/UserContext';
 
 const Container = styled('div')`
   display: flex;
-  width: 100%;
-  min-width: 60%;
-  // overflow-x: scroll;
+  width: ${(props) => (props.isLoading ? '100%' : '')};
   background-color: ${(props) => (props.isDraggingOver ? '' : '')};
 `;
 
@@ -37,7 +35,8 @@ const ListTitle = styled('div')`
 `;
 
 const Maindrag = (props) => {
-  const { openSidebar, setOpenSidebar, openFilter, setOpenFilter } = props;
+  const { openSidebar, setOpenSidebar, openFilter, setOpenFilter, setLoading } =
+    props;
   const initialValues = { category: '' };
   const [formValues, setFormValues] = useState(initialValues);
   const [isSubmit, setIsSubmit] = useState(false);
@@ -311,6 +310,7 @@ const Maindrag = (props) => {
       }
     }
     setStarter({ columns, columnOrder, jobs });
+    if (columnOrder.length) setLoading(false);
   }, [Success, changes]);
 
   const jobsData = Object.values(starter.jobs);
@@ -418,87 +418,111 @@ const Maindrag = (props) => {
       </div>
 
       <div
-        style={{ overflowX: 'scroll', display: 'flex', paddingLeft: '40px' }}
+        style={{
+          overflow: 'auto',
+          display: 'flex',
+          paddingLeft: '40px',
+          width: '100%',
+          height: '100%'
+        }}
       >
-        <div>
-          <Droppable
-            droppableId="all-column"
-            type="column"
-            direction="horizontal"
-          >
-            {(provided, snapshot) => (
-              <Container
-                isDraggingOver={snapshot.isDraggingOver}
-                {...provided.droppableProps}
-                ref={provided.innerRef}
-              >
-                {starter?.columnOrder?.map((columnId, index) => {
-                  const column = starter?.columns[columnId];
-                  const jobs = column?.jobs?.map(
-                    (taskId) => starter?.jobs?.[taskId]
-                  );
-                  return (
-                    <Column
-                      index={index}
-                      key={column.id}
-                      column={column}
-                      jobs={jobs}
-                      setJobId={setJobId}
-                      hover={hover}
-                      jobId={jobId}
-                      ratings={ratings}
-                      statusap={statusap}
-                    />
-                  );
-                })}
-                {provided.placeholder}
-              </Container>
-            )}
-          </Droppable>
-        </div>
-        <div>
-          <div className="addlist-title mt-2" onClick={handleClick}>
-            + Add another List
-          </div>
-          <Popover
-            style={{ top: '40px' }}
-            open={open}
-            anchorEl={anchorEl}
-            onClose={handleClose}
-            anchorOrigin={{
-              horizontal: 'left',
-              vertical: 'top'
+        <Droppable
+          droppableId="all-column"
+          type="column"
+          direction="horizontal"
+        >
+          {(provided, snapshot) => (
+            <Container
+              isLoading={!starter?.columnOrder.length}
+              isDraggingOver={snapshot.isDraggingOver}
+              {...provided.droppableProps}
+              ref={provided.innerRef}
+            >
+              {!starter?.columnOrder.length
+                ? new Array(5)
+                    .fill(0)
+                    .map((value, index) => (
+                      <Skeleton
+                        key={index}
+                        variant="rounded"
+                        sx={{ width: '20%', height: '95%', margin: '8px' }}
+                      />
+                    ))
+                : starter?.columnOrder?.map((columnId, index) => {
+                    const column = starter?.columns[columnId];
+                    const jobs = column?.jobs?.map(
+                      (taskId) => starter?.jobs?.[taskId]
+                    );
+                    return (
+                      <Column
+                        index={index}
+                        key={column.id}
+                        column={column}
+                        jobs={jobs}
+                        setJobId={setJobId}
+                        hover={hover}
+                        jobId={jobId}
+                        ratings={ratings}
+                        statusap={statusap}
+                      />
+                    );
+                  })}
+              {provided.placeholder}
+            </Container>
+          )}
+        </Droppable>
+        {starter?.columnOrder.length ? (
+          <div
+            style={{
+              flexShrink: '0',
+              width: '315px'
             }}
           >
-            <Typography sx={{ p: 2 }}>
-              <Input
-                type="text"
-                name="category"
-                className="w-100"
-                error={formErrors.category}
-                helperText={formErrors.category}
-                value={formValues.category}
-                onChange={handleChange}
-                size="small"
-                label={formErrors.category ? 'Category' : 'Category'}
-              />
-              <Button
-                className="mt-2"
-                variant="contained"
-                onClick={() => addCategory()}
-              >
-                Add
-              </Button>
-              <Button
-                onClick={() => handleClose()}
-                className="mt-2 mx-2"
-                variant="contained"
-              >
-                Cancel
-              </Button>
-            </Typography>
-          </Popover>
-        </div>
+            <div className="addlist-title mt-2 w-full" onClick={handleClick}>
+              + Add another List
+            </div>
+            <Popover
+              style={{ top: '40px' }}
+              open={open}
+              anchorEl={anchorEl}
+              onClose={handleClose}
+              anchorOrigin={{
+                horizontal: 'left',
+                vertical: 'top'
+              }}
+            >
+              <Typography sx={{ p: 2 }}>
+                <Input
+                  type="text"
+                  name="category"
+                  className="w-100"
+                  error={formErrors.category}
+                  helperText={formErrors.category}
+                  value={formValues.category}
+                  onChange={handleChange}
+                  size="small"
+                  label={formErrors.category ? 'Category' : 'Category'}
+                />
+                <Button
+                  className="mt-2"
+                  variant="contained"
+                  onClick={() => addCategory()}
+                >
+                  Add
+                </Button>
+                <Button
+                  onClick={() => handleClose()}
+                  className="mt-2 mx-2"
+                  variant="contained"
+                >
+                  Cancel
+                </Button>
+              </Typography>
+            </Popover>
+          </div>
+        ) : (
+          <></>
+        )}
       </div>
     </DragDropContext>
   );

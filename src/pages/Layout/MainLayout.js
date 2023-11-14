@@ -38,7 +38,8 @@ import {
   Popover,
   Divider,
   FormControlLabel,
-  Switch
+  Switch,
+  Skeleton
 } from '@mui/material';
 import Accounts from '../../components/Sidebar/Accounts';
 import Logo from '../../components/Sidebar/Logo';
@@ -418,21 +419,39 @@ function MainLayout(props) {
             className="d-flex justify-content-center gap-1 ms-auto align-items-center header-text"
             style={{ paddingLeft: '24px', width: 'max-content' }}
           >
-            {users?.slice(0, 2).map((user, index) => {
-              return <NavbarUser user={user} key={index} index={index} />;
-            })}
+            {users.length
+              ? users?.slice(0, 2).map((user, index) => {
+                  return <NavbarUser user={user} key={index} index={index} />;
+                })
+              : new Array(2).fill(0).map((value, index) => (
+                  <>
+                    <Skeleton width={40} height={40} variant="circular" />
+                    <div className="flex">
+                      <Skeleton width={150}>
+                        <Typography>.</Typography>
+                      </Skeleton>
+                      <Skeleton width={100}>
+                        <Typography>.</Typography>
+                      </Skeleton>
+                    </div>
+                  </>
+                ))}
 
             <div className="d-flex gap-2" style={{ paddingLeft: '20px' }}>
-              {users.slice(3, 5).map((e, index) => {
-                return (
-                  <Avatar
-                    key={index}
-                    sx={{ width: 30, height: 30 }}
-                    src={e?.profileImageUrl}
-                  />
-                );
-              })}
-              {users?.length > 2 && (
+              {users.length ? (
+                users.slice(3, 5).map((e, index) => {
+                  return (
+                    <Avatar
+                      key={index}
+                      sx={{ width: 30, height: 30 }}
+                      src={e?.profileImageUrl}
+                    />
+                  );
+                })
+              ) : (
+                <></>
+              )}
+              {users?.length > 2 ? (
                 <Avatar
                   ref={divRef}
                   onClick={(e) => handleOpen(e)}
@@ -445,7 +464,15 @@ function MainLayout(props) {
                 >
                   +{users?.length - 4}
                 </Avatar>
+              ) : (
+                <></>
               )}
+              {users.length === 0 &&
+                new Array(3).fill(0).map((value, index) => (
+                  <>
+                    <Skeleton width={30} height={30} variant="circular" />
+                  </>
+                ))}
             </div>
           </div>
           <Typography
@@ -491,9 +518,17 @@ function MainLayout(props) {
             <div
               className="btn"
               onClick={(e) => handleClick(e)}
-              style={{ width: 'max-content' }}
+              style={{ width: 'max-content', display: 'flex' }}
             >
-              <span className="nav-username">{user?.fullName}</span>
+              <span className="nav-username">
+                {user?.fullName ? (
+                  user?.fullName
+                ) : (
+                  <Skeleton width={100} height={25}>
+                    <Typography>.</Typography>
+                  </Skeleton>
+                )}
+              </span>
               <img src={DownArrow} className="px-1" />
             </div>
             <Popover
