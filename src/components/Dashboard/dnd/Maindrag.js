@@ -26,7 +26,7 @@ import { userContext } from '../../../context/UserContext';
 
 const Container = styled('div')`
   display: flex;
-  align-items: baseline;
+  align-items: flex-start;
   width: ${(props) => (props.isLoading ? '100%' : '')};
   background-color: ${(props) => (props.isDraggingOver ? '' : '')};
 `;
