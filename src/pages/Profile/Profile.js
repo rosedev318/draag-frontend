@@ -491,9 +491,9 @@ const Profile = () => {
                                     <g
                                       id="Symbols"
                                       stroke="none"
-                                      stroke-width="1"
+                                      strokeWidth="1"
                                       fill="none"
-                                      fill-rule="evenodd"
+                                      fillRule="evenodd"
                                     >
                                       <g id="basic-/-phone">
                                         <mask id="mask-2" fill="white">
@@ -534,9 +534,9 @@ const Profile = () => {
                                     <g
                                       id="Symbols"
                                       stroke="none"
-                                      stroke-width="1"
+                                      strokeWidth="1"
                                       fill="none"
-                                      fill-rule="evenodd"
+                                      fillRule="evenodd"
                                     >
                                       <g id="edit-/-copy">
                                         <mask id="mask-2" fill="white">

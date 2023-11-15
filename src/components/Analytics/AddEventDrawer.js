@@ -43,22 +43,7 @@ const AddEventDrawer = (props) => {
           you need to avoid in your journey.
         </Box>
         <Box sx={{marginTop: '16px'}}>
-          <RadioGroup
-            defaultValue="female"
-            name="radio-buttons-group"
-          >
-            <FormControlLabel className='ml-0 underlined' value="female" control={<Radio className='px-0 mr-8px' />} label="Fb campain" />
-            <FormControlLabel className='ml-0 underlined' value="male" control={<Radio className='px-0 mr-8px' />} label="Mass message - Putney" />
-            <FormControlLabel className='ml-0 underlined' value="other" control={<Radio className='px-0 mr-8px' />} label="Mario Festival stall day 1" />
-          </RadioGroup>
         </Box>
-        <TextField
-          className='w-100 mt-16px'
-          multiline
-          rows={3}
-          variant="outlined"
-          placeholder='Notes'
-        />
         <Box className="mt-16px">
           <DatePicker label="Add date" />
         </Box>

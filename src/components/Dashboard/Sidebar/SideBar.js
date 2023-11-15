@@ -185,7 +185,7 @@ const SideBar = (props) => {
                                     ref={provided.innerRef}
                                     {...provided.dragHandleProps}
                                     {...provided.draggableProps}
-                                    isdragging={snapshot.isDragging}
+                                    isdragging={snapshot.isDragging ? 'true' : 'false'}
                                   >
                                     <Avatar
                                       src={item?.photo}

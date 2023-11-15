@@ -59,7 +59,7 @@ const NotificationIcon = ({ notificationType }) => {
               stroke="none"
               stroke-width="1"
               fill="none"
-              fill-rule="evenodd"
+              fillRule="evenodd"
             >
               <g id="basic-/-label">
                 <mask id="mask-2" fill="white">
