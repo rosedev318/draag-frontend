@@ -168,6 +168,8 @@ const Dashboard = (props) => {
             ) : (
               <div>
                 <img
+                  width={28}
+                  height={28}
                   src={mode === 'light' ? FilterLight : FilterDark}
                   onClick={() => handleFilterSidebar()}
                   className={`cursor-pointer ${
@@ -250,6 +252,8 @@ const Dashboard = (props) => {
             ) : (
               <div>
                 <img
+                  width={28}
+                  height={28}
                   src={mode === 'light' ? PlusSquareLight : PlusSquareDark}
                   onClick={() => navigate('/jobdetail')}
                   className="cursor-pointer"
@@ -261,6 +265,8 @@ const Dashboard = (props) => {
             ) : (
               <div>
                 <img
+                  width={28}
+                  height={28}
                   src={mode === 'light' ? CalendlyLight : CalendlyDark}
                   className="cursor-pointer"
                   onClick={() => setOpenCalendly(true)}
