@@ -83,7 +83,7 @@ const MonthStats = (props) => {
 
   return (
     <div>
-      <div className="px-5 py-4">
+      <div className="px-5 pt-4 pb-5">
         <div className="row">
           {Data?.length > 0 &&
             Data.map((e, index) => {

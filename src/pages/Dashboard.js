@@ -143,9 +143,12 @@ const Dashboard = (props) => {
             >
               <div
                 className="state-text px-5 mx-2"
-                style={{ fontSize: '15px', lineHeight: '30px' }}
+                style={{
+                  fontSize: '15px',
+                  lineHeight: '30px'
+                }}
               >
-                Monthly Stats
+                Monthly stats
               </div>
               <div
                 className="coll-icon text-white px-3 cursor-pointer"
