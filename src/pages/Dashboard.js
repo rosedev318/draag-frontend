@@ -2,7 +2,8 @@ import React from 'react';
 import './Dashboard.css';
 
 import Expand from '../Images/expand.svg';
-import Collapse from '../Images/shrink.svg';
+import CollapseImage from '../Images/shrink.svg';
+import Collapse from '@mui/material/Collapse';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import ConfettiExplosion from 'react-confetti-explosion';
@@ -126,20 +127,36 @@ const Dashboard = (props) => {
             </div>
           </div>
         )}
-        <div className={`${statsOpen ? 'topcard' : 'topcard-small'}`}>
-          <div
-            className="d-flex justify-content-between align-items-center"
-            style={{ paddingTop: '11px' }}
+        <div style={{ maxHeight: '100vh' }}>
+          <Collapse
+            orientation="vertical"
+            in={statsOpen}
+            collapsedSize={50}
+            sx={{
+              backgroundColor: '#008BFF'
+            }}
           >
-            <div className="state-text mx-4">Monthly stats</div>
+            {/* <div className={!statsOpen ? 'topcard-small' : 'topcard'}> */}
             <div
-              className="coll-icon text-white px-3 cursor-pointer"
-              onClick={() => handleStatsOpen()}
+              className="d-flex justify-content-between align-items-center"
+              style={{ paddingTop: '11px' }}
             >
-              {statsOpen ? <img src={Collapse} /> : <img src={Expand} />}
+              <div
+                className="state-text px-5 mx-2"
+                style={{ fontSize: '15px', lineHeight: '30px' }}
+              >
+                Monthly Stats
+              </div>
+              <div
+                className="coll-icon text-white px-3 cursor-pointer"
+                onClick={() => handleStatsOpen()}
+              >
+                {statsOpen ? <img src={CollapseImage} /> : <img src={Expand} />}
+              </div>
             </div>
-          </div>
-          {statsOpen && <MonthStats monthData={monthData} />}
+            {<MonthStats monthData={monthData} />}
+            {/* </div> */}
+          </Collapse>
         </div>
         <div style={{ padding: '15px 0 10px 50px' }}>
           <div className="d-flex gap-5">
