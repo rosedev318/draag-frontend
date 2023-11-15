@@ -26,6 +26,7 @@ import { userContext } from '../../../context/UserContext';
 
 const Container = styled('div')`
   display: flex;
+  align-items: baseline;
   width: ${(props) => (props.isLoading ? '100%' : '')};
   background-color: ${(props) => (props.isDraggingOver ? '' : '')};
 `;
@@ -443,6 +444,7 @@ const Maindrag = (props) => {
                     .fill(0)
                     .map((value, index) => (
                       <Skeleton
+                        animation="wave"
                         key={index}
                         variant="rounded"
                         sx={{ width: '20%', height: '95%', margin: '8px' }}
