@@ -175,16 +175,17 @@ const SideBar = (props) => {
                               isdragging="true"
                               key={index}
                               draggable="true"
+                              shouldRespectForcePress
                             >
-                              {(provided, snapshot) => (
-                                <>
+                              {(provided, snapshot) => {
+                                return (
                                   <div
-                                    className="d-flex gap-2 align-items-center"
+                                    className={`d-flex gap-2 align-items-center bg-white flex-1`}
                                     onClick={() => handleOpen(item?.id)}
                                     ref={provided.innerRef}
                                     {...provided.dragHandleProps}
                                     {...provided.draggableProps}
-                                    isdragging={snapshot.isDragging}
+                                    isdragging={snapshot.isDragging ? 'true' : 'false'}
                                   >
                                     <Avatar
                                       src={item?.photo}
@@ -196,22 +197,24 @@ const SideBar = (props) => {
                                     >
                                       {item.firstName}
                                     </div>
-                                    <div
-                                      className="d-flex justify-content-end"
-                                      style={{
-                                        position: 'absolute',
-                                        right: '20px'
-                                      }}
-                                    >
-                                      <RemoveRedEyeOutlinedIcon
-                                        style={{ color: 'lightgrey' }}
-                                        className="fs-4 cursor-pointer"
-                                        onClick={() => handleOpen(item?.id)}
-                                      />
-                                    </div>
+                                    {snapshot.isDragging &&
+                                      <div
+                                        className="d-flex justify-content-end"
+                                        style={{
+                                          position: 'absolute',
+                                          right: '20px'
+                                        }}
+                                      >
+                                        <RemoveRedEyeOutlinedIcon
+                                          style={{ color: 'lightgrey' }}
+                                          className="fs-4 cursor-pointer"
+                                          onClick={() => handleOpen(item?.id)}
+                                        />
+                                      </div>
+                                    }
                                   </div>
-                                </>
-                              )}
+                                )
+                              }}
                             </Draggable>
                           </div>
                         </div>

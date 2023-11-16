@@ -2,6 +2,7 @@ import * as actionTypes from '../Actions/ActionTypes';
 
 const initialState = {
   metrics: {},
+  events: {},
   top_area_candidate: {},
   top_area_client: {},
   complete_client: {},
@@ -15,6 +16,17 @@ const initialState = {
 
 const store = (state = initialState, action) => {
   switch (action.type) {
+    case actionTypes.EVENTS_SUCCESS:
+      return {
+        ...state,
+        events: action.payload,
+      };
+    case actionTypes.CREATE_EVENT:
+      console.log("log in store", state, action.payload);
+      return {
+        ...state,
+        events: action.payload,
+      };
     case actionTypes.METRICS_INIT:
       return {
         ...state,

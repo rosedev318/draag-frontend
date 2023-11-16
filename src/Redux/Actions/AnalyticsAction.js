@@ -2,6 +2,69 @@ import axios from 'axios';
 import * as actionTypes from './ActionTypes';
 import { toast } from 'react-toastify';
 
+export const createEvent = (payload) => (dispatch) => {
+  return new Promise((resolve, reject) => {
+    const token = localStorage.getItem('authtoken');
+    axios
+      .post(
+        `/api/chart-event-notes/bulk`, 
+        payload,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`
+          }
+        }
+      )
+      .then((res) => {
+        if (res.data && res.status == '200') {
+          resolve(res.data);
+          toast.success('Events Created Successfully', { autoClose: 1500 });
+        }
+      })
+      .catch((err) => {
+        if (err?.response?.status == '401') {
+          localStorage.clear();
+          window.location.replace(window.location.origin);
+        }
+        
+        toast.error(err.response.data.message, { autoClose: 1500 });
+      });
+  });
+};
+
+export const getEvents = (payload) => (dispatch) => {
+  return new Promise((resolve, reject) => {
+    const token = localStorage.getItem('authtoken');
+    axios
+      .get(
+        `/api/chart-event-notes`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`
+          }
+        },
+        payload
+      )
+      .then((res) => {
+        if (res.data && res.status == '200') {
+          dispatch({
+            type: actionTypes.EVENTS_SUCCESS,
+            payload: res.data
+          });
+          resolve(res);
+        }
+      })
+      .catch((err) => {
+        console.log('err', err);
+        if (err?.response?.status == '401') {
+          localStorage.clear();
+          window.location.replace(window.location.origin);
+        }
+        toast.error(err?.response?.statusText, { autoClose: 1500 });
+      });
+  });
+};
+
 export const getMetrics = (startdate, enddate, payload) => (dispatch) => {
   return new Promise((resolve, reject) => {
     dispatch({

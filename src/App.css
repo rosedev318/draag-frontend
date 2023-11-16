@@ -54,3 +54,58 @@
   outline: 0 !important;
   outline-offset: 0 !important;
 }
+
+.flex-1 {
+  flex: 1 !important;
+}
+
+.bg-white {
+  background-color: white !important;
+}
+
+.bg-light-gray {
+  background-color: #eeeeee !important;
+}
+
+.lh-42px {
+  line-height: 42px !important;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.ml-8px {
+  margin-left: 8px !important;
+}
+
+.text-unset {
+  text-transform: unset !important;
+}
+
+.flex-row-reverse {
+  flex-direction: row-reverse !important;
+}
+
+.mx-m-9px {
+  margin-left: -9px !important;
+  margin-right: -9px !important;
+}
+
+.mt-10px {
+  margin-top: 10px !important;
+}
+
+.mx-m-8px {
+  margin-left: -8px !important;
+  margin-right: -8px !important;
+}
+
+.py-8px {
+  padding-top: 8px !important;
+  padding-bottom: 8px !important;
+}
+
+.mt-8px {
+  margin-top: 8px !important;
+}

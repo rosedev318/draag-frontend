@@ -316,7 +316,21 @@ const Maindrag = (props) => {
 
   const jobsData = Object.values(starter.jobs);
 
+  const onDragStart = start => {
+    const el = document.getElementById(start.draggableId);
+    if (el) {
+      el.style.position = 'fixed';
+      el.style.zIndex = 50;
+    }
+  };
+
   const onDragEnd = ({ destination, source, draggableId, type }) => {
+    const el = document.getElementById(draggableId);
+    if (el) {
+      el.style.position = '';
+      el.style.zIndex = '';
+    }
+    
     if (type == 'nanny' && jobId !== undefined) {
       dispatch(createAssignment(jobId, draggableId)).then((res) => {
         if (res.status == '200') {

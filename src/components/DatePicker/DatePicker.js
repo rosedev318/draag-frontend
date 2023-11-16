@@ -8,24 +8,23 @@ import './DatePicker.css';
 import moment from 'moment';
 
 const DatePicker = (props) => {
-  const { label } = props;
+  const { label, value, onChange } = props;
   const [anchorEl, setAnchorEl] = useState(null);
   const [pickerVisible, setPickerVisible] = useState(false);
-  const [value, setValue] = useState("");
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
   const handleClose = (val) => {
     if (val) {
-        setValue(val);
+        onChange(val);
     }
     setPickerVisible(false);
     setAnchorEl(null);
   };
   const handleChange = (val, state) => {
     if(state == 'finish') {
-        setValue(moment(val.$d).format('MM/DD/YYYY'));
+        onChange(moment(val.$d).format('MM/DD/YYYY'));
         setAnchorEl(null);
         setPickerVisible(false);
     }
@@ -38,8 +37,8 @@ const DatePicker = (props) => {
     <>
         <Button
             variant="text"
-            sx={{ color: '#262525', backgroundColor: '#e2e8f0', textTransform: 'unset' }}
-            className='btn-gray mt-2'
+            sx={{ color: '#262525', backgroundColor: '#e2e8f0', textTransform: 'unset', marginTop: '8px' }}
+            className='btn-gray'
             onClick={handleClick}
         >
             <CalendarMonth sx={{ color: '#0B66E4', marginRight: '6px' }} />{ value ? value : label }
