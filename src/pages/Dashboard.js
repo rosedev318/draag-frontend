@@ -111,11 +111,10 @@ const Dashboard = (props) => {
       <div
         style={{
           paddingTop: 65,
-          height: '100vh',
           display: 'flex',
           flexDirection: 'column',
-          overflowY: 'hidden',
-          flexGrow: '1'
+          flexGrow: '1',
+          height: '100vh'
           // overflowY: openSidebar && 'hidden'
         }}
         className="position-relative"
@@ -168,6 +167,8 @@ const Dashboard = (props) => {
             ) : (
               <div>
                 <img
+                  width={28}
+                  height={28}
                   src={mode === 'light' ? FilterLight : FilterDark}
                   onClick={() => handleFilterSidebar()}
                   className={`cursor-pointer ${
@@ -250,6 +251,8 @@ const Dashboard = (props) => {
             ) : (
               <div>
                 <img
+                  width={28}
+                  height={28}
                   src={mode === 'light' ? PlusSquareLight : PlusSquareDark}
                   onClick={() => navigate('/jobdetail')}
                   className="cursor-pointer"
@@ -261,6 +264,8 @@ const Dashboard = (props) => {
             ) : (
               <div>
                 <img
+                  width={28}
+                  height={28}
                   src={mode === 'light' ? CalendlyLight : CalendlyDark}
                   className="cursor-pointer"
                   onClick={() => setOpenCalendly(true)}

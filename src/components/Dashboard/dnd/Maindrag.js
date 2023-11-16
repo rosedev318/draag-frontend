@@ -434,11 +434,10 @@ const Maindrag = (props) => {
 
       <div
         style={{
-          overflow: 'auto',
           display: 'flex',
           paddingLeft: '40px',
-          width: '100%',
-          height: '100%'
+          flexGrow: '1',
+          overflowX: 'auto'
         }}
       >
         <Droppable

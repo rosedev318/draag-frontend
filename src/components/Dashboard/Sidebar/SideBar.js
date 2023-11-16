@@ -22,7 +22,7 @@ import {
 } from '../../../Redux/Actions/CategoryAction';
 import { Task } from '@mui/icons-material';
 import { FiUsers } from 'react-icons/fi';
-import SearchIcon from '@mui/icons-material/Search';
+import GroupsIcon from '@mui/icons-material/Groups';
 import Input from '../../input/Input';
 import RemoveRedEyeOutlinedIcon from '@mui/icons-material/RemoveRedEyeOutlined';
 import { useNavigate } from 'react-router-dom';
@@ -75,7 +75,7 @@ const SideBar = (props) => {
         className="bottom-button"
         onClick={() => handleSidebar()}
       >
-        <SearchIcon />
+        <GroupsIcon />
       </div>
       {openSidebar && (
         <>
@@ -180,12 +180,18 @@ const SideBar = (props) => {
                               {(provided, snapshot) => {
                                 return (
                                   <div
-                                    className={`d-flex gap-2 align-items-center bg-white flex-1`}
+                                    className={`d-flex gap-2 align-items-center ${
+                                      !snapshot.isDragging
+                                        ? 'bg-white'
+                                        : 'bg-transparent'
+                                    } flex-1`}
                                     onClick={() => handleOpen(item?.id)}
                                     ref={provided.innerRef}
                                     {...provided.dragHandleProps}
                                     {...provided.draggableProps}
-                                    isdragging={snapshot.isDragging ? 'true' : 'false'}
+                                    isdragging={
+                                      snapshot.isDragging ? 'true' : 'false'
+                                    }
                                   >
                                     <Avatar
                                       src={item?.photo}
@@ -197,7 +203,7 @@ const SideBar = (props) => {
                                     >
                                       {item.firstName}
                                     </div>
-                                    {snapshot.isDragging &&
+                                    {!snapshot.isDragging && (
                                       <div
                                         className="d-flex justify-content-end"
                                         style={{
@@ -211,9 +217,9 @@ const SideBar = (props) => {
                                           onClick={() => handleOpen(item?.id)}
                                         />
                                       </div>
-                                    }
+                                    )}
                                   </div>
-                                )
+                                );
                               }}
                             </Draggable>
                           </div>

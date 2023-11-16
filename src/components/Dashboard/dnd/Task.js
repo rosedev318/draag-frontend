@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState, memo } from 'react';
 import styled from '@emotion/styled';
 import { Draggable, Droppable } from 'react-beautiful-dnd';
 import { Avatar, AvatarGroup } from '@mui/material';
@@ -32,6 +32,15 @@ const Box = styled('div')`
   padding: 5px 8px;
 `;
 
+const isValidImage = (url) => {
+  return new Promise((resolve, reject) => {
+    var img = new Image();
+    img.onload = () => resolve(url);
+    img.onerror = () => resolve(defaultAvatarURL);
+    img.src = url;
+  });
+};
+
 const Task = ({
   task,
   index,
@@ -56,7 +65,11 @@ const Task = ({
     setOpenUserModal(true);
   };
 
-  const [assigned, setAssigned] = useState([]);
+  const [assigned, setAssigned] = useState(
+    task.assignments
+      .sort((c, d) => (c.nanny.name > d.nanny.name ? 1 : d.nanny.name ? -1 : 0))
+      .sort((a, b) => (a.messageSent && !b.messageSent ? 1 : -1))
+  );
   const handleClose = () => {
     setOpen(false);
     setOpenUserModal(false);
@@ -95,7 +108,6 @@ const Task = ({
       );
     }
   }, [task.assignments]);
-
   return (
     <React.Fragment>
       <Draggable draggableId={task.id} key={index} index={index} type="task">
@@ -215,7 +227,7 @@ const Task = ({
                             <div className="px-1">
                               <AvatarGroup max={4}>
                                 {assigned.slice(0, 3).map((e) => {
-                                  return (
+                                  return e?.nanny?.photo ? (
                                     <Avatar
                                       onClick={() =>
                                         navigate('/profile', {
@@ -231,6 +243,8 @@ const Task = ({
                                       }`}
                                       src={e?.nanny?.photo}
                                     />
+                                  ) : (
+                                    <></>
                                   );
                                 })}
                                 {assigned?.length > 3 && (
@@ -297,7 +311,7 @@ const Task = ({
                       </div>
                       <div className="d-flex align-items-center justify-content-start px-1 gap-2">
                         {assigned.slice(0, 4).map((e) => {
-                          return (
+                          return e?.nanny?.photo ? (
                             <Avatar
                               onClick={() =>
                                 navigate('/profile', {
@@ -310,6 +324,8 @@ const Task = ({
                               }`}
                               src={e?.nanny?.photo}
                             />
+                          ) : (
+                            <></>
                           );
                         })}
                         {assigned?.length > 4 && (
@@ -378,4 +394,4 @@ const Task = ({
   );
 };
 
-export default Task;
+export default memo(Task);
