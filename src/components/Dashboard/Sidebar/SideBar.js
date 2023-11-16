@@ -22,7 +22,7 @@ import {
 } from '../../../Redux/Actions/CategoryAction';
 import { Task } from '@mui/icons-material';
 import { FiUsers } from 'react-icons/fi';
-import SearchIcon from '@mui/icons-material/Search';
+import GroupsIcon from '@mui/icons-material/Groups';
 import Input from '../../input/Input';
 import RemoveRedEyeOutlinedIcon from '@mui/icons-material/RemoveRedEyeOutlined';
 import { useNavigate } from 'react-router-dom';
@@ -75,7 +75,7 @@ const SideBar = (props) => {
         className="bottom-button"
         onClick={() => handleSidebar()}
       >
-        <SearchIcon />
+        <GroupsIcon />
       </div>
       {openSidebar && (
         <>

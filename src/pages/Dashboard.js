@@ -111,11 +111,10 @@ const Dashboard = (props) => {
       <div
         style={{
           paddingTop: 65,
-          height: '100vh',
           display: 'flex',
           flexDirection: 'column',
-          overflowY: 'hidden',
-          flexGrow: '1'
+          flexGrow: '1',
+          height: '100vh'
           // overflowY: openSidebar && 'hidden'
         }}
         className="position-relative"

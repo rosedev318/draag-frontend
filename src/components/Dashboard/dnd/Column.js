@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, memo } from 'react';
 import styled from '@emotion/styled';
 import Task from './Task';
 import { Droppable, Draggable } from 'react-beautiful-dnd';
@@ -118,6 +118,7 @@ const Column = ({
     setAnchorE2(null);
   };
 
+  console.log(jobs, column.name);
   return (
     <Draggable draggableId={column?.id} key={index} index={index} type="column">
       {(provided) => (
@@ -326,4 +327,4 @@ const Column = ({
   );
 };
 
-export default Column;
+export default memo(Column);

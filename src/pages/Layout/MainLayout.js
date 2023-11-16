@@ -1,4 +1,5 @@
 import { React, useContext, useEffect, useRef, useState } from 'react';
+import Collapse from '@mui/material/Collapse';
 import './MainLayout.css';
 // import { createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -23,6 +24,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
 import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
 import DownArrow from '../../Images/chevron_down_gray.svg';
+import { useMediaQuery } from 'react-responsive';
 
 import { useLocation, useNavigate } from 'react-router-dom';
 
@@ -65,6 +67,7 @@ import Notification from '../../components/Notifications/Notification';
 import { seenStatus } from '../../Redux/Actions/CalenderAction';
 import { PopupModal } from 'react-calendly';
 import styled from 'styled-components';
+import { InstallMobile } from '@mui/icons-material';
 
 function MainLayout(props) {
   const {
@@ -77,7 +80,8 @@ function MainLayout(props) {
     setOpenCalendly,
     openCalendly,
     handleChange,
-    mode
+    mode,
+    children
   } = props;
 
   const navigate = useNavigate();
@@ -118,6 +122,7 @@ function MainLayout(props) {
 
   const [file, setFile] = useState([]);
   const agencyusers = useSelector((state) => state.Agency.agencyUser);
+  const isMobile = useMediaQuery({ maxWidth: 700 });
 
   useEffect(() => {
     if (agencyusers?.length > 0) {
@@ -169,123 +174,138 @@ function MainLayout(props) {
     setOpenNotification(false);
   };
 
+  console.log(mobileOpen, screenOpen);
+
   const drawer = (
-    <div
-      className={`drawer ${screenOpen ? 'overflowX scrollY' : ''}`}
-      style={{ backgroundColor: '#1C2536', overflowY: 'auto', height: '100vh' }}
+    <Collapse
+      collapsedSize={90}
+      orientation="horizontal"
+      in={!screenOpen || mobileOpen}
     >
-      <IconButton className="ms-4 bg-none collapse-icon bg-none">
-        {!mobileOpen && screenOpen ? (
-          <div
-            className="bg-light mx-1 mt-5 mb-4"
-            style={{ borderRadius: '50%' }}
-          >
-            <ChevronRightIcon
-              onClick={handleDrawerWidth}
-              className="text-dark d-flex fs-6 flex-column align-items-center"
-            />
-          </div>
-        ) : (
-          <div className="d-flex align-items-center justify-content-center">
-            <div className="bg-light mt-3" style={{ borderRadius: '50%' }}>
-              <ChevronLeftIcon
-                onClick={handleDrawerWidth}
-                className="fs-6 text-dark"
-              />
-            </div>
-            {(!screenOpen || mobileOpen) && <Logo mobileOpen={mobileOpen} />}
-          </div>
+      <div
+        className={`drawer ${screenOpen ? 'overflowX scrollY' : ''}`}
+        style={{
+          backgroundColor: '#1C2536',
+          overflowY: 'auto',
+          height: '100vh',
+          width: '270px'
+        }}
+      >
+        {!mobileOpen && screenOpen && (
+          <Logo mobileOpen={mobileOpen} type="small" />
         )}
-      </IconButton>
+        <IconButton
+          className="ms-4 bg-none collapse-icon bg-none"
+          onClick={handleDrawerWidth}
+        >
+          {!mobileOpen && screenOpen ? (
+            <div
+              className="bg-light mx-1 mt-3 mb-4"
+              style={{ borderRadius: '50%' }}
+            >
+              <ChevronRightIcon className="text-dark d-flex fs-6 flex-column align-items-center" />
+            </div>
+          ) : (
+            <div className="d-flex align-items-center justify-content-center">
+              <div className="bg-light mt-3" style={{ borderRadius: '50%' }}>
+                <ChevronLeftIcon className="fs-6 text-dark" />
+              </div>
+              {(!screenOpen || mobileOpen) && <Logo mobileOpen={mobileOpen} />}
+            </div>
+          )}
+        </IconButton>
 
-      <div className="d-flex flex-column">
-        {(!screenOpen || mobileOpen) && <Accounts />}
-        <List component="nav">
-          {MenuList.map((item, index) => {
-            const isActive = pathname === item.path;
-            return (
-              <div key={index}>
-                <ListItemButton
-                  className={
-                    isActive
-                      ? !screenOpen || mobileOpen
-                        ? 'active px-4'
-                        : 'bg-none px-4'
-                      : 'px-4'
-                  }
-                  onClick={() => {
-                    if (item.path === '/logout') {
-                      dispatch(logout());
-                    } else if (item.path === '/jointeam') {
-                      navigate('/jointeam', {
-                        state: { jointeam: true, pathname }
-                      });
-                    } else if (item.name === 'Calendly') {
-                      setOpenCalendly(true);
-                    } else {
-                      navigate(item.path);
+        <div className="d-flex flex-column">
+          {(!screenOpen || mobileOpen) && <Accounts />}
+          <List component="nav">
+            {MenuList.map((item, index) => {
+              const isActive = pathname === item.path;
+              return (
+                <div key={index}>
+                  <ListItemButton
+                    className={
+                      isActive
+                        ? !screenOpen || mobileOpen
+                          ? 'active px-4'
+                          : 'bg-none px-4'
+                        : 'px-4'
                     }
-                  }}
-                >
-                  <div
-                    className={`d-flex align-items-center py-1 ${
-                      mobileOpen ? 'mx-0' : ''
-                    }`}
+                    onClick={() => {
+                      if (item.path === '/logout') {
+                        dispatch(logout());
+                      } else if (item.path === '/jointeam') {
+                        navigate('/jointeam', {
+                          state: { jointeam: true, pathname }
+                        });
+                      } else if (item.name === 'Calendly') {
+                        setOpenCalendly(true);
+                      } else {
+                        navigate(item.path);
+                      }
+                    }}
                   >
-                    <ListItemIcon
-                      className={
-                        isActive
-                          ? !screenOpen || mobileOpen
-                            ? 'active-icon d-flex flex-column'
-                            : 'active-small d-flex flex-column align-items-center'
-                          : ' text-white d-flex flex-column'
-                      }
-                      style={
-                        screenOpen
-                          ? !mobileOpen
-                            ? { alignItems: 'center' }
-                            : {}
-                          : {}
-                      }
+                    <div
+                      className={`d-flex align-items-center py-1 ${
+                        mobileOpen ? 'mx-0' : ''
+                      }`}
                     >
-                      {item.icon}
-                    </ListItemIcon>
-
-                    <ListItemText
-                      className={
-                        mobileOpen || !screenOpen ? 'd-block' : 'd-none'
-                      }
-                      style={
-                        isActive ? { color: '#4285F4' } : { color: '#FFFFFF' }
-                      }
-                      primary={item.name}
-                    />
-                  </div>
-                </ListItemButton>
-                {(!screenOpen || mobileOpen) && item.divider && (
-                  <div className="d-flex align-items-center py-3">
-                    <hr className="onehr" />
-                    <span className="reporthead">Tools</span>
-                    <hr className="secondhr" />
-                  </div>
-                )}
-                {item.divider2 && (
-                  <div>
-                    <div className="d-flex align-items-center py-3">
-                      <hr
+                      <ListItemIcon
                         className={
-                          !screenOpen || mobileOpen ? 'onehr1' : 'onehr1-small'
+                          isActive
+                            ? !screenOpen || mobileOpen
+                              ? 'active-icon d-flex flex-column'
+                              : 'active-small d-flex flex-column align-items-center'
+                            : ' text-white d-flex flex-column'
                         }
+                        style={
+                          screenOpen
+                            ? !mobileOpen
+                              ? { alignItems: 'center' }
+                              : {}
+                            : {}
+                        }
+                      >
+                        {item.icon}
+                      </ListItemIcon>
+
+                      <ListItemText
+                        className={
+                          mobileOpen || !screenOpen ? 'd-block' : 'd-none'
+                        }
+                        style={
+                          isActive ? { color: '#4285F4' } : { color: '#FFFFFF' }
+                        }
+                        primary={item.name}
                       />
                     </div>
-                  </div>
-                )}
-              </div>
-            );
-          })}
-        </List>
+                  </ListItemButton>
+                  {(!screenOpen || mobileOpen) && item.divider && (
+                    <div className="d-flex align-items-center py-3">
+                      <hr className="onehr" />
+                      <span className="reporthead">Tools</span>
+                      <hr className="secondhr" />
+                    </div>
+                  )}
+                  {item.divider2 && (
+                    <div>
+                      <div className="d-flex align-items-center py-3">
+                        <hr
+                          className={
+                            !screenOpen || mobileOpen
+                              ? 'onehr1'
+                              : 'onehr1-small'
+                          }
+                        />
+                      </div>
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+          </List>
+        </div>
       </div>
-    </div>
+    </Collapse>
   );
 
   const container =
@@ -394,218 +414,15 @@ function MainLayout(props) {
   };
 
   return (
-    <Box sx={{ display: 'flex' }} className="position-relative">
+    <Box
+      sx={{ display: 'flex', height: '100vh', overflow: 'hidden' }}
+      className="position-relative w-100"
+    >
       <CssBaseline />
-      <AppBar
-        position="fixed"
-        className="appBar"
-        style={styleApp}
-        sx={{
-          width: { sm: `calc(100% - ${drawerWidth}px)` },
-          ml: { sm: `${drawerWidth}px)` }
-        }}
-      >
-        <Toolbar>
-          <IconButton
-            color="black"
-            aria-label="open drawer"
-            edge="start"
-            onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { sm: 'none' } }}
-          >
-            <MenuIcon />
-          </IconButton>
-          <div
-            className="d-flex justify-content-center gap-1 ms-auto align-items-center header-text"
-            style={{ paddingLeft: '24px', width: 'max-content' }}
-          >
-            {users.length
-              ? users?.slice(0, 2).map((user, index) => {
-                  return <NavbarUser user={user} key={index} index={index} />;
-                })
-              : new Array(2).fill(0).map((value, index) => (
-                  <>
-                    <Skeleton width={40} height={40} variant="circular" />
-                    <div className="flex">
-                      <Skeleton width={150}>
-                        <Typography>.</Typography>
-                      </Skeleton>
-                      <Skeleton width={100}>
-                        <Typography>.</Typography>
-                      </Skeleton>
-                    </div>
-                  </>
-                ))}
-
-            <div className="d-flex gap-2" style={{ paddingLeft: '20px' }}>
-              {users.length ? (
-                users.slice(3, 5).map((e, index) => {
-                  return (
-                    <Avatar
-                      key={index}
-                      sx={{ width: 30, height: 30 }}
-                      src={e?.profileImageUrl}
-                    />
-                  );
-                })
-              ) : (
-                <></>
-              )}
-              {users?.length > 2 ? (
-                <Avatar
-                  ref={divRef}
-                  onClick={(e) => handleOpen(e)}
-                  className="cursor-pointer number-avtar"
-                  sx={{
-                    width: 30,
-                    height: 30,
-                    fontSize: '13px'
-                  }}
-                >
-                  +{users?.length - 4}
-                </Avatar>
-              ) : (
-                <></>
-              )}
-              {users.length === 0 &&
-                new Array(3).fill(0).map((value, index) => (
-                  <>
-                    <Skeleton width={30} height={30} variant="circular" />
-                  </>
-                ))}
-            </div>
-          </div>
-          <Typography
-            hariant="h6"
-            // noWrap
-            className="text-black d-flex gap-4 ms-auto align-items-center justify-content-end"
-            component="div"
-          >
-            <div className="d-flex align-items-center gap-3">
-              <FormControlLabel
-                onChange={() => handleChange()}
-                control={<MaterialUISwitch defaultChecked={mode} />}
-                sx={{ marginLeft: 0 }}
-              />
-              <div>
-                <ModeStandbyIcon className="fs-3 header-text" />
-              </div>
-              <div className="position-relative">
-                <NotificationsNoneIcon
-                  className="fs-3 cursor-pointer header-text"
-                  onClick={(event) => handleClickN(event)}
-                />
-                {!status?.seen && (
-                  <span
-                    className="position-absolute badge translate-middle p-1 bg-danger border border-light rounded-circle"
-                    style={{ marginLeft: '-4px' }}
-                  >
-                    <span className="visually-hidden">New alerts</span>
-                  </span>
-                )}
-              </div>
-              <div>
-                <IconButton sx={{ p: 0 }}>
-                  <Avatar
-                    src={user?.profileImageUrl}
-                    sx={{ width: 30, height: 30 }}
-                  />
-                </IconButton>
-              </div>
-            </div>
-          </Typography>
-          <div className="nav-user">
-            <div
-              className="btn"
-              onClick={(e) => handleClick(e)}
-              style={{ width: 'max-content', display: 'flex' }}
-            >
-              <span className="nav-username">
-                {user?.fullName ? (
-                  user?.fullName
-                ) : (
-                  <Skeleton width={100} height={25}>
-                    <Typography>.</Typography>
-                  </Skeleton>
-                )}
-              </span>
-              <img src={DownArrow} className="px-1" />
-            </div>
-            <Popover
-              open={openProfile}
-              anchorEl={anchorE2}
-              onClose={handleCloseP}
-              anchorOrigin={{
-                vertical: 'bottom',
-                horizontal: 'left'
-              }}
-            >
-              <Typography
-                sx={{ p: 1, width: '150px', cursor: 'pointer' }}
-                onClick={() => handleOpenProfile()}
-              >
-                Edit Profile
-              </Typography>
-              <Divider />
-              <Typography
-                sx={{ p: 1, width: '150px', cursor: 'pointer' }}
-                onClick={() => dispatch(logout())}
-              >
-                Log Out
-              </Typography>
-            </Popover>
-
-            {/* <ul className="dropdown-menu" style={{ textAlign: 'start' }}>
-              <li>
-                <a
-                  className="dropdown-item cursor-pointer"
-                  onClick={() => handleOpenProfile()}
-                >
-                  Edit User
-                </a>
-              </li>
-              <div className="dropdown-divider mt-2 mb-1"></div>
-              <li>
-                <a
-                  className="dropdown-item cursor-pointer"
-                  onClick={() => dispatch(logout())}
-                >
-                  Log Out
-                </a>
-              </li>
-            </ul> */}
-          </div>
-        </Toolbar>
-        {profileOpen && (
-          <ProfileSidebar
-            setProfileOpen={setProfileOpen}
-            profileOpen={profileOpen}
-            defaultAgency={defaultAgency}
-            agencyName={agencyName}
-            handleOpenAgency={handleOpenAgency}
-            file={file}
-            setFile={setFile}
-            handleOpenProfileModal={handleOpenProfileModal}
-          />
-        )}
-
-        <LeaveAgencyModal
-          openAgency={openAgency}
-          handleCloseAgency={handleCloseAgency}
-          deleteAgency={deleteAgency}
-          name={agencyName}
-        />
-
-        <RemoveProfileModal
-          profileModal={profileModal}
-          handleCloseProfileModal={handleCloseProfileModal}
-          setFile={setFile}
-        />
-      </AppBar>
 
       <Box
         component="nav"
-        sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
+        sx={{ flexShrink: { sm: 0 }, zIndex: 3000 }}
         aria-label="mailbox folders"
       >
         <Drawer
@@ -627,7 +444,7 @@ function MainLayout(props) {
         >
           {drawer}
         </Drawer>
-        <Drawer
+        {/* <Drawer
           variant="permanent"
           sx={{
             display: { xs: 'none', sm: 'block' },
@@ -638,10 +455,223 @@ function MainLayout(props) {
             }
           }}
           open
-        >
-          {drawer}
-        </Drawer>
+        > */}
+        {!isMobile && drawer}
+        {/* </Drawer> */}
       </Box>
+      <div style={{ flexGrow: '1', overflow: 'auto' }}>
+        <AppBar
+          position="fixed"
+          className="appBar"
+          style={styleApp}
+          sx={
+            {
+              // width: { sm: `calc(100% - ${drawerWidth}px)` },
+              // ml: { sm: `${drawerWidth}px)` }
+            }
+          }
+        >
+          <Toolbar>
+            <IconButton
+              color="black"
+              aria-label="open drawer"
+              edge="start"
+              onClick={handleDrawerToggle}
+              sx={{ mr: 2, display: { sm: 'none' } }}
+            >
+              <MenuIcon />
+            </IconButton>
+            <div
+              className="d-flex justify-content-center gap-1 ms-auto align-items-center header-text"
+              style={{ paddingLeft: '24px', width: 'max-content' }}
+            >
+              {users.length
+                ? users?.slice(0, 2).map((user, index) => {
+                    return <NavbarUser user={user} key={index} index={index} />;
+                  })
+                : new Array(2).fill(0).map((value, index) => (
+                    <>
+                      <Skeleton width={40} height={40} variant="circular" />
+                      <div className="flex">
+                        <Skeleton width={150}>
+                          <Typography>.</Typography>
+                        </Skeleton>
+                        <Skeleton width={100}>
+                          <Typography>.</Typography>
+                        </Skeleton>
+                      </div>
+                    </>
+                  ))}
+
+              <div className="d-flex gap-2" style={{ paddingLeft: '20px' }}>
+                {users.length ? (
+                  users.slice(3, 5).map((e, index) => {
+                    return (
+                      <Avatar
+                        key={index}
+                        sx={{ width: 30, height: 30 }}
+                        src={e?.profileImageUrl}
+                      />
+                    );
+                  })
+                ) : (
+                  <></>
+                )}
+                {users?.length > 2 ? (
+                  <Avatar
+                    ref={divRef}
+                    onClick={(e) => handleOpen(e)}
+                    className="cursor-pointer number-avtar"
+                    sx={{
+                      width: 30,
+                      height: 30,
+                      fontSize: '13px'
+                    }}
+                  >
+                    +{users?.length - 4}
+                  </Avatar>
+                ) : (
+                  <></>
+                )}
+                {users.length === 0 &&
+                  new Array(3).fill(0).map((value, index) => (
+                    <>
+                      <Skeleton width={30} height={30} variant="circular" />
+                    </>
+                  ))}
+              </div>
+            </div>
+            <Typography
+              hariant="h6"
+              // noWrap
+              className="text-black d-flex gap-4 ms-auto align-items-center justify-content-end"
+              component="div"
+            >
+              <div className="d-flex align-items-center gap-3">
+                <FormControlLabel
+                  onChange={() => handleChange()}
+                  control={<MaterialUISwitch defaultChecked={mode} />}
+                  sx={{ marginLeft: 0 }}
+                />
+                <div>
+                  <ModeStandbyIcon className="fs-3 header-text" />
+                </div>
+                <div className="position-relative">
+                  <NotificationsNoneIcon
+                    className="fs-3 cursor-pointer header-text"
+                    onClick={(event) => handleClickN(event)}
+                  />
+                  {!status?.seen && (
+                    <span
+                      className="position-absolute badge translate-middle p-1 bg-danger border border-light rounded-circle"
+                      style={{ marginLeft: '-4px' }}
+                    >
+                      <span className="visually-hidden">New alerts</span>
+                    </span>
+                  )}
+                </div>
+                <div>
+                  <IconButton sx={{ p: 0 }}>
+                    <Avatar
+                      src={user?.profileImageUrl}
+                      sx={{ width: 30, height: 30 }}
+                    />
+                  </IconButton>
+                </div>
+              </div>
+            </Typography>
+            <div className="nav-user">
+              <div
+                className="btn"
+                onClick={(e) => handleClick(e)}
+                style={{ width: 'max-content', display: 'flex' }}
+              >
+                <span className="nav-username">
+                  {user?.fullName ? (
+                    user?.fullName
+                  ) : (
+                    <Skeleton width={100} height={25}>
+                      <Typography>.</Typography>
+                    </Skeleton>
+                  )}
+                </span>
+                <img src={DownArrow} className="px-1" />
+              </div>
+              <Popover
+                open={openProfile}
+                anchorEl={anchorE2}
+                onClose={handleCloseP}
+                anchorOrigin={{
+                  vertical: 'bottom',
+                  horizontal: 'left'
+                }}
+              >
+                <Typography
+                  sx={{ p: 1, width: '150px', cursor: 'pointer' }}
+                  onClick={() => handleOpenProfile()}
+                >
+                  Edit Profile
+                </Typography>
+                <Divider />
+                <Typography
+                  sx={{ p: 1, width: '150px', cursor: 'pointer' }}
+                  onClick={() => dispatch(logout())}
+                >
+                  Log Out
+                </Typography>
+              </Popover>
+
+              {/* <ul className="dropdown-menu" style={{ textAlign: 'start' }}>
+              <li>
+                <a
+                  className="dropdown-item cursor-pointer"
+                  onClick={() => handleOpenProfile()}
+                >
+                  Edit User
+                </a>
+              </li>
+              <div className="dropdown-divider mt-2 mb-1"></div>
+              <li>
+                <a
+                  className="dropdown-item cursor-pointer"
+                  onClick={() => dispatch(logout())}
+                >
+                  Log Out
+                </a>
+              </li>
+            </ul> */}
+            </div>
+          </Toolbar>
+          {profileOpen && (
+            <ProfileSidebar
+              setProfileOpen={setProfileOpen}
+              profileOpen={profileOpen}
+              defaultAgency={defaultAgency}
+              agencyName={agencyName}
+              handleOpenAgency={handleOpenAgency}
+              file={file}
+              setFile={setFile}
+              handleOpenProfileModal={handleOpenProfileModal}
+            />
+          )}
+
+          <LeaveAgencyModal
+            openAgency={openAgency}
+            handleCloseAgency={handleCloseAgency}
+            deleteAgency={deleteAgency}
+            name={agencyName}
+          />
+
+          <RemoveProfileModal
+            profileModal={profileModal}
+            handleCloseProfileModal={handleCloseProfileModal}
+            setFile={setFile}
+          />
+        </AppBar>
+
+        {children}
+      </div>
+
       {open && (
         <ActiveUserModal
           anchorEl={anchorEl}

@@ -184,9 +184,9 @@ function App() {
 
   return tokenVal ? (
     <>
-      <Box sx={{ display: 'flex' }} className="MainBox">
+      <Box sx={{ display: 'flex', width: '100vw' }} className="MainBox">
         <ToastContainer />
-        {hideMainLayout ? null : (
+        {!hideMainLayout && (
           <MainLayout
             handleDrawerWidth={handleDrawerWidth}
             handleDrawerToggle={handleDrawerToggle}
@@ -197,38 +197,42 @@ function App() {
             openCalendly={openCalendly}
             handleChange={handleChange}
             mode={mode}
-          />
+          >
+            <Routes>
+              <Route
+                path="/"
+                exact
+                element={
+                  <Dashboard setOpenCalendly={setOpenCalendly} mode={mode} />
+                }
+              />
+              <Route path="/analytics" element={<Analytics />} />
+              <Route path="/card" element={<Card />} />
+              <Route
+                path="/integration"
+                element={<Integration drawerWidth={drawerWidth} />}
+              />
+              <Route
+                path="/userdetail"
+                element={<Userform screenOpen={screenOpen} />}
+              />
+              <Route path="/bio" element={<Bio screenOpen={screenOpen} />} />
+              <Route
+                path="/docs"
+                element={<Document screenOpen={screenOpen} />}
+              />
+              <Route path="/permission" element={<UserPermission />} />
+              <Route
+                path="/candidate"
+                element={<Candidates screenOpen={screenOpen} />}
+              />
+              <Route path="/jobdetail" element={<Jobform />} />
+              <Route path="/clients" element={<Clients />} />
+              <Route path="/profile" element={<Profile />} />
+              <Route path="/help" element={<Help />} />
+            </Routes>
+          </MainLayout>
         )}
-        <Routes>
-          <Route
-            path="/"
-            exact
-            element={
-              <Dashboard setOpenCalendly={setOpenCalendly} mode={mode} />
-            }
-          />
-          <Route path="/analytics" element={<Analytics />} />
-          <Route path="/card" element={<Card />} />
-          <Route
-            path="/integration"
-            element={<Integration drawerWidth={drawerWidth} />}
-          />
-          <Route
-            path="/userdetail"
-            element={<Userform screenOpen={screenOpen} />}
-          />
-          <Route path="/bio" element={<Bio screenOpen={screenOpen} />} />
-          <Route path="/docs" element={<Document screenOpen={screenOpen} />} />
-          <Route path="/permission" element={<UserPermission />} />
-          <Route
-            path="/candidate"
-            element={<Candidates screenOpen={screenOpen} />}
-          />
-          <Route path="/jobdetail" element={<Jobform />} />
-          <Route path="/clients" element={<Clients />} />
-          <Route path="/profile" element={<Profile />} />
-          <Route path="/help" element={<Help />} />
-        </Routes>
       </Box>
       <Routes>
         <Route path="/jointeam" element={<Join />} />
