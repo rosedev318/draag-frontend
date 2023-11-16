@@ -3,27 +3,22 @@ import * as actionTypes from './ActionTypes';
 import { toast } from 'react-toastify';
 
 export const createEvent = (payload) => (dispatch) => {
-  console.log("action create event", payload);
   return new Promise((resolve, reject) => {
     const token = localStorage.getItem('authtoken');
     axios
       .post(
-        `/api/chart-event-notes`,
+        `/api/chart-event-notes/bulk`, 
+        payload,
         {
           headers: {
             Authorization: `Bearer ${token}`
           }
-        },
-        payload
+        }
       )
       .then((res) => {
         if (res.data && res.status == '200') {
-          dispatch({
-            type: actionTypes.CREATE_EVENT,
-            payload: res.data
-          });
-          resolve(res);
-          // toast.success('Event Created Successfully', { autoClose: 1500 });
+          resolve(res.data);
+          toast.success('Events Created Successfully', { autoClose: 1500 });
         }
       })
       .catch((err) => {

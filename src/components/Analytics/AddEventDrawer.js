@@ -7,10 +7,62 @@ import RadioGroup from '@mui/material/RadioGroup';
 import DatePicker from '../DatePicker/DatePicker';
 import EventCard from './EventCard';
 import { createEvent } from '../../Redux/Actions/AnalyticsAction';
+import moment from 'moment';
+import { useDispatch } from 'react-redux';
+import { toast } from 'react-toastify';
 
 const AddEventDrawer = (props) => {
-  const [addingEvent, setAddingEvent] = useState(true);
-  const [eventsByDay, setEventsByDay] = useState([]);
+  const dispatch = useDispatch();
+  const [addingEvent, setAddingEvent] = useState(false);
+  const [eventsByDay, setEventsByDay] = useState([{
+    date: '',
+    notes: []
+  }]);
+
+  const saveEventsByDate = () => {
+    if(eventsByDay.length && eventsByDay.every(e => e.date && e?.notes.length)) {
+      dispatch(
+        createEvent(eventsByDay.map(event => {
+          return {
+            date: moment(event.date, "MM/DD/YYYY").unix(),
+            notes: event.notes
+          }
+        }))
+      ).then((data) => {
+        setEventsByDay([{
+          date: '',
+          notes: []
+        }])
+        setAddingEvent(false)
+        console.log("result", data)
+      });
+    } else {
+      toast.error('Please check events.', { autoClose: 1500 });
+    }
+  }
+  const saveEvent = (index, newEvent) => {
+    setEventsByDay(eventsByDay.map((event, i) => {
+      if(index == i)
+        return newEvent
+      else
+        return event
+    }))
+  }
+  const addEventByDay = () => {
+    if(eventsByDay?.length == 0 || eventsByDay.some(e => !e.date)) {
+      toast.error('Please select a date for the event.', { autoClose: 1500 });
+    }else if(eventsByDay?.length == 0 || eventsByDay.some(e => !e?.notes?.length)) {
+      toast.error('Please input at least one note for the event.', { autoClose: 1500 });
+    } else {
+      setEventsByDay([
+        ...eventsByDay,
+        {
+          date: '',
+          notes: []
+        }
+      ]);
+    }
+  }
 
   return (
     <>
@@ -39,15 +91,21 @@ const AddEventDrawer = (props) => {
         <Box sx={{marginTop: '16px'}}>
         </Box>
         <Box className="mt-16px">
-          <EventCard />
-          <EventCard />
-          <EventCard />
-          <EventCard />
-          <EventCard />
+          {
+            eventsByDay.map((event, index) => 
+              <EventCard
+                key={index}
+                event={event}
+                saveEvent={(e) => {saveEvent(index, e)}}
+                handleClose={() => {setEventsByDay(eventsByDay.filter((e, i) => i != index))}}
+              />
+            )
+          }
           <div className='w-100 d-flex flex-row-reverse'>
             <Button
               variant="text"
               className='mt-2 text-unset'
+              onClick={() => {addEventByDay()}}
             >
               Add events for new date
             </Button>
@@ -55,6 +113,7 @@ const AddEventDrawer = (props) => {
           <div className='w-100 d-flex flex-row-reverse'>
             <Button
               variant="text"
+              onClick={saveEventsByDate}
               className='mt-2 text-unset'
             >
               Submit

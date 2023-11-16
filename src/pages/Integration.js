@@ -295,9 +295,9 @@ const Integration = () => {
                   <div className='mt-8px d-flex justify-between items-center'>
                     <Button className='text-unset' variant="outlined" sx={{color: '#333', borderColor: '#333'}}>
                       <SwapHoriz />
-                      Connect
+                      Connected
                     </Button>
-                    <IOSSwitch />
+                    <IOSSwitch defaultChecked />
                   </div>
                 </div>
               </Grid>

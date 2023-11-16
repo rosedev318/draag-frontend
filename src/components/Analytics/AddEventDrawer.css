@@ -7,12 +7,15 @@
 
 .day-event-header {
   display: flex;
+  padding-left: 8px;
   justify-content: space-between;
 }
 
 .day-event-body {
   padding-top: 12px;
   display: flex;
+  padding-left: 8px;
+  padding-right: 8px;
   flex-direction: column;
 }
 
