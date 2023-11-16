@@ -4,7 +4,7 @@ import Chart from 'react-apexcharts';
 import { useMediaQuery } from 'react-responsive';
 
 const AnalyticChart = (props) => {
-  const { times, monthData, success } = props;
+  const { times, monthData, success, events } = props;
 
   const [category, setCategory] = useState([]);
   const [series, setSeries] = useState();
@@ -122,7 +122,7 @@ const AnalyticChart = (props) => {
 
   useEffect(() => {
     getData();
-  }, [times, monthData]);
+  }, [times, monthData, events]);
 
   const schema = {
     series: [
@@ -158,10 +158,42 @@ const AnalyticChart = (props) => {
         tickAmount: isMobile ? 5 : 10
       },
       tooltip: {
-        x: {
-          format: 'dd/MM/yy HH:mm'
+        enabled: true,
+        custom: function({ series, seriesIndex, dataPointIndex, w }) {
+          let startDate;
+          if(monthData?.length) {
+            monthData.map((e) => {
+              if (startDate === undefined || e.key < startDate) startDate = e.key;
+            });
+          }
+          
+          let filteredEvents = [];
+          if(events?.length) {
+            filteredEvents = events.filter(e => {
+              return moment(e.scheduleDate, 'YYYY-MM-DD').isSame(moment.unix(startDate).add(dataPointIndex, 'days'), 'day')
+            })
+          }
+          let html = `<div class="custom-tooltip">
+            <p>candedates: ${series[seriesIndex][dataPointIndex]}</p>`;
+          
+          if(!filteredEvents.length) {
+            html += `<p>No events</p>`;
+          } else {
+            html += `<ul>`;
+            filteredEvents.forEach(e => {
+              html += `<li>${e.content}</li>`;
+            });
+            html += `</ul>`;
+          }
+          html += `</div>`;
+          return html;
         }
       },
+      // tooltip: {
+      //   x: {
+      //     format: 'dd/MM/yy HH:mm'
+      //   }
+      // },
       fill: {
         type: ['gradient'],
         gradient: {

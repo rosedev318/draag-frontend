@@ -112,7 +112,7 @@ const AddEventDrawer = (props) => {
           </div>
           <div className='w-100 d-flex flex-row-reverse'>
             <Button
-              variant="text"
+              variant="contained"
               onClick={saveEventsByDate}
               className='mt-2 text-unset'
             >

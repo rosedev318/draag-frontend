@@ -56,6 +56,7 @@ const Analytics = () => {
 
   const [success, setSuccess] = useState(false);
 
+  const events = useSelector((state) => state.Analytics.events);
   const changes = useSelector((state) => state.Agency.agencyChange);
   const monthDatas = useSelector((state) => state.Analytics.count_candidate);
   // candidate analytics
@@ -233,6 +234,7 @@ const Analytics = () => {
           <div className="candidate-total-head">Total candidates</div>
           <div className="pt-3">
             <AnalyticChart
+              events={events.content}
               times={times}
               monthData={monthData}
               success={success}
