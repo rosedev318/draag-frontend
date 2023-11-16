@@ -39,7 +39,7 @@ const DatePicker = (props) => {
         <Button
             variant="text"
             sx={{ color: '#262525', backgroundColor: '#e2e8f0', textTransform: 'unset' }}
-            className='btn-gray mt-2'
+            className='btn-gray'
             onClick={handleClick}
         >
             <CalendarMonth sx={{ color: '#0B66E4', marginRight: '6px' }} />{ value ? value : label }

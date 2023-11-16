@@ -19,7 +19,8 @@ import {
   getMetrics,
   getTopProfessionClient,
   getTopSubCandidate,
-  getTopSubClient
+  getTopSubClient,
+  getEvents
 } from '../Redux/Actions/AnalyticsAction';
 import AnalyticChart from '../components/Charts/AnalyticChart';
 import GenderChart from '../components/Charts/GenderChart';
@@ -198,6 +199,7 @@ const Analytics = () => {
     dispatch(getGenderCandidate());
     dispatch(getTopSubClient());
     dispatch(getTopProfessionClient());
+    dispatch(getEvents());
   }, [changes]);
 
   const handleCustomSearch = () => {

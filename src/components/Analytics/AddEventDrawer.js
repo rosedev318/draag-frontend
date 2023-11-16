@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import { Button, IconButton, Box, Drawer, TextField, FormControlLabel } from '@mui/material';
 import './AddEventDrawer.css';
-import { AddCircleOutlineOutlined, CalendarMonth } from '@mui/icons-material';
+import { AddCircleOutlineOutlined, Close, PanoramaFishEye } from '@mui/icons-material';
 import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
 import DatePicker from '../DatePicker/DatePicker';
+import EventCard from './EventCard';
+import { createEvent } from '../../Redux/Actions/AnalyticsAction';
 
 const AddEventDrawer = (props) => {
-//   const { timezone, handleChange } = props;
   const [addingEvent, setAddingEvent] = useState(false);
+  const [eventsByDay, setEventsByDay] = useState([]);
 
   return (
     <>
@@ -28,14 +30,6 @@ const AddEventDrawer = (props) => {
       <div className='add-event-container'>
         <div className='d-flex justify-between items-center w-full'>
           <h3>Add an event</h3>
-          <IconButton
-            variant="text"
-            sx={{ color: '#262525' }}
-            className='add-event-btn'
-            onClick={() => {}}
-          >
-            <AddCircleOutlineOutlined sx={{ color: '#0B66E4' }} />
-          </IconButton>
         </div>
         <Box sx={{color: '#BAB7B7', fontSize: '16px', lineHeight: '20px', marginTop: '16px'}}>
           Input data about your activities, enabling you to track your progress effectively.
@@ -45,7 +39,27 @@ const AddEventDrawer = (props) => {
         <Box sx={{marginTop: '16px'}}>
         </Box>
         <Box className="mt-16px">
-          <DatePicker label="Add date" />
+          <EventCard />
+          <EventCard />
+          <EventCard />
+          <EventCard />
+          <EventCard />
+          <div className='w-100 d-flex flex-row-reverse'>
+            <Button
+              variant="text"
+              className='mt-2 text-unset'
+            >
+              Add events for new date
+            </Button>
+          </div>
+          <div className='w-100 d-flex flex-row-reverse'>
+            <Button
+              variant="text"
+              className='mt-2 text-unset'
+            >
+              Submit
+            </Button>
+          </div>
         </Box>
       </div>
     </Drawer>
