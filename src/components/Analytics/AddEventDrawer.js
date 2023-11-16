@@ -9,7 +9,7 @@ import EventCard from './EventCard';
 import { createEvent } from '../../Redux/Actions/AnalyticsAction';
 
 const AddEventDrawer = (props) => {
-  const [addingEvent, setAddingEvent] = useState(false);
+  const [addingEvent, setAddingEvent] = useState(true);
   const [eventsByDay, setEventsByDay] = useState([]);
 
   return (
