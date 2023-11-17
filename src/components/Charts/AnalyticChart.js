@@ -194,7 +194,7 @@ const AnalyticChart = (props) => {
               ${filteredEvents.length ? '<hr/>' : ''}
               <ul class="custom-tooltip-events">
                 ${eventsHTML}
-              </ur>
+              </ul>
             </div>
           `;
         }
