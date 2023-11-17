@@ -192,6 +192,11 @@ const AnalyticChart = (props) => {
                 <li>Candedates: ${candidatesText}</li>
               </ul>
               ${filteredEvents.length ? '<hr/>' : ''}
+              ${
+                filteredEvents.length
+                  ? '<span style="font-size:14px; font-weight:600; margin-left:10px;">Events</span>'
+                  : ''
+              }
               <ul class="custom-tooltip-events">
                 ${eventsHTML}
               </ur>

@@ -27,6 +27,7 @@ import Input from '../../input/Input';
 import RemoveRedEyeOutlinedIcon from '@mui/icons-material/RemoveRedEyeOutlined';
 import { useNavigate } from 'react-router-dom';
 import MemberModal from '../Modals/MemberModal';
+import { userContext } from '../../../context/UserContext';
 
 const SideBar = (props) => {
   const { openSidebar, setOpenSidebar, jobId } = props;
@@ -40,12 +41,11 @@ const SideBar = (props) => {
   );
   const loading = useSelector((state) => state.Category.loading);
   const [open, setOpen] = useState(false);
-
+  const { openUser, setOpenUser } = useContext(userContext);
   const handleOpen = (id) => {
     setOpen(true);
     setMemberId(id);
   };
-
   useEffect(() => {
     setHighlightUser(highlightUserData);
   }, [highlightUserData]);
@@ -57,10 +57,12 @@ const SideBar = (props) => {
   }, [changes, openSidebar]);
 
   const handleSidebar = () => {
+    setOpenUser(false);
     setOpenSidebar(!openSidebar);
   };
 
   const handleSearch = debounce((event) => {
+    console.log('event', event);
     if (event?.length > 0) {
       dispatch(nanniesHightlight(event));
     } else {

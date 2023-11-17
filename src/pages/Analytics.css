@@ -24,6 +24,10 @@
   margin-bottom: 0px;
 }
 
+.custom-tooltip-events {
+  margin-top: 4px;
+}
+
 .custom-tooltip-candidate > li::marker {
   color: #2196f3;
 }

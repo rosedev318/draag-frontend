@@ -146,7 +146,6 @@ const Notification = (props) => {
     });
     setUniqueDate(data);
   }, [notification]);
-
   return (
     <div className="notification-main">
       <Popover
@@ -195,7 +194,7 @@ const Notification = (props) => {
               {uniqueDate.map((data, index) => (
                 <>
                   <div className="time-label d-flex justify-content-center">
-                    {moment(data).format('ddd D MMM')}
+                    {data}
                   </div>
                   {object?.[data]?.map((message) => {
                     const ida = openA ? 'simple-popover' : undefined;
@@ -236,8 +235,17 @@ const Notification = (props) => {
                                   }
                                 })}
                             </div>
-                            <span className="notification-time">
+                            {/* <span className="notification-time">
                               {moment(data).startOf('month').fromNow()}
+                            </span> */}
+                            <span className="notification-time">
+                              {moment
+                                .utc(
+                                  message?.createdAt,
+                                  'YYYY-MM-DDTHH:mm:ss.SSSSZ'
+                                )
+                                .startOf('hour')
+                                .fromNow()}
                             </span>
                           </div>
                           <div className="d-flex icon-content gap-3">
