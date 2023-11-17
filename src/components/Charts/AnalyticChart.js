@@ -159,33 +159,44 @@ const AnalyticChart = (props) => {
       },
       tooltip: {
         enabled: true,
-        custom: function({ series, seriesIndex, dataPointIndex, w }) {
+        custom: function ({ series, seriesIndex, dataPointIndex }) {
           let startDate;
-          if(monthData?.length) {
-            monthData.map((e) => {
-              if (startDate === undefined || e.key < startDate) startDate = e.key;
-            });
+
+          for (let item of monthData) {
+            if (startDate === undefined || item.key < startDate)
+              startDate = item.key;
           }
-          
-          let filteredEvents = [];
-          if(events?.length) {
-            filteredEvents = events.filter(e => {
-              return moment(e.scheduleDate, 'YYYY-MM-DD').isSame(moment.unix(startDate).add(dataPointIndex, 'days'), 'day')
-            })
-          }
-          let html = `<div class="custom-tooltip">
-          <span>${moment.unix(startDate).add(dataPointIndex, 'days').format('MM/DD/YYYY')}</span>`;
-          html += `<ul>`;
-          html += `<li>candedates: ${series[seriesIndex][dataPointIndex]}</li>`;
-          if(!filteredEvents.length) {
-            html += `<li>No events</li>`;
-          }
-          filteredEvents.forEach(e => {
-            html += `<li>${e.content}</li>`;
-          });
-          html += `</ul>`;
-          html += `</div>`;
-          return html;
+
+          const targetDate = moment.unix(startDate).add(dataPointIndex, 'days');
+
+          const filteredEvents =
+            events?.filter(({ scheduleDate }) =>
+              moment(scheduleDate, 'YYYY-MM-DD').isSame(targetDate, 'day')
+            ) || [];
+
+          console.log('startDate, targetDate', startDate, filteredEvents);
+
+          const dateFormatted = targetDate.format('MM/DD/YYYY');
+          const candidatesText = series[seriesIndex][dataPointIndex];
+
+          const eventsHTML = filteredEvents.length
+            ? filteredEvents
+                .map(({ content }) => `<li>${content}</li>`)
+                .join('')
+            : '';
+
+          return `
+            <div class="custom-tooltip">
+              <h6 class="mb-3" style="font-weight:600; text-align:center; font-size: 15px;">${dateFormatted}</h6>
+              <ul class="custom-tooltip-candidate">
+                <li>Candedates: ${candidatesText}</li>
+              </ul>
+              ${filteredEvents.length ? '<hr/>' : ''}
+              <ul class="custom-tooltip-events">
+                ${eventsHTML}
+              </ur>
+            </div>
+          `;
         }
       },
       // tooltip: {
