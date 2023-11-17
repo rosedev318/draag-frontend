@@ -2,9 +2,11 @@ import React, { useEffect, useState } from 'react';
 import UserProfile from '../../Profile/UserProfile';
 import Status from '../../status/Status';
 import ContactDetail from '../../Profile/ContactDetail';
-import { Box, CircularProgress, Tab, Tabs, Typography } from '@mui/material';
+import { Box, CircularProgress, Tab, Tabs, Typography, Link } from '@mui/material';
 import EditIcon from '@mui/icons-material/Edit';
 import { useDispatch } from 'react-redux';
+import CheckGray from '../../../Images/circle_check-gray.svg';
+import CheckGreen from '../../../Images/circle_check-green.svg';
 import {
   Blacklist,
   Ratings,

@@ -120,3 +120,11 @@
 .custom-tooltip ul {
   padding-right: 6px !important;
 }
+
+.mr-6px {
+  margin-right: 6px !important;
+}
+
+.flex-row-reverse {
+  flex-direction: row-reverse;
+}

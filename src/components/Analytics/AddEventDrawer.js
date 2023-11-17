@@ -34,7 +34,6 @@ const AddEventDrawer = (props) => {
           notes: []
         }])
         setAddingEvent(false)
-        console.log("result", data)
       });
     } else {
       toast.error('Please check events.', { autoClose: 1500 });
@@ -69,7 +68,7 @@ const AddEventDrawer = (props) => {
     <Button
       variant="text"
       sx={{ color: '#262525' }}
-      className='add-event-btn mt-2'
+      className='add-event-btn mt-4 mb-3'
       onClick={() => {setAddingEvent(true)}}
     >
       <AddCircleOutlineOutlined sx={{ color: '#0B66E4', marginRight: '6px' }} />Add an event
@@ -83,14 +82,12 @@ const AddEventDrawer = (props) => {
         <div className='d-flex justify-between items-center w-full'>
           <h3>Add an event</h3>
         </div>
-        <Box sx={{color: '#BAB7B7', fontSize: '16px', lineHeight: '20px', marginTop: '16px'}}>
+        <Box sx={{color: '#BAB7B7', fontSize: '14px', lineHeight: '20px'}}>
           Input data about your activities, enabling you to track your progress effectively.
           By doing so, you can gain insights into what is working well for you and what 
           you need to avoid in your journey.
         </Box>
-        <Box sx={{marginTop: '16px'}}>
-        </Box>
-        <Box className="mt-16px">
+        <Box sx={{marginTop: '32px'}}>
           {
             eventsByDay.map((event, index) => 
               <EventCard
@@ -107,7 +104,7 @@ const AddEventDrawer = (props) => {
               className='mt-2 text-unset'
               onClick={() => {addEventByDay()}}
             >
-              Add events for new date
+              Add another event
             </Button>
           </div>
           <div className='w-100 d-flex flex-row-reverse'>

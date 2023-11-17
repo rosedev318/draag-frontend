@@ -203,7 +203,6 @@
     outline: none;
   }
 
-  .assign-modal,
   .user-active-modal{
     width: 30%;
   }
@@ -259,8 +258,7 @@
     .detail-width{
         width: 100% !important;
     }
-    .delete-comment-modal,
-    .assign-modal{
+    .delete-comment-modal{
         width: 60%;
     }
     .user-active-modal{
@@ -298,7 +296,6 @@
     }
    
     .delete-comment-modal,
-    .assign-modal,
     .user-active-modal{
         width: 40%;
     }

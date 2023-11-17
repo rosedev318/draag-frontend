@@ -47,10 +47,10 @@ const CoverModal = (props) => {
 
   return (
     <div
-      className="main-attach-modal position-relative"
+      className="main-attach-modal"
       style={{ height: '561px' }}
     >
-      <div className="d-flex justify-content-center align-items-center">
+      <div className="d-flex justify-content-center align-items-center position-relative">
         Attach
         <CloseIcon
           className="cursor-pointer"

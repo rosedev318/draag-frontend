@@ -105,7 +105,7 @@ const AttachModal = (props) => {
 
   return (
     <div className="main-attach-modal position-relative">
-      <div className="d-flex justify-content-center align-items-center">
+      <div className="d-flex justify-content-center align-items-center position-relative">
         <span style={{ fontSize: '14px' }}>Attach</span>
         <CloseIcon
           className="cursor-pointer"

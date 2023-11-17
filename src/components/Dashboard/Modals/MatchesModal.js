@@ -1,4 +1,4 @@
-import { Avatar, CircularProgress, Modal } from '@mui/material';
+import { Avatar, CircularProgress, Modal, Drawer } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 import CloseIcon from '@mui/icons-material/Close';
 import { useDispatch } from 'react-redux';
@@ -14,16 +14,8 @@ const MatchesModal = (props) => {
   const loading = useSelector((state) => state.Category.loading);
 
   const style = {
-    position: 'absolute',
-    top: '50%',
-    left: '50%',
-    transform: 'translate(-50%, -50%)',
-    backgroundColor: '#fff',
-    border: 'none',
-    borderRadius: '6px',
-    px: 4,
-    overflow: 'hidden',
-    outline: 'none'
+    padding: '48px !important',
+    minWidth: '400px'
   };
 
   useEffect(() => {
@@ -34,14 +26,9 @@ const MatchesModal = (props) => {
 
   return (
     <div>
-      <Modal
-        open={openMatches}
-        onClose={handleCloseMatches}
-        aria-labelledby="child-modal-title"
-        aria-describedby="child-modal-description"
-      >
-        <div style={style} className="assign-modal">
-          <div style={{ overflowY: 'auto', height: '300px' }}>
+      <Drawer anchor={'right'} open={openMatches} onClose={handleCloseMatches}>
+        <div style={style}>
+          <div>
             <div className="d-flex justify-content-between p-2">
               <div>Matches</div>
               <CloseIcon
@@ -93,7 +80,7 @@ const MatchesModal = (props) => {
             </div>
           </div>
         </div>
-      </Modal>
+      </Drawer>
     </div>
   );
 };

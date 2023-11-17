@@ -3,7 +3,8 @@
     width: 442px;
     height: 413px;
     border-radius: 5px;
-    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);
+    padding: 48px !important;
+    /* box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5); */
     position: relative;
     z-index: 1;
 }

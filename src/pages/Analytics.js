@@ -229,7 +229,9 @@ const Analytics = () => {
         <div>
           <Card metricsData={metricsData} datamonth={datamonth} />
         </div>
-        <AddEventDrawer />
+        <div className='w-100 d-flex flex-row-reverse'>
+          <AddEventDrawer />
+        </div>
         <div className="mt-3">
           <div className="candidate-total-head">Total candidates</div>
           <div className="pt-3">

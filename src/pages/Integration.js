@@ -105,27 +105,27 @@ const Integration = () => {
             <div className="inte-main">
               <Grid
                 container
-                spacing={2}
+                spacing={5}
                 justifyContent="flex-start"
                 direction="row"
               >
-                <Grid item>
+                <Grid sm={6} md={4} item>
                   <div className="inte-card">
                     <div className="inte-img">
                       <img
-                        height={45}
-                        width={45}
+                        height={36}
+                        width={36}
                         className="object-fit-cover"
                         src={require('.././Images/round-img.png')}
                       />
                     </div>
-                    <p className="title-head mt-10px">Calendly</p>
+                    <p className="title-head mt-10px mb-6px">Calendly</p>
                     <p className="title-sub" style={{ paddingRight: '30px' }}>
                       Integrate Calendly actions with your sign up flow.{' '}
                     </p>
                     <div
                       className="d-flex justify-between items-center"
-                      style={{ marginTop: '30px' }}
+                      style={{ marginTop: '20px' }}
                     >
                       <Button
                         className="text-unset"
@@ -133,9 +133,9 @@ const Integration = () => {
                         onClick={() => {
                           setConnectDrawerVisible(true);
                         }}
-                        sx={{ color: '#333', borderColor: '#333' }}
+                        sx={{ color: '#000', borderColor: '#000' }}
                       >
-                        <SwapHoriz />
+                        <SwapHoriz className='mr-6px' />
                         Connect
                       </Button>
                       <Drawer
@@ -301,28 +301,28 @@ const Integration = () => {
                     </div>
                   </div>
                 </Grid>
-                <Grid item>
+                <Grid sm={6} md={4} item>
                   <div className="inte-card">
                     <div className="inte-img">
                       <img
-                        height={45}
-                        width={45}
+                        height={24}
+                        width={36}
                         className="object-fit-cover"
                         src={require('.././Images/chek-img.png')}
                       />
                     </div>
-                    <p className="title-head mt-10px">Respond.io</p>
+                    <p className="title-head mt-10px mb-6px">Respond.io</p>
                     <p className="title-sub" style={{ paddingRight: '30px' }}>
                       With just one click you are all set with respond.io
                     </p>
                     <div
                       className="d-flex justify-between items-center"
-                      style={{ marginTop: '30px' }}
+                      style={{ marginTop: '20px' }}
                     >
                       <Button
                         className="text-unset"
                         variant="outlined"
-                        sx={{ color: '#333', borderColor: '#333' }}
+                        sx={{ color: '#000', borderColor: '#000' }}
                       >
                         <SwapHoriz />
                         Connected
