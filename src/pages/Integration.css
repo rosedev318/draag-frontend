@@ -21,13 +21,19 @@
 
 .inte-img {
   border-radius: 4px;
-  height: 46px;
+  border: 1px solid #9e9e9e;
+  width: fit-content;
+  padding: 4px;
+}
+
+.inte-img .inte-div {
+  height: 44px;
+  width: 44px;
+  border-radius: 4px;
   display: flex;
   justify-content: center;
   align-items: center;
   border: 1px solid #9e9e9e;
-  width: fit-content;
-  padding: 4px;
 }
 
 .main-integration {

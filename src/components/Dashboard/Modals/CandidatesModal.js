@@ -53,8 +53,16 @@ const CandidatesModal = (props) => {
 
   return (
     <div className="candidate-job-modal">
-      <div>
-        <div className="d-flex justify-content-between assign-team-title pt-3">
+      <div className='flex-1 modal-opacity' onClick={handleCloseCandidate}></div>
+      <div
+        style={{
+          minWidth: '420px',
+          backgroundColor: '#fff',
+          padding: '48px',
+          borderRadius: '5px'
+        }}
+      >
+        <div className="d-flex justify-content-between assign-team-title pt-3 px-3">
           Candidates assigned to this post
           <CloseIcon
             sx={{
@@ -66,6 +74,8 @@ const CandidatesModal = (props) => {
             onClick={() => handleCloseCandidate()}
           />
         </div>
+        {/* <div className="d-flex justify-content-end px-3"></div> */}
+
         <div className="pt-5">
           {assigned?.map((e, index) => {
             return (
@@ -74,7 +84,7 @@ const CandidatesModal = (props) => {
                 className="d-flex justify-content-between pt-2 position-relative"
               >
                 <div
-                  className={`d-flex align-items-center gap-2   ${
+                  className={`d-flex align-items-center gap-2 ${
                     e.messageSent ? 'fade-out' : ''
                   }`}
                 >
@@ -86,7 +96,6 @@ const CandidatesModal = (props) => {
                 </div>
                 <div
                   className="d-flex gap-3"
-                  style={{ position: 'absolute', right: 18 }}
                 >
                   <div
                     className="text-capitalize cursor-pointer"

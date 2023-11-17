@@ -94,7 +94,11 @@ const AddEventDrawer = (props) => {
                 key={index}
                 event={event}
                 saveEvent={(e) => {saveEvent(index, e)}}
-                handleClose={() => {setEventsByDay(eventsByDay.filter((e, i) => i != index))}}
+                handleClose={() => {
+                  console.log('here')
+                  if(eventsByDay?.length > 1)
+                    setEventsByDay(eventsByDay.filter((e, i) => i != index))
+                }}
               />
             )
           }

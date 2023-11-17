@@ -141,94 +141,96 @@ const SideBar = (props) => {
                 </div> */}
                 </div>
               </div>
-              {loading ? (
-                <div className="d-flex justify-content-center">
-                  <CircularProgress />
-                </div>
-              ) : (
-                highlightUser?.length > 0 &&
-                highlightUser?.map((item, index) => (
-                  <Droppable
-                    key={index}
-                    type="nanny"
-                    droppableId={item.id}
-                    direction="horizontal"
-                    isdragging="true"
-                    isDropDisabled={true}
-                  >
-                    {(provided, snapshot) => (
-                      <div
-                        isdraggingover={
-                          snapshot.isDraggingOver
-                            ? snapshot.isDraggingOver
-                            : undefined
-                        }
-                        ref={provided.innerRef}
-                        {...provided.droppableProps}
-                      >
-                        <div className="pt-3" style={{ paddingLeft: '10px' }}>
-                          <div className="d-flex gap-2">
-                            <Draggable
-                              draggableId={item.id}
-                              index={index}
-                              type="task"
-                              isdragging="true"
-                              key={index}
-                              draggable="true"
-                              shouldRespectForcePress
-                            >
-                              {(provided, snapshot) => {
-                                return (
-                                  <div
-                                    className={`d-flex gap-2 align-items-center ${
-                                      !snapshot.isDragging
-                                        ? 'bg-white'
-                                        : 'bg-transparent'
-                                    } flex-1`}
-                                    onClick={() => handleOpen(item?.id)}
-                                    ref={provided.innerRef}
-                                    {...provided.dragHandleProps}
-                                    {...provided.draggableProps}
-                                    isdragging={
-                                      snapshot.isDragging ? 'true' : 'false'
-                                    }
-                                  >
-                                    <Avatar
-                                      src={item?.photo}
-                                      sx={{ width: 24, height: 24 }}
-                                    />
+              <div className='h-100 overflow-y-auto'>
+                {loading ? (
+                  <div className="d-flex justify-content-center">
+                    <CircularProgress />
+                  </div>
+                ) : (
+                  highlightUser?.length > 0 &&
+                  highlightUser?.map((item, index) => (
+                    <Droppable
+                      key={index}
+                      type="nanny"
+                      droppableId={item.id}
+                      direction="horizontal"
+                      isdragging="true"
+                      isDropDisabled={true}
+                    >
+                      {(provided, snapshot) => (
+                        <div
+                          isdraggingover={
+                            snapshot.isDraggingOver
+                              ? snapshot.isDraggingOver
+                              : undefined
+                          }
+                          ref={provided.innerRef}
+                          {...provided.droppableProps}
+                        >
+                          <div className="pt-3" style={{ paddingLeft: '10px' }}>
+                            <div className="d-flex gap-2">
+                              <Draggable
+                                draggableId={item.id}
+                                index={index}
+                                type="task"
+                                isdragging="true"
+                                key={index}
+                                draggable="true"
+                                shouldRespectForcePress
+                              >
+                                {(provided, snapshot) => {
+                                  return (
                                     <div
-                                      className="member-name"
-                                      style={{ cursor: 'grab' }}
+                                      className={`d-flex gap-2 align-items-center ${
+                                        !snapshot.isDragging
+                                          ? 'bg-white'
+                                          : 'bg-transparent'
+                                      } flex-1`}
+                                      onClick={() => handleOpen(item?.id)}
+                                      ref={provided.innerRef}
+                                      {...provided.dragHandleProps}
+                                      {...provided.draggableProps}
+                                      isdragging={
+                                        snapshot.isDragging ? 'true' : 'false'
+                                      }
                                     >
-                                      {item.firstName}
-                                    </div>
-                                    {!snapshot.isDragging && (
+                                      <Avatar
+                                        src={item?.photo}
+                                        sx={{ width: 24, height: 24 }}
+                                      />
                                       <div
-                                        className="d-flex justify-content-end"
-                                        style={{
-                                          position: 'absolute',
-                                          right: '20px'
-                                        }}
+                                        className="member-name"
+                                        style={{ cursor: 'grab' }}
                                       >
-                                        <RemoveRedEyeOutlinedIcon
-                                          style={{ color: 'lightgrey' }}
-                                          className="fs-4 cursor-pointer"
-                                          onClick={() => handleOpen(item?.id)}
-                                        />
+                                        {item.firstName}
                                       </div>
-                                    )}
-                                  </div>
-                                );
-                              }}
-                            </Draggable>
+                                      {!snapshot.isDragging && (
+                                        <div
+                                          className="d-flex justify-content-end"
+                                          style={{
+                                            position: 'absolute',
+                                            right: '20px'
+                                          }}
+                                        >
+                                          <RemoveRedEyeOutlinedIcon
+                                            style={{ color: 'lightgrey' }}
+                                            className="fs-4 cursor-pointer"
+                                            onClick={() => handleOpen(item?.id)}
+                                          />
+                                        </div>
+                                      )}
+                                    </div>
+                                  );
+                                }}
+                              </Draggable>
+                            </div>
                           </div>
                         </div>
-                      </div>
-                    )}
-                  </Droppable>
-                ))
-              )}
+                      )}
+                    </Droppable>
+                  ))
+                )}
+              </div>
             </div>
           </div>
         </>

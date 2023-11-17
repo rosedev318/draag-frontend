@@ -46,62 +46,64 @@ const CoverModal = (props) => {
   };
 
   return (
-    <div
-      className="main-attach-modal"
-      style={{ height: '561px' }}
-    >
-      <div className="d-flex justify-content-center align-items-center position-relative">
-        Attach
-        <CloseIcon
-          className="cursor-pointer"
-          sx={{ width: 16, height: 16, position: 'absolute', right: '15px' }}
-          onClick={() => handleCloseCover()}
-        />
-      </div>
-      <div className="attach-main pt-3 px-2">
-        <span className="fw-bold" style={{ fontSize: '15px' }}>
-          Attach a file from your computer
-        </span>
-        <div className="mb-2 mt-3">
-          <div className="image-drop">
-            <div className="drop-cover text-center d-flex justify-content-center align-items-center">
-              <Dropzone
-                onDrop={(acceptedFiles) => {
-                  setFile(URL.createObjectURL(acceptedFiles[0]));
-                  setFiledata(acceptedFiles[0]);
-                }}
-                multiple={false}
-              >
-                {({ getRootProps, getInputProps }) => (
-                  <div {...getRootProps()}>
-                    <input {...getInputProps()} />
-                    <div className="fs-6">Drag and drop files here</div>
-                  </div>
-                )}
-              </Dropzone>
+    <div className='d-flex h-100'>
+      <div className='flex-1 modal-opacity' onClick={handleCloseCover}></div>
+      <div
+        className="main-attach-modal"
+      >
+        <div className="d-flex justify-content-center align-items-center position-relative">
+          Attach
+          <CloseIcon
+            className="cursor-pointer"
+            sx={{ width: 16, height: 16, position: 'absolute', right: '15px' }}
+            onClick={() => handleCloseCover()}
+          />
+        </div>
+        <div className="attach-main pt-3 px-2">
+          <span className="fw-bold" style={{ fontSize: '15px' }}>
+            Attach a file from your computer
+          </span>
+          <div className="mb-2 mt-3">
+            <div className="image-drop">
+              <div className="drop-cover text-center d-flex justify-content-center align-items-center">
+                <Dropzone
+                  onDrop={(acceptedFiles) => {
+                    setFile(URL.createObjectURL(acceptedFiles[0]));
+                    setFiledata(acceptedFiles[0]);
+                  }}
+                  multiple={false}
+                >
+                  {({ getRootProps, getInputProps }) => (
+                    <div {...getRootProps()}>
+                      <input {...getInputProps()} />
+                      <div className="fs-6">Drag and drop files here</div>
+                    </div>
+                  )}
+                </Dropzone>
+              </div>
             </div>
           </div>
-        </div>
-        <label for="file-upload" className="custom-file-upload mt-3">
-          Choose a file
-        </label>
-        <div className="fw-bold pt-4">Uploaded Files</div>
-        <div className="pt-3">
-          {file && <img src={file} className="cover-image" />}
-          {!file && job.photo && (
-            <img src={job.photo} className="cover-image" />
-          )}
-        </div>
-        <div className="d-flex justify-content-end gap-2 pt-4 pb-3">
-          <button
-            className="cancelattach-btn"
-            onClick={() => handleCloseCover()}
-          >
-            Cancel
-          </button>
-          <button className="insertbtn-attach" onClick={() => handlePhoto()}>
-            Upload
-          </button>
+          <label for="file-upload" className="custom-file-upload mt-3">
+            Choose a file
+          </label>
+          <div className="fw-bold pt-4">Uploaded Files</div>
+          <div className="pt-3">
+            {file && <img src={file} className="cover-image" />}
+            {!file && job.photo && (
+              <img src={job.photo} className="cover-image" />
+            )}
+          </div>
+          <div className="d-flex justify-content-end gap-2 pt-4 pb-3">
+            <button
+              className="cancelattach-btn"
+              onClick={() => handleCloseCover()}
+            >
+              Cancel
+            </button>
+            <button className="insertbtn-attach" onClick={() => handlePhoto()}>
+              Upload
+            </button>
+          </div>
         </div>
       </div>
     </div>

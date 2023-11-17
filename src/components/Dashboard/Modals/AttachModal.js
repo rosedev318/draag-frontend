@@ -104,91 +104,91 @@ const AttachModal = (props) => {
   }, [editAttachment, attach]);
 
   return (
-    <div className="main-attach-modal position-relative">
-      <div className="d-flex justify-content-center align-items-center position-relative">
-        <span style={{ fontSize: '14px' }}>Attach</span>
-        <CloseIcon
-          className="cursor-pointer"
-          sx={{ width: 16, height: 16, position: 'absolute', right: '15px' }}
-          onClick={() => handleCloseAttach()}
-        />
-      </div>
-      <div className="attach-main pt-3">
-        <span className="fw-bold" style={{ fontSize: '15px' }}>
-          Attach a file from your computer
-        </span>
-        <div className="mb-2 mt-3">
-          <div className="image-drop">
-            <div className="drop-cover text-center d-flex justify-content-center align-items-center">
-              <Dropzone
-                onDrop={(acceptedFiles) => {
-                  setFile(URL.createObjectURL(acceptedFiles[0]));
-                  setFiledata(acceptedFiles[0]);
-                }}
-                multiple={false}
-              >
-                {({ getRootProps, getInputProps }) => (
-                  <div {...getRootProps()}>
-                    <input {...getInputProps()} />
-                    <div className="fs-6">Drag and drop files here</div>
-                  </div>
-                )}
-              </Dropzone>
+    <div className='d-flex h-100'>
+      <div className='flex-1 modal-opacity' onClick={handleCloseAttach}></div>
+      <div className="main-attach-modal">
+        <div className="d-flex justify-content-center align-items-center position-relative">
+          <span style={{ fontSize: '14px' }}>Attach</span>
+          <CloseIcon
+            className="cursor-pointer"
+            sx={{ width: 16, height: 16, position: 'absolute', right: '15px' }}
+            onClick={() => handleCloseAttach()}
+          />
+        </div>
+        <div className="attach-main pt-3">
+          <span className="fw-bold" style={{ fontSize: '15px' }}>
+            Attach a file from your computer
+          </span>
+          <div className="mb-2 mt-3">
+            <div className="image-drop">
+              <div className="drop-cover text-center d-flex justify-content-center align-items-center">
+                <Dropzone
+                  onDrop={(acceptedFiles) => {
+                    setFile(URL.createObjectURL(acceptedFiles[0]));
+                    setFiledata(acceptedFiles[0]);
+                  }}
+                  multiple={false}
+                >
+                  {({ getRootProps, getInputProps }) => (
+                    <div {...getRootProps()}>
+                      <input {...getInputProps()} />
+                      <div className="fs-6">Drag and drop files here</div>
+                    </div>
+                  )}
+                </Dropzone>
+              </div>
             </div>
           </div>
-        </div>
-        <label for="file-upload" className="custom-file-upload mt-3">
-          Choose a file
-        </label>
-        <input id="file-upload" type="file" onChange={onImageChange} />
-        <Divider className="mt-3 mb-3" />
-        <div className="text-input-attach">Search or paste a link</div>
-        <input
-          type="text"
-          className="attach-input mt-1"
-          placeholder="Find recent links or paste a new link"
-          onChange={handleChange}
-          value={formValues.url}
-          name="url"
-        />
-        <div className="text-input-attach pt-3">Display text (optional)</div>
-        <input
-          type="text"
-          className="attach-input mt-1"
-          placeholder="Text to Display"
-          onChange={handleChange}
-          value={formValues.title}
-          name="title"
-        />
-        <div className="pt-3">
-          {file?.length > 0 && (
-            <div>
-              <img
-                src={file}
-                style={{
-                  height: '150px',
-                  width: '100%',
-                  objectFit: 'contain'
-                }}
-              />
-            </div>
-          )}
-          {file?.length === 0 && (
-            <div style={{ height: '20%', width: '100%' }}></div>
-          )}
-        </div>
-        <div className="d-flex justify-content-end gap-2 pt-4">
-          <button
-            className="cancelattach-btn"
-            onClick={() => {
-              handleCloseAttach();
-            }}
-          >
-            Cancel
-          </button>
-          <button className="insertbtn-attach" onClick={() => addAttach()}>
-            {editAttachment ? 'Save' : 'Insert'}
-          </button>
+          <label for="file-upload" className="custom-file-upload mt-3">
+            Choose a file
+          </label>
+          <input id="file-upload" type="file" onChange={onImageChange} />
+          <Divider className="mt-3 mb-3" />
+          <div className="text-input-attach">Search or paste a link</div>
+          <input
+            type="text"
+            className="attach-input mt-1"
+            placeholder="Find recent links or paste a new link"
+            onChange={handleChange}
+            value={formValues.url}
+            name="url"
+          />
+          <div className="text-input-attach pt-3">Display text (optional)</div>
+          <input
+            type="text"
+            className="attach-input mt-1"
+            placeholder="Text to Display"
+            onChange={handleChange}
+            value={formValues.title}
+            name="title"
+          />
+          <div className="pt-3">
+            {file?.length > 0 && (
+              <div>
+                <img
+                  src={file}
+                  style={{
+                    height: '150px',
+                    width: '100%',
+                    objectFit: 'contain'
+                  }}
+                />
+              </div>
+            )}
+          </div>
+          <div className="d-flex justify-content-end gap-2 pt-4">
+            <button
+              className="cancelattach-btn"
+              onClick={() => {
+                handleCloseAttach();
+              }}
+            >
+              Cancel
+            </button>
+            <button className="insertbtn-attach" onClick={() => addAttach()}>
+              {editAttachment ? 'Save' : 'Insert'}
+            </button>
+          </div>
         </div>
       </div>
     </div>

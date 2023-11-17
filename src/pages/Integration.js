@@ -112,12 +112,14 @@ const Integration = () => {
                 <Grid sm={6} md={4} item>
                   <div className="inte-card">
                     <div className="inte-img">
-                      <img
-                        height={36}
-                        width={36}
-                        className="object-fit-cover"
-                        src={require('.././Images/round-img.png')}
-                      />
+                      <div className='inte-div'>
+                        <img
+                          height={36}
+                          width={36}
+                          className="object-fit-cover"
+                          src={require('.././Images/round-img.png')}
+                        />
+                      </div>
                     </div>
                     <p className="title-head mt-10px mb-6px">Calendly</p>
                     <p className="title-sub" style={{ paddingRight: '30px' }}>
@@ -304,12 +306,14 @@ const Integration = () => {
                 <Grid sm={6} md={4} item>
                   <div className="inte-card">
                     <div className="inte-img">
-                      <img
-                        height={24}
-                        width={36}
-                        className="object-fit-cover"
-                        src={require('.././Images/chek-img.png')}
-                      />
+                      <div className='inte-div'>
+                        <img
+                          height={24}
+                          width={36}
+                          className="object-fit-cover"
+                          src={require('.././Images/chek-img.png')}
+                        />
+                      </div>
                     </div>
                     <p className="title-head mt-10px mb-6px">Respond.io</p>
                     <p className="title-sub" style={{ paddingRight: '30px' }}>

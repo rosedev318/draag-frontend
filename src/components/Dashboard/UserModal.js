@@ -1,4 +1,4 @@
-import { Avatar, Button, CircularProgress, Input, Modal, Dialog, Drawer } from '@mui/material';
+import { Avatar, Button, CircularProgress, Input, Modal } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 import React, { useEffect, useRef, useState } from 'react';
 import './UserModal.css';
@@ -640,13 +640,23 @@ const UserModal = (props) => {
                         </div>
                       </div>
 
-                      <Drawer anchor={'right'} open={openAssign} onClose={() => {setOpenAssign(false)}}>
-                        <AssignModal
-                          job={task}
-                          openAssign={openAssign}
-                          handleCloseAssign={handleCloseAssign}
-                        />
-                      </Drawer>
+                      {openAssign && (
+                        <div
+                          style={{
+                            position: 'absolute',
+                            right: 0,
+                            top: 0,
+                            bottom: 0,
+                            left: 0
+                          }}
+                        >
+                          <AssignModal
+                            job={task}
+                            openAssign={openAssign}
+                            handleCloseAssign={handleCloseAssign}
+                          />
+                        </div>
+                      )}
                       <div className="pt-5">
                         <div>
                           <div className="d-flex column-flex-main gap-0">
@@ -880,18 +890,30 @@ const UserModal = (props) => {
                               >
                                 Add to card
                               </div>
-                              <Drawer anchor={'right'} open={openAttach} onClose={handleCloseAttach}>
-                                <AttachModal
-                                  handleCloseAttach={handleCloseAttach}
-                                  openAttach={openAttach}
-                                  jobId={task.id}
-                                  editAttachment={editAttachment}
-                                  attachmentId={attachmentId}
-                                  anchorElAttach={anchorElAttach}
-                                  placementAttach={placementAttach}
-                                  setOpenAttach={setOpenAttach}
-                                />
-                              </Drawer>
+                              {openAttach && (
+                                <div
+                                  style={{
+                                    position: 'fixed',
+                                    right: 0,
+                                    bottom: 0,
+                                    left: 0,
+                                    top: 0,
+                                    zIndex: 1,
+                                    // top: '-3%'
+                                  }}
+                                >
+                                  <AttachModal
+                                    handleCloseAttach={handleCloseAttach}
+                                    openAttach={openAttach}
+                                    jobId={task.id}
+                                    editAttachment={editAttachment}
+                                    attachmentId={attachmentId}
+                                    anchorElAttach={anchorElAttach}
+                                    placementAttach={placementAttach}
+                                    setOpenAttach={setOpenAttach}
+                                  />
+                                </div>
+                              )}
                               <div className="position-relative">
                                 <div
                                   onClick={(event) => handleClick(event)}
@@ -914,16 +936,27 @@ const UserModal = (props) => {
                                   Candidates
                                 </div>
                               </div>
-                              <Drawer anchor={'right'} open={openCandidate} onClose={() => {setOpenCandidate(false)}}>
-                                <CandidatesModal
-                                  job={task}
-                                  assigned={assigned}
-                                  setAssigned={setAssigned}
-                                  openCandidate={openCandidate}
-                                  handleCloseCandidate={handleCloseCandidate}
-                                  handleOpenMember={handleOpenMember}
-                                />
-                              </Drawer>
+                              {openCandidate && (
+                                <div
+                                  style={{
+                                    position: 'absolute',
+                                    right: 0,
+                                    top: 0,
+                                    left: 0,
+                                    bottom: 0,
+                                  }}
+                                >
+                                  <CandidatesModal
+                                    job={task}
+                                    assigned={assigned}
+                                    setAssigned={setAssigned}
+                                    openCandidate={openCandidate}
+                                    handleCloseCandidate={handleCloseCandidate}
+                                    handleOpenMember={handleOpenMember}
+                                  />
+                                </div>
+                              )}
+                              {}
                               <div className="position-relative">
                                 <div
                                   style={{
@@ -956,15 +989,28 @@ const UserModal = (props) => {
                                   Labels
                                 </div>
                               </div>
-                              <Drawer anchor={'right'} open={openCover} onClose={handleCloseCover}>
-                                <CoverModal
-                                  job={task}
-                                  file={file}
-                                  setFile={setFile}
-                                  openCover={openCover}
-                                  handleCloseCover={handleCloseCover}
-                                />
-                              </Drawer>
+                              {openCover && (
+                                <div
+                                  style={{
+                                    position: 'absolute',
+                                    right: 0,
+                                    left: 0,
+                                    top: 0,
+                                    bottom: 0,
+                                    zIndex: 1,
+                                    // top: '4rem'
+                                    // bottom: '45%'
+                                  }}
+                                >
+                                  <CoverModal
+                                    job={task}
+                                    file={file}
+                                    setFile={setFile}
+                                    openCover={openCover}
+                                    handleCloseCover={handleCloseCover}
+                                  />
+                                </div>
+                              )}
                               <div className="">
                                 <div
                                   onClick={() => handleOpenCover()}

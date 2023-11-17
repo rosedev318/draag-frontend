@@ -174,17 +174,16 @@ const AnalyticChart = (props) => {
             })
           }
           let html = `<div class="custom-tooltip">
-            <p>candedates: ${series[seriesIndex][dataPointIndex]}</p>`;
-          
+          <span>${moment.unix(startDate).add(dataPointIndex, 'days').format('MM/DD/YYYY')}</span>`;
+          html += `<ul>`;
+          html += `<li>candedates: ${series[seriesIndex][dataPointIndex]}</li>`;
           if(!filteredEvents.length) {
-            html += `<p>No events</p>`;
-          } else {
-            html += `<ul>`;
-            filteredEvents.forEach(e => {
-              html += `<li>${e.content}</li>`;
-            });
-            html += `</ul>`;
+            html += `<li>No events</li>`;
           }
+          filteredEvents.forEach(e => {
+            html += `<li>${e.content}</li>`;
+          });
+          html += `</ul>`;
           html += `</div>`;
           return html;
         }
