@@ -14,6 +14,7 @@ import { GrAttachment } from 'react-icons/gr';
 import { MdOutlineCreditCard } from 'react-icons/md';
 import { LiaArchiveSolid } from 'react-icons/lia';
 import { useDispatch } from 'react-redux';
+import { CSSTransition } from 'react-transition-group';
 import {
   createComments,
   deleteComments,
@@ -640,7 +641,31 @@ const UserModal = (props) => {
                         </div>
                       </div>
 
-                      {openAssign && (
+                      <CSSTransition
+                        in={openAssign}
+                        timeout={200}
+                        classNames="rtl-animation-container"
+                        unmountOnExit
+                      >
+                        <div
+                          style={{
+                            position: 'absolute',
+                            right: 0,
+                            top: 0,
+                            bottom: 0,
+                            left: 0,
+                            backgroundColor: '#00000080',
+                            zIndex: 1
+                          }}
+                        >
+                          <AssignModal
+                            job={task}
+                            openAssign={openAssign}
+                            handleCloseAssign={handleCloseAssign}
+                          />
+                        </div>
+                      </CSSTransition>
+                      {/* {openAssign && (
                         <div
                           style={{
                             position: 'absolute',
@@ -656,7 +681,7 @@ const UserModal = (props) => {
                             handleCloseAssign={handleCloseAssign}
                           />
                         </div>
-                      )}
+                      )} */}
                       <div className="pt-5">
                         <div>
                           <div className="d-flex column-flex-main gap-0">
