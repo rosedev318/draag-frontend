@@ -302,8 +302,8 @@ function Bio(props) {
         bio: data?.bio,
         skills: skillsArr
       });
-      setInputEmp(
-        data?.employmentHistories &&
+      if (data?.employmentHistories?.length > 0) {
+        setInputEmp(
           data?.employmentHistories.map((e) => ({
             position:
               e.positions &&
@@ -318,7 +318,9 @@ function Bio(props) {
             reffile: [{ name: e.referenceUrl }],
             refContact: e.referenceContactInfo
           }))
-      );
+        );
+      }
+
       setInputEdu(
         data?.educations &&
           data?.educations?.map((e) => ({
@@ -333,6 +335,10 @@ function Bio(props) {
       );
     }
   }, [state?.id, state?.edit, data]);
+
+  useEffect(() => {
+    console.log('inputEmp', inputEmp, data?.employmentHistories);
+  }, [inputEmp, data]);
 
   return (
     <>
@@ -616,26 +622,7 @@ function Bio(props) {
                           </AccordionDetails>
                         </Accordion>
                       </div>
-                      <div className="row mt-1">
-                        <div className="col">
-                          <Input
-                            type="text"
-                            name="refContact"
-                            className="w-100"
-                            error={formErrors.refContact}
-                            helperText={formErrors.refContact}
-                            value={data.refContact}
-                            onChange={(e) => handleInputEmp(e, i)}
-                            size="small"
-                            label={
-                              formErrors.refContact
-                                ? 'Contact Info'
-                                : 'Contact Info'
-                            }
-                          />
-                        </div>
-                        <div className="col"></div>
-                      </div>
+
                       <div className="mt-4">
                         <div className="row mt-3">
                           <div className="col-12 col-lg-6 col-md-6 col-xl-6 col-sm-6">
@@ -698,6 +685,26 @@ function Bio(props) {
                             </div>
                           </div>
                         </div>
+                      </div>
+                      <div className="row mt-1">
+                        <div className="col">
+                          <Input
+                            type="text"
+                            name="refContact"
+                            className="w-100"
+                            error={formErrors.refContact}
+                            helperText={formErrors.refContact}
+                            value={data.refContact}
+                            onChange={(e) => handleInputEmp(e, i)}
+                            size="small"
+                            label={
+                              formErrors.refContact
+                                ? 'Contact Info'
+                                : 'Contact Info'
+                            }
+                          />
+                        </div>
+                        <div className="col"></div>
                       </div>
                     </React.Fragment>
                   );

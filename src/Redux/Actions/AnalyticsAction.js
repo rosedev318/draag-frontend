@@ -6,15 +6,11 @@ export const createEvent = (payload) => (dispatch) => {
   return new Promise((resolve, reject) => {
     const token = localStorage.getItem('authtoken');
     axios
-      .post(
-        `/api/chart-event-notes/bulk`, 
-        payload,
-        {
-          headers: {
-            Authorization: `Bearer ${token}`
-          }
+      .post(`/api/chart-event-notes/bulk`, payload, {
+        headers: {
+          Authorization: `Bearer ${token}`
         }
-      )
+      })
       .then((res) => {
         if (res.data && res.status == '200') {
           resolve(res.data);
@@ -26,7 +22,7 @@ export const createEvent = (payload) => (dispatch) => {
           localStorage.clear();
           window.location.replace(window.location.origin);
         }
-        
+
         toast.error(err.response.data.message, { autoClose: 1500 });
       });
   });

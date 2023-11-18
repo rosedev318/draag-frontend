@@ -118,7 +118,6 @@ const Column = ({
     setAnchorE2(null);
   };
 
-  console.log(jobs, column.name);
   return (
     <Draggable draggableId={column?.id} key={index} index={index} type="column">
       {(provided) => (

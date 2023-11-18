@@ -174,6 +174,14 @@ function MainLayout(props) {
     setOpenNotification(false);
   };
 
+  const [sidebarOpen, setSidebarOpen] = useState(screenOpen);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setSidebarOpen(screenOpen);
+    }, 300);
+  }, [screenOpen]);
+
   console.log(mobileOpen, screenOpen);
 
   const drawer = (
@@ -181,9 +189,10 @@ function MainLayout(props) {
       collapsedSize={90}
       orientation="horizontal"
       in={!screenOpen || mobileOpen}
+      timeout={{ enter: 700, exit: 700 }}
     >
       <div
-        className={`drawer ${screenOpen ? 'overflowX scrollY' : ''}`}
+        className={`drawer ${sidebarOpen ? 'overflowX scrollY' : ''}`}
         style={{
           backgroundColor: '#1C2536',
           overflowY: 'auto',
@@ -191,32 +200,35 @@ function MainLayout(props) {
           width: '270px'
         }}
       >
-        {!mobileOpen && screenOpen && (
-          <Logo mobileOpen={mobileOpen} type="small" />
-        )}
         <IconButton
-          className="ms-4 bg-none collapse-icon bg-none"
+          className="ms-4 bg-none collapse-icon bg-none mt-2"
           onClick={handleDrawerWidth}
+          style={{
+            height: '56px'
+          }}
         >
-          {!mobileOpen && screenOpen ? (
+          <div className="d-flex align-items-center justify-content-center">
             <div
-              className="bg-light mx-1 mt-3 mb-4"
-              style={{ borderRadius: '50%' }}
+              className="bg-light"
+              style={{
+                borderRadius: '50%'
+              }}
             >
-              <ChevronRightIcon className="text-dark d-flex fs-6 flex-column align-items-center" />
-            </div>
-          ) : (
-            <div className="d-flex align-items-center justify-content-center">
-              <div className="bg-light mt-3" style={{ borderRadius: '50%' }}>
+              {sidebarOpen && !mobileOpen ? (
+                <ChevronRightIcon className="text-dark d-flex fs-6 flex-column align-items-center" />
+              ) : (
                 <ChevronLeftIcon className="fs-6 text-dark" />
-              </div>
-              {(!screenOpen || mobileOpen) && <Logo mobileOpen={mobileOpen} />}
+              )}
             </div>
-          )}
+            {(!sidebarOpen || mobileOpen) && <Logo mobileOpen={mobileOpen} />}
+          </div>
         </IconButton>
 
+        {!mobileOpen && sidebarOpen && (
+          <Logo mobileOpen={mobileOpen} type="small" />
+        )}
         <div className="d-flex flex-column">
-          {(!screenOpen || mobileOpen) && <Accounts />}
+          {(!sidebarOpen || mobileOpen) && <Accounts />}
           <List component="nav">
             {MenuList.map((item, index) => {
               const isActive = pathname === item.path;
@@ -225,7 +237,7 @@ function MainLayout(props) {
                   <ListItemButton
                     className={
                       isActive
-                        ? !screenOpen || mobileOpen
+                        ? !sidebarOpen || mobileOpen
                           ? 'active px-4'
                           : 'bg-none px-4'
                         : 'px-4'
@@ -252,13 +264,13 @@ function MainLayout(props) {
                       <ListItemIcon
                         className={
                           isActive
-                            ? !screenOpen || mobileOpen
+                            ? !sidebarOpen || mobileOpen
                               ? 'active-icon d-flex flex-column'
                               : 'active-small d-flex flex-column align-items-center'
                             : ' text-white d-flex flex-column'
                         }
                         style={
-                          screenOpen
+                          sidebarOpen
                             ? !mobileOpen
                               ? { alignItems: 'center' }
                               : {}
@@ -270,7 +282,7 @@ function MainLayout(props) {
 
                       <ListItemText
                         className={
-                          mobileOpen || !screenOpen ? 'd-block' : 'd-none'
+                          mobileOpen || !sidebarOpen ? 'd-block' : 'd-none'
                         }
                         style={
                           isActive ? { color: '#4285F4' } : { color: '#FFFFFF' }
@@ -279,7 +291,7 @@ function MainLayout(props) {
                       />
                     </div>
                   </ListItemButton>
-                  {(!screenOpen || mobileOpen) && item.divider && (
+                  {(!sidebarOpen || mobileOpen) && item.divider && (
                     <div className="d-flex align-items-center py-3">
                       <hr className="onehr" />
                       <span className="reporthead">Tools</span>
@@ -291,7 +303,7 @@ function MainLayout(props) {
                       <div className="d-flex align-items-center py-3">
                         <hr
                           className={
-                            !screenOpen || mobileOpen
+                            !sidebarOpen || mobileOpen
                               ? 'onehr1'
                               : 'onehr1-small'
                           }

@@ -1,12 +1,11 @@
-@import "./colors/colors.css";
-
+@import './colors/colors.css';
 
 .error-message span {
-    color: red !important;
+  color: red !important;
 }
 
 .error-message span.green {
-    color: green !important;
+  color: green !important;
 }
 
 .justify-between {
@@ -110,32 +109,6 @@
   margin-top: 8px !important;
 }
 
-.custom-tooltip {
-  border: 1px solid #333;
-  border-radius: 4px;
-  padding: 6px !important;
-  font-size: 14px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.custom-tooltip span {
-  margin-top: 8px;
-}
-
-.custom-tooltip ul {
-  padding-right: 1.2rem !important;
-}
-
-.custom-tooltip ul>li::marker {
-  color: red;
-}
-
-.custom-tooltip ul>li:first-child::marker {
-  color: #2196f3;
-}
-
 .mr-6px {
   margin-right: 6px !important;
 }
@@ -152,7 +125,7 @@
   -webkit-tap-highlight-color: transparent;
 }
 
-.h-100>.MuiCollapse-wrapper {
+.h-100 > .MuiCollapse-wrapper {
   height: 100%;
 }
 

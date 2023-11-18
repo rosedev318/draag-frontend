@@ -236,7 +236,7 @@ const Analytics = () => {
           <div className="candidate-total-head">Total candidates</div>
           <div className="pt-3">
             <AnalyticChart
-              events={events.content}
+              events={events}
               times={times}
               monthData={monthData}
               success={success}

@@ -17,7 +17,7 @@ import { useDispatch } from 'react-redux';
 import { getJob, getJobRating } from '../../../Redux/Actions/CategoryAction';
 import CardProgress from '../CardProgress';
 import TrialAvtar from '../TrialAvtar';
-import { userContext } from '../../../context/UserContext';
+import UserContext, { userContext } from '../../../context/UserContext';
 
 const Container = styled('div')`
   width: 300px;
@@ -55,24 +55,23 @@ const Task = ({
 }) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const { openuserModal, setOpenUserModal } = useContext(userContext);
-  const [open, setOpen] = useState(false);
+  const { openuserModal, setOpenUserModal, openUser, setOpenUser } =
+    useContext(userContext);
+  // const [open, setOpen] = useState(false);
   const [openCandidate, setOpenCandidate] = useState(false);
   const [rate, setRate] = useState('');
   const [status, setStatus] = useState('');
   const handleOpen = () => {
-    setOpen(true);
-    setOpenUserModal(true);
+    setOpenUser(true);
+    // setOpenUserModal(true);
   };
-
   const [assigned, setAssigned] = useState(
     task.assignments
       .sort((c, d) => (c.nanny.name > d.nanny.name ? 1 : d.nanny.name ? -1 : 0))
       .sort((a, b) => (a.messageSent && !b.messageSent ? 1 : -1))
   );
   const handleClose = () => {
-    setOpen(false);
-    setOpenUserModal(false);
+    setOpenUser(false);
   };
 
   const messageSent = task.assignments.filter((e) => e.messageSent);
@@ -368,11 +367,11 @@ const Task = ({
         )}
       </Draggable>
       <UserModal
-        open={open}
+        open={openUser}
         task={task}
         handleClose={handleClose}
         category={category}
-        setOpen={setOpen}
+        setOpen={setOpenUser}
         handleOpen={handleOpen}
         setRate={setRate}
         rating={rating}

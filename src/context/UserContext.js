@@ -4,6 +4,7 @@ export const userContext = createContext(null);
 
 export default ({ children }) => {
   const [openuserModal, setOpenUserModal] = useState(false);
+  const [openUser, setOpenUser] = useState(false);
   const [starter, setStarter] = useState({
     columns: {},
     columnOrder: [],
@@ -14,7 +15,9 @@ export default ({ children }) => {
     openuserModal,
     setOpenUserModal,
     starter,
-    setStarter
+    setStarter,
+    openUser,
+    setOpenUser
   };
 
   return <userContext.Provider value={store}>{children}</userContext.Provider>;

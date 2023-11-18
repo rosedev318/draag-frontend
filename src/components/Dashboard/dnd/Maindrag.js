@@ -316,7 +316,7 @@ const Maindrag = (props) => {
 
   const jobsData = Object.values(starter.jobs);
 
-  const onDragStart = start => {
+  const onDragStart = (start) => {
     const el = document.getElementById(start.draggableId);
     if (el) {
       el.style.position = 'fixed';
@@ -330,7 +330,7 @@ const Maindrag = (props) => {
       el.style.position = '';
       el.style.zIndex = '';
     }
-    
+
     if (type == 'nanny' && jobId !== undefined) {
       dispatch(createAssignment(jobId, draggableId)).then((res) => {
         if (res.status == '200') {
