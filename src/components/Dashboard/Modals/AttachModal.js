@@ -106,7 +106,7 @@ const AttachModal = (props) => {
   return (
     <div className='d-flex h-100'>
       <div className='flex-1 modal-opacity' onClick={handleCloseAttach}></div>
-      <div className="main-attach-modal">
+      <div className="main-attach-modal main-box">
         <div className="d-flex justify-content-center align-items-center position-relative">
           <span style={{ fontSize: '14px' }}>Attach</span>
           <CloseIcon

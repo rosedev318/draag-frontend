@@ -655,7 +655,8 @@ const UserModal = (props) => {
                             bottom: 0,
                             left: 0,
                             backgroundColor: '#00000080',
-                            zIndex: 1
+                            zIndex: 1,
+                            overflow: 'hidden'
                           }}
                         >
                           <AssignModal
@@ -915,16 +916,22 @@ const UserModal = (props) => {
                               >
                                 Add to card
                               </div>
-                              {openAttach && (
+                              <CSSTransition
+                                in={openAttach}
+                                timeout={200}
+                                classNames="rtl-animation-container"
+                                unmountOnExit
+                              >
                                 <div
                                   style={{
-                                    position: 'fixed',
+                                    position: 'absolute',
                                     right: 0,
+                                    top: 0,
                                     bottom: 0,
                                     left: 0,
-                                    top: 0,
+                                    backgroundColor: '#00000080',
                                     zIndex: 1,
-                                    // top: '-3%'
+                                    overflow: 'hidden'
                                   }}
                                 >
                                   <AttachModal
@@ -938,7 +945,7 @@ const UserModal = (props) => {
                                     setOpenAttach={setOpenAttach}
                                   />
                                 </div>
-                              )}
+                              </CSSTransition>
                               <div className="position-relative">
                                 <div
                                   onClick={(event) => handleClick(event)}
@@ -961,14 +968,22 @@ const UserModal = (props) => {
                                   Candidates
                                 </div>
                               </div>
-                              {openCandidate && (
+                              <CSSTransition
+                                in={openCandidate}
+                                timeout={200}
+                                classNames="rtl-animation-container"
+                                unmountOnExit
+                              >
                                 <div
                                   style={{
                                     position: 'absolute',
                                     right: 0,
                                     top: 0,
-                                    left: 0,
                                     bottom: 0,
+                                    left: 0,
+                                    backgroundColor: '#00000080',
+                                    zIndex: 1,
+                                    overflow: 'hidden'
                                   }}
                                 >
                                   <CandidatesModal
@@ -980,8 +995,7 @@ const UserModal = (props) => {
                                     handleOpenMember={handleOpenMember}
                                   />
                                 </div>
-                              )}
-                              {}
+                              </CSSTransition>
                               <div className="position-relative">
                                 <div
                                   style={{
@@ -1014,17 +1028,22 @@ const UserModal = (props) => {
                                   Labels
                                 </div>
                               </div>
-                              {openCover && (
+                              <CSSTransition
+                                in={openCover}
+                                timeout={200}
+                                classNames="rtl-animation-container"
+                                unmountOnExit
+                              >
                                 <div
                                   style={{
                                     position: 'absolute',
                                     right: 0,
-                                    left: 0,
                                     top: 0,
                                     bottom: 0,
+                                    left: 0,
+                                    backgroundColor: '#00000080',
                                     zIndex: 1,
-                                    // top: '4rem'
-                                    // bottom: '45%'
+                                    overflow: 'hidden'
                                   }}
                                 >
                                   <CoverModal
@@ -1035,7 +1054,7 @@ const UserModal = (props) => {
                                     handleCloseCover={handleCloseCover}
                                   />
                                 </div>
-                              )}
+                              </CSSTransition>
                               <div className="">
                                 <div
                                   onClick={() => handleOpenCover()}

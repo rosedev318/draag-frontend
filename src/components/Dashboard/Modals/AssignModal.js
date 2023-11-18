@@ -56,7 +56,7 @@ const AssignModal = (props) => {
   return (
     <div className='d-flex h-100'>
       <div className='flex-1 modal-opacity' onClick={handleCloseAssign}></div>
-      <div className="assign-team-modal px-2">
+      <div className="assign-team-modal main-box px-2">
         <div style={{ padding: '40px' }}>
           <div className="d-flex justify-content-between assign-team-title pt-3 px-3">
             <div className="assign-team-title">
