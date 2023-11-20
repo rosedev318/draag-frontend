@@ -54,7 +54,7 @@ const CandidatesModal = (props) => {
   return (
     <div className="candidate-job-modal">
       <div className='flex-1 modal-opacity' onClick={handleCloseCandidate}></div>
-      <div
+      <div className='main-box'
         style={{
           minWidth: '420px',
           backgroundColor: '#fff',

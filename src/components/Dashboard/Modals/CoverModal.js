@@ -49,7 +49,7 @@ const CoverModal = (props) => {
     <div className='d-flex h-100'>
       <div className='flex-1 modal-opacity' onClick={handleCloseCover}></div>
       <div
-        className="main-attach-modal"
+        className="main-attach-modal main-box"
       >
         <div className="d-flex justify-content-center align-items-center position-relative">
           Attach
