@@ -114,8 +114,9 @@ const Dashboard = (props) => {
           display: 'flex',
           flexDirection: 'column',
           flexGrow: '1',
-          height: '100vh'
+          minHeight: '100vh',
           // overflowY: openSidebar && 'hidden'
+          overflowY: 'auto'
         }}
         className="position-relative"
       >

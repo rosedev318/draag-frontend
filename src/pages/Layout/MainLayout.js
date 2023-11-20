@@ -197,14 +197,21 @@ function MainLayout(props) {
           backgroundColor: '#1C2536',
           overflowY: 'auto',
           height: '100vh',
-          width: '270px'
+          width: '250px'
         }}
       >
+        {!mobileOpen && sidebarOpen && (
+          <div style={{ marginTop: '20px', marginBottom: '-10px' }}>
+            <Logo mobileOpen={mobileOpen} type="small" />
+          </div>
+        )}
         <IconButton
           className="ms-4 bg-none collapse-icon bg-none mt-2"
           onClick={handleDrawerWidth}
           style={{
-            height: '56px'
+            height: '56px',
+            paddingLeft: `${sidebarOpen && !mobileOpen ? '10px' : '0px'}`,
+            paddingTop: `${sidebarOpen && !mobileOpen ? '0px' : '0px'}`
           }}
         >
           <div className="d-flex align-items-center justify-content-center">
@@ -224,9 +231,6 @@ function MainLayout(props) {
           </div>
         </IconButton>
 
-        {!mobileOpen && sidebarOpen && (
-          <Logo mobileOpen={mobileOpen} type="small" />
-        )}
         <div className="d-flex flex-column">
           {(!sidebarOpen || mobileOpen) && <Accounts />}
           <List component="nav">

@@ -105,14 +105,14 @@ const Integration = () => {
             <div className="inte-main">
               <Grid
                 container
-                spacing={5}
+                spacing={7}
                 justifyContent="flex-start"
                 direction="row"
               >
-                <Grid sm={6} md={4} item>
+                <Grid item>
                   <div className="inte-card">
                     <div className="inte-img">
-                      <div className='inte-div'>
+                      <div className="inte-div">
                         <img
                           height={36}
                           width={36}
@@ -137,7 +137,7 @@ const Integration = () => {
                         }}
                         sx={{ color: '#000', borderColor: '#000' }}
                       >
-                        <SwapHoriz className='mr-6px' />
+                        <SwapHoriz className="mr-6px" />
                         Connect
                       </Button>
                       <Drawer
@@ -303,10 +303,10 @@ const Integration = () => {
                     </div>
                   </div>
                 </Grid>
-                <Grid sm={6} md={4} item>
+                <Grid item>
                   <div className="inte-card">
                     <div className="inte-img">
-                      <div className='inte-div'>
+                      <div className="inte-div">
                         <img
                           height={24}
                           width={36}

@@ -1,6 +1,6 @@
 import { Avatar, Button, CircularProgress, Input, Modal } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 import './UserModal.css';
 import { FaRegCreditCard } from 'react-icons/fa';
 import moment from 'moment';
@@ -51,6 +51,7 @@ import DeleteAttachModal from './Modals/DeleteAttachModal';
 import AttachImageModal from './Modals/AttachImageModal';
 import { userProfile } from '../../Redux/Actions/AgencyAction';
 import MemberModal from './Modals/MemberModal';
+import { userContext } from '../../context/UserContext';
 
 const bigExplodeProps = {
   force: 0.8,
@@ -91,6 +92,7 @@ const UserModal = (props) => {
   const [notes, setNotes] = useState();
   const [file, setFile] = useState('');
   const [attachmentId, setAttachmentid] = useState('');
+  // const{openUser,setOpenUser} = useContext(userContext)
   const textareaRef = useRef();
   const [activity, setActivity] = useState('history');
   const commentsData = useSelector((state) => state.Category.comments);
@@ -519,7 +521,11 @@ const UserModal = (props) => {
                                 fontWeight: 900
                               }}
                             >
-                              Nanny Housekeeper in Barons Court
+                              {task?.necessaryPositions?.length > 0 ? 
+                              
+                              task?.necessaryPositions?.[0]?.name + " " + "in" + " " + task?.area 
+                              
+                               : ""} 
                             </div>
                             <div>
                               <EditIcon

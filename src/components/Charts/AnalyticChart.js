@@ -170,10 +170,13 @@ const AnalyticChart = (props) => {
           const targetDate = moment.unix(startDate).add(dataPointIndex, 'days');
 
           let filteredEvents = [];
-          if(events?.length) {
-            filteredEvents = events.filter(e => {
-              return moment(e.scheduleDate, 'YYYY-MM-DD').isSame(moment.unix(startDate).add(dataPointIndex, 'days'), 'day')
-            })
+          if (events?.length) {
+            filteredEvents = events.filter((e) => {
+              return moment(e.scheduleDate, 'YYYY-MM-DD').isSame(
+                moment.unix(startDate).add(dataPointIndex, 'days'),
+                'day'
+              );
+            });
           }
 
           console.log('startDate, targetDate', startDate, filteredEvents);
@@ -191,7 +194,7 @@ const AnalyticChart = (props) => {
             <div class="custom-tooltip">
               <h6 class="mb-3" style="font-weight:600; text-align:center; font-size: 15px;">${dateFormatted}</h6>
               <ul class="custom-tooltip-candidate">
-                <li>Candedates: ${candidatesText}</li>
+                <li>Candidates: ${candidatesText}</li>
               </ul>
               ${filteredEvents.length ? '<hr/>' : ''}
               ${

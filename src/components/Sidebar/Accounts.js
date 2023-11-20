@@ -27,13 +27,16 @@ const Accounts = () => {
 
   return (
     <div className="d-flex justify-content-center px-4">
-      <div className="selectcard d-flex justify-content-evenly align-items-center">
-        <div className="selectlabel">Teams:</div>
+      <div
+        className="selectcard d-flex justify-content-evenly align-items-center"
+        style={{ height: '35px', width: '180' }}
+      >
         <div>
           <select
             onChange={(e) => handleChange(e.target.value)}
             style={{
-              backgroundImage: `url(${require('../../Images/newarrow.jpg')})`
+              backgroundImage: `url(${require('../../Images/newarrow.jpg')})`,
+              width: '100%'
             }}
           >
             {agencies?.length > 0 &&

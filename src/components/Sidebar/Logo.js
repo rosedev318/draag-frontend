@@ -12,11 +12,11 @@ const Logo = ({ mobileOpen, type = 'big' }) => {
     <LogoBox>
       <img
         alt="Dragg"
-        className={`${mobileOpen ? 'ps-4' : 'mx-4'}`}
-        style={{ objectFit: 'contain' }}
+        className={`${mobileOpen ? 'ps-4' : 'ps-0'}`}
+        style={mobileOpen ? { objectFit: 'contain' } : { marginLeft: '30px' }}
         src={type === 'small' ? './LogoMark.png' : '/WhiteLogo.png'}
-        height={40}
-        width={type === 'small' ? 40 : 104}
+        height={30}
+        width={type === 'small' ? 30 : 85}
       />
     </LogoBox>
   );
